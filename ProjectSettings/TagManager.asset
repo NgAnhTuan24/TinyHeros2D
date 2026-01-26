@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Sky
+    uniqueID: 2478817573
+    locked: 0
+  - name: Cloud
+    uniqueID: 2001621463
+    locked: 0
+  - name: Hills
+    uniqueID: 2966970689
+    locked: 0
+  - name: Foreground
+    uniqueID: 1172548095
+    locked: 0
