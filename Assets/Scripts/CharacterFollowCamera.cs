@@ -3,23 +3,24 @@ using UnityEngine;
 public class CharacterFollowCamera : MonoBehaviour
 {
     public Transform cam;
-    public float offsetX = -4f; // lệch về bên trái
-    public bool lockY = true;
+    public float offsetX = -8f;
+    public float smooth = 10f;
 
-    private Rigidbody2D rb;
+    private float fixedY;
+    private float fixedZ;
 
-    void Awake()
+    void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        fixedY = transform.position.y;
+        fixedZ = transform.position.z;
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
-        Vector2 targetPos = new Vector2(
+        transform.position = new Vector3(
             cam.position.x + offsetX,
-            lockY ? rb.position.y : cam.position.y
+            transform.position.y,
+            transform.position.z
         );
-
-        rb.MovePosition(targetPos);
     }
 }
