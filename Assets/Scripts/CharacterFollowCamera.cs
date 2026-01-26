@@ -4,7 +4,6 @@ public class CharacterFollowCamera : MonoBehaviour
 {
     public Transform cam;
     public float offsetX = -8f;
-    public float smooth = 10f;
 
     private float fixedY;
     private float fixedZ;
