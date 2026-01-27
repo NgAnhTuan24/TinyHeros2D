@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5446718010781599414}
   - component: {fileID: 3433105709746964189}
   - component: {fileID: 6860138965962180844}
+  - component: {fileID: 3304535631753726976}
   m_Layer: 0
   m_Name: Dude
   m_TagString: Untagged
@@ -134,7 +135,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6860138965962180844
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -180,3 +181,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.62}
   m_EdgeRadius: 0
+--- !u!114 &3304535631753726976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681581295865836287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da985c4ee9d70894799a861a0dcb2183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

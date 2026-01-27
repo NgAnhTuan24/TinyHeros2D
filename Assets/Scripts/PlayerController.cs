@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Character player;
+
     void Start()
     {
-        
+        player = Init.player;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        player.Update();
     }
 }
