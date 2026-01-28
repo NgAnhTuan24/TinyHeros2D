@@ -26,6 +26,7 @@ public class Character
     protected Character(GameObject gameObject)
     {
         hp = 3;
+        speed = 7f;
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
