@@ -24,7 +24,7 @@ public class Character
 
     protected Transform tf { get; set; }
 
-    protected float horizontalInput;
+    private float horizontalInput;
 
     protected Character(GameObject gameObject)
     {
@@ -41,11 +41,18 @@ public class Character
     {
         InputHandle();
         FlipSprite();
+        UpdateAnimation();
     }
 
     public void FixedUpdate()
     {
         Move();
+    }
+
+    private void UpdateAnimation()
+    {
+        float speedAbs = Mathf.Abs(horizontalInput);
+        animator.SetFloat("Speed", speedAbs);
     }
 
     private void InputHandle()
