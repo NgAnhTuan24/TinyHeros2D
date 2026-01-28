@@ -12,7 +12,6 @@ public class Character
     protected float speed;
     protected float jumpForce;
     protected float gravityScale;
-    protected int maxJumpCount = 2;
     protected int jumpCount;
     protected Direction direction;
     protected Rigidbody2D rb;
@@ -22,6 +21,7 @@ public class Character
 
     private float horizontalInput;
     private bool isGrounded;
+    private int maxJumpCount = 2;
 
     protected Character(GameObject gameObject)
     {
@@ -38,7 +38,6 @@ public class Character
 
     public void Update()
     {
-        CheckGround();
         InputHandle();
         FlipSprite();
         UpdateAnimation();
@@ -46,19 +45,20 @@ public class Character
 
     public void FixedUpdate()
     {
+        CheckGround();
         Move();
     }
 
     private void UpdateAnimation()
     {
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
-        animator.SetBool("IsJumping", !isGrounded && rb.velocity.y > 0.1f);
-        animator.SetBool("IsFalling", !isGrounded && rb.velocity.y < -0.1f);
+        animator.SetBool("IsJumping", !isGrounded && rb.velocity.y > 0.2f);
+        animator.SetBool("IsFalling", !isGrounded && rb.velocity.y < -0.2f);
     }
 
     private void InputHandle()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
         if (horizontalInput < 0)
         {
             direction = Direction.Left;
@@ -89,7 +89,10 @@ public class Character
 
     private void FlipSprite()
     {
-        tf.rotation = direction == Direction.Right ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+        if (direction == Direction.Right)
+            tf.localScale = new Vector3(1, 1, 1);
+        else
+            tf.localScale = new Vector3(-1, 1, 1);
     }
 
     private void Move()
