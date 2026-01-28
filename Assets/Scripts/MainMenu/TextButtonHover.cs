@@ -4,14 +4,12 @@ using UnityEngine.EventSystems;
 
 public class TextButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public TextMeshProUGUI text;
     public Color normalColor = Color.white;
     public Color hoverColor = Color.yellow;
 
-    private TextMeshProUGUI text;
-
     void Awake()
     {
-        text = GetComponent<TextMeshProUGUI>();
         text.color = normalColor;
     }
 
