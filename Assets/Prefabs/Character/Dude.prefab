@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3433105709746964189}
   - component: {fileID: 6860138965962180844}
   - component: {fileID: 3304535631753726976}
+  - component: {fileID: 3914281933087109908}
   m_Layer: 0
   m_Name: Dude
   m_TagString: Untagged
@@ -193,3 +194,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da985c4ee9d70894799a861a0dcb2183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3914281933087109908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681581295865836287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07002ae6d79b5646a4f5a16073babfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  noOfClicks: 0
+  maxComboDelay: 0.9
