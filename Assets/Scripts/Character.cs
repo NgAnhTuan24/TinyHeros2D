@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Character 
+public class Character
 {
     public enum Direction
     {
@@ -37,24 +37,37 @@ public abstract class Character
         rb.gravityScale = gravityScale;
     }
 
-    internal void Update()
+    public void Update()
     {
         InputHandle();
         FlipSprite();
     }
 
-    protected abstract void InputHandle();
+    public void FixedUpdate()
+    {
+        Move();
+    }
+
+    private void InputHandle()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (horizontalInput < 0)
+        {
+            direction = Direction.Left;
+        }
+        else if (horizontalInput > 0)
+        {
+            direction = Direction.Right;
+        }
+    }
 
     private void FlipSprite()
     {
-        switch (direction)
-        {
-            case Direction.Left:
-                tf.localScale = new Vector3(-1, tf.localScale.y, tf.localScale.z);
-                break;
-            case Direction.Right:
-                tf.localScale = new Vector3(1, tf.localScale.y, tf.localScale.z);
-                break;
-        }
+        tf.rotation = direction == Direction.Right ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 180, 0);
+    }
+
+    private void Move()
+    {
+        rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
     }
 }
