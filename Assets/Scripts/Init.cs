@@ -15,6 +15,12 @@ public class Init : MonoBehaviour
             case "Pink":
                 player = new Pink(playerObject);
                 break;
+            case "Owlet":
+                player = new Owlet(playerObject);
+                break;
+            case "Dude":
+                player = new Dude(playerObject);
+                break;
         }
     }
 }
