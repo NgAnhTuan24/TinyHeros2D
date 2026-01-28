@@ -56,8 +56,9 @@ public class Character
 
     private void UpdateAnimation()
     {
-        float speedAbs = Mathf.Abs(horizontalInput);
-        animator.SetFloat("Speed", speedAbs);
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
+        animator.SetBool("IsJumping", !isGrounded && rb.velocity.y > 0.1f);
+        animator.SetBool("IsFalling", !isGrounded && rb.velocity.y < -0.1f);
     }
 
     private void InputHandle()
