@@ -12,6 +12,8 @@ public class Character
 
     protected float speed { get; set; }
 
+    protected float jumpForce { get; set; }
+
     protected float gravityScale { get; set; }
 
     protected Direction direction { get; set; }
@@ -25,6 +27,7 @@ public class Character
     protected Transform tf { get; set; }
 
     private float horizontalInput;
+    private bool isGrounded;
 
     protected Character(GameObject gameObject)
     {
@@ -33,12 +36,14 @@ public class Character
         animator = gameObject.GetComponent<Animator>();
         boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
         tf = gameObject.transform;
-        gravityScale = 5;
+        gravityScale = 5f;
         rb.gravityScale = gravityScale;
+        jumpForce = 15f;
     }
 
     public void Update()
     {
+        CheckGround();
         InputHandle();
         FlipSprite();
         UpdateAnimation();
@@ -66,6 +71,18 @@ public class Character
         {
             direction = Direction.Right;
         }
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            Jump();
+        }
+    }
+
+    protected void CheckGround()
+    {
+        RaycastHit2D hit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
+
+        isGrounded = hit.collider != null;
     }
 
     private void FlipSprite()
@@ -76,5 +93,11 @@ public class Character
     private void Move()
     {
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+    }
+
+    protected void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, 0);
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 }
