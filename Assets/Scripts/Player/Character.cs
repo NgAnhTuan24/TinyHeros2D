@@ -8,23 +8,17 @@ public class Character
         Left
     }
 
-    protected int hp { get; set; }
-
-    protected float speed { get; set; }
-
-    protected float jumpForce { get; set; }
-
-    protected float gravityScale { get; set; }
-
-    protected Direction direction { get; set; }
-
-    protected Rigidbody2D rb { get; set; }
-
-    protected Animator animator { get; set; }
-
-    protected BoxCollider2D boxCollider2D { get; set; }
-
-    protected Transform tf { get; set; }
+    protected int hp;
+    protected float speed;
+    protected float jumpForce;
+    protected float gravityScale;
+    protected int maxJumpCount = 2;
+    protected int jumpCount;
+    protected Direction direction;
+    protected Rigidbody2D rb;
+    protected Animator animator;
+    protected BoxCollider2D boxCollider2D;
+    protected Transform tf;
 
     private float horizontalInput;
     private bool isGrounded;
@@ -39,6 +33,7 @@ public class Character
         gravityScale = 5f;
         rb.gravityScale = gravityScale;
         jumpForce = 15f;
+        jumpCount = 0;
     }
 
     public void Update()
@@ -73,7 +68,7 @@ public class Character
             direction = Direction.Right;
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && jumpCount < maxJumpCount)
         {
             Jump();
         }
@@ -83,7 +78,13 @@ public class Character
     {
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
 
+        bool wasGrounded = isGrounded;
         isGrounded = hit.collider != null;
+
+        if (!wasGrounded && isGrounded)
+        {
+            jumpCount = 0;
+        }
     }
 
     private void FlipSprite()
@@ -100,5 +101,10 @@ public class Character
     {
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+        jumpCount++;
+
+        animator.SetBool("IsJumping", true);
+        animator.SetBool("IsFalling", false);
     }
 }
