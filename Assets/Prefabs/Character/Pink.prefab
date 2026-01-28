@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3050539732183253662}
   - component: {fileID: 7443708435546155662}
   - component: {fileID: -6232140375461885543}
+  - component: {fileID: 1005209018548112271}
   m_Layer: 0
   m_Name: Pink
   m_TagString: Untagged
@@ -193,3 +194,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da985c4ee9d70894799a861a0dcb2183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1005209018548112271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155509736639523145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07002ae6d79b5646a4f5a16073babfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  noOfClicks: 0
+  maxComboDelay: 0.9
