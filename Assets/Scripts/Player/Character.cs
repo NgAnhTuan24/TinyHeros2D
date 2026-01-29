@@ -11,6 +11,7 @@ public class Character
     protected int hp;
     protected float speed;
     protected float jumpForce;
+    protected int damage;
     protected float gravityScale;
     protected int jumpCount;
     protected Direction direction;
@@ -23,10 +24,13 @@ public class Character
     private bool isGrounded;
     private int maxJumpCount = 2;
 
+    public int Damage => damage;
+
     protected Character(GameObject gameObject)
     {
         hp = 3;
         speed = 7f;
+        damage = 1;
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
