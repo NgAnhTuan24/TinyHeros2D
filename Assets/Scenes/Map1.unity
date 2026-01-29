@@ -531,6 +531,7 @@ GameObject:
   - component: {fileID: 2064223508}
   - component: {fileID: 2064223511}
   - component: {fileID: 2064223512}
+  - component: {fileID: 2064223513}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -690,6 +691,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
+--- !u!114 &2064223513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064223506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63b412f3a72b644a8cec7d90bdb8acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFlash: {fileID: 2100000, guid: e373f98e6834ff145bfa08e698817ef5, type: 2}
+  restoreDefaulMatTime: 0.2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
