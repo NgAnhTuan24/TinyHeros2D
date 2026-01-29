@@ -9,12 +9,22 @@ public class Character
     }
 
     protected int hp;
+
     protected float speed;
+
     protected float jumpForce;
-    protected int damage;
+
+    protected int minDamage;
+    protected int maxDamage;
+    protected float critChance;
+    protected float critMultiplier;
+
     protected float gravityScale;
+
     protected int jumpCount;
+
     protected Direction direction;
+
     protected Rigidbody2D rb;
     protected Animator animator;
     protected BoxCollider2D boxCollider2D;
@@ -24,20 +34,42 @@ public class Character
     private bool isGrounded;
     private int maxJumpCount = 2;
 
-    public int Damage => damage;
+    public int Damage
+    {
+        get
+        {
+            int dmg = Random.Range(minDamage, maxDamage + 1);
+
+            bool isCrit = Random.value < critChance;
+
+            if (isCrit)
+            {
+                dmg = Mathf.RoundToInt(dmg * critMultiplier);
+            }
+
+            return dmg;
+        }
+    }
 
     protected Character(GameObject gameObject)
     {
         hp = 3;
         speed = 7f;
-        damage = 1;
+        jumpForce = 15f;
+
+        minDamage = 1;
+        maxDamage = 3;
+        critChance = 0.25f;
+        critMultiplier = 2f;
+
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
         tf = gameObject.transform;
+
         gravityScale = 5f;
         rb.gravityScale = gravityScale;
-        jumpForce = 15f;
+        
         jumpCount = 0;
     }
 
