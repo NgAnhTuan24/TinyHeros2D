@@ -3,10 +3,10 @@ using UnityEngine;
 public class ComboHits : MonoBehaviour
 {
     public Animator anim;
-    public int noOfClicks = 0;
+    public int noOfKeyPresses = 0;
     public float maxComboDelay = 0;
 
-    private float lastClickedTime = 0;
+    private float lastKeyPressedTime = 0;
 
     private void Start()
     {
@@ -15,33 +15,33 @@ public class ComboHits : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time - lastClickedTime > maxComboDelay)
+        if (Time.time - lastKeyPressedTime > maxComboDelay)
         {
-            noOfClicks = 0;
+            noOfKeyPresses = 0;
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetKeyDown(KeyCode.J))
         {
-            lastClickedTime = Time.time;
-            noOfClicks++;
-            if(noOfClicks == 1)
+            lastKeyPressedTime = Time.time;
+            noOfKeyPresses++;
+            if(noOfKeyPresses == 1)
             {
                 anim.SetBool("Attack1", true);
             }
-            noOfClicks = Mathf.Clamp(noOfClicks, 0, 2);
+            noOfKeyPresses = Mathf.Clamp(noOfKeyPresses, 0, 2);
         }
     }
 
     public void return1()
     {
-        if (noOfClicks >= 2)
+        if (noOfKeyPresses >= 2)
         {
             anim.SetBool("Attack2", true);
         }
         else
         {
             anim.SetBool("Attack1", false);
-            noOfClicks = 0;
+            noOfKeyPresses = 0;
         }
     }
 
@@ -49,6 +49,6 @@ public class ComboHits : MonoBehaviour
     {
         anim.SetBool("Attack1", false);
         anim.SetBool("Attack2", false);
-        noOfClicks = 0;
+        noOfKeyPresses = 0;
     }
 }
