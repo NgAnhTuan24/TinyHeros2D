@@ -532,6 +532,7 @@ GameObject:
   - component: {fileID: 2064223511}
   - component: {fileID: 2064223512}
   - component: {fileID: 2064223513}
+  - component: {fileID: 2064223514}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -627,7 +628,7 @@ Transform:
   m_GameObject: {fileID: 2064223506}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: -3, z: 0}
+  m_LocalPosition: {x: 0.55, y: -3, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -705,6 +706,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteFlash: {fileID: 2100000, guid: e373f98e6834ff145bfa08e698817ef5, type: 2}
   restoreDefaulMatTime: 0.2
+--- !u!114 &2064223514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064223506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960aea318973ac448ae92a563afdc09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
