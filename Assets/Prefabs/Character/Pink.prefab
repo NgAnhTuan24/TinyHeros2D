@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7443708435546155662}
   - component: {fileID: -6232140375461885543}
   - component: {fileID: 1005209018548112271}
+  - component: {fileID: 1379052931988623598}
   - component: {fileID: 616172518822960651}
   - component: {fileID: 3391318787818620720}
   - component: {fileID: 1323907541740342668}
@@ -213,6 +214,19 @@ MonoBehaviour:
   anim: {fileID: 0}
   noOfKeyPresses: 0
   maxComboDelay: 0.9
+--- !u!114 &1379052931988623598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155509736639523145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055809ea59772fe48b6db1c8bf3d9f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!114 &616172518822960651
 MonoBehaviour:
   m_ObjectHideFlags: 0
