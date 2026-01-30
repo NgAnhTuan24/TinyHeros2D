@@ -41,14 +41,7 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("Player")) return;
-
-        Die();
-    }
-
-    void Die()
+    public void Die()
     {
         if (!rb.simulated) return;
 
@@ -105,5 +98,4 @@ public class EnemyPatrol : MonoBehaviour
         Gizmos.DrawSphere(right, 0.1f);
         Gizmos.DrawLine(left, right);
     }
-
 }

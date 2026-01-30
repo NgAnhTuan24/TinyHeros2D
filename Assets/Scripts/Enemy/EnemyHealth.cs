@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour, IDamageable
+public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int maxHp;
 
     private int hp;
     private Knockback knockback;
     private Flash flash;
-
+    
     private void Awake()
     {
         knockback = GetComponent<Knockback>();

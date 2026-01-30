@@ -34,6 +34,8 @@ public class Character
     private bool isGrounded;
     private int maxJumpCount = 2;
 
+    private Knockback knockback;
+
     public int Damage
     {
         get
@@ -71,6 +73,8 @@ public class Character
         rb.gravityScale = gravityScale;
         
         jumpCount = 0;
+
+        knockback = gameObject.GetComponent<Knockback>();
     }
 
     public void Update()
@@ -82,6 +86,8 @@ public class Character
 
     public void FixedUpdate()
     {
+        if (knockback.gettingKnockedBack) return;
+
         CheckGround();
         Move();
     }
