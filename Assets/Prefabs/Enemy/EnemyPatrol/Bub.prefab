@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5282174417787056645}
   - component: {fileID: 6968422138854207326}
   - component: {fileID: 7945883791858957986}
+  - component: {fileID: 5222574687026600226}
   - component: {fileID: 7981346658661881702}
   m_Layer: 0
   m_Name: Bub
@@ -181,6 +182,41 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.63}
   m_EdgeRadius: 0
+--- !u!70 &5222574687026600226
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574023473858851646}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.004303257, y: 0.5808348}
+  m_Size: {x: 0.7504198, y: 0.06937576}
+  m_Direction: 1
 --- !u!114 &7981346658661881702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,3 +231,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   distance: 5
+  headColl: {fileID: 5222574687026600226}

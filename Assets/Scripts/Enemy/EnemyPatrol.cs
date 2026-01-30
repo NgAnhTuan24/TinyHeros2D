@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
@@ -5,14 +6,18 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] private float speed = 2f;
     [SerializeField] private float distance = 5f;
 
+    [SerializeField] private float blinkDuration = 1f;
+    [SerializeField] private float blinkInterval = 0.1f;
+
     private Vector3 startPos;
     private bool movingLeft = true;
     private Rigidbody2D rb;
-
+    private Animator anim;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         startPos = transform.position;
     }
 
@@ -34,6 +39,50 @@ public class EnemyPatrol : MonoBehaviour
             movingLeft = true;
             Flip();
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Player")) return;
+
+        Die();
+    }
+
+    void Die()
+    {
+        if (!rb.simulated) return;
+
+        rb.velocity = Vector2.zero;
+        rb.simulated = false;
+
+        Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
+        foreach (var col in colliders)
+        {
+            col.enabled = false;
+        }
+
+        anim.SetBool("IsDie", true);
+
+        StartCoroutine(DieRoutine());
+    }
+
+    IEnumerator DieRoutine()
+    {
+        yield return new WaitForSeconds(
+            anim.GetCurrentAnimatorStateInfo(0).length
+        );
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        float timer = 0f;
+
+        while (timer < blinkDuration)
+        {
+            sr.enabled = !sr.enabled;
+            yield return new WaitForSeconds(blinkInterval);
+            timer += blinkInterval;
+        }
+
+        Destroy(gameObject);
     }
 
     private void Flip()
