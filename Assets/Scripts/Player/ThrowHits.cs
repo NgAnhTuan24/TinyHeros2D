@@ -6,7 +6,7 @@ public class ThrowHits : MonoBehaviour
     public float projectileSpeed;
     public Transform point;
 
-    public Animator anim;
+    Animator anim;
 
     void Start()
     {

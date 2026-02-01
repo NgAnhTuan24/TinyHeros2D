@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class ComboHits : MonoBehaviour
 {
-    public Animator anim;
     public int noOfKeyPresses = 0;
     public float maxComboDelay = 0;
 
     private float lastKeyPressedTime = 0;
+    
+    Animator anim;
 
     private void Start()
     {
