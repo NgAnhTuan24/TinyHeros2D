@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
     Knockback knockback;
     Flash flash;
 
+    private Rigidbody2D rb;
+    private Animator anim;
+
     void Awake()
     {
         knockback = GetComponent<Knockback>();
@@ -16,6 +19,9 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+
         hp = maxHp;
     }
 
@@ -39,5 +45,18 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Player đã chết");
+
+        if (!rb.simulated) return;
+
+        rb.velocity = Vector2.zero;
+        rb.simulated = false;
+
+        Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
+        foreach (var col in colliders)
+        {
+            col.enabled = false;
+        }
+
+        anim.SetTrigger("IsDie");
     }
 }
