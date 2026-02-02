@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 616172518822960651}
   - component: {fileID: 3391318787818620720}
   - component: {fileID: 1323907541740342668}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pink
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -241,7 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1fae7d1c4c62849aac3bacdb09100e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heartUI: {fileID: 0}
   maxHp: 3
 --- !u!114 &3391318787818620720
 MonoBehaviour:

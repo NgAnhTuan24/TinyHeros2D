@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 8740907180456331205}
   - component: {fileID: 7847793239730155983}
   - component: {fileID: 7429434455134659688}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Owlet
   m_TagString: Player
   m_Icon: {fileID: 0}
