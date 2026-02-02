@@ -70,4 +70,9 @@ public class PlayerHealth : MonoBehaviour
 
         anim.SetTrigger("IsDie");
     }
+
+    public void OnDie()
+    {
+        Destroy(gameObject);
+    }
 }
