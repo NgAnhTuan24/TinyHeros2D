@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int maxHp;
+    [SerializeField] private float knockBackThrust = 20; //lực đẩy;
 
     private int hp;
     private Knockback knockback;
@@ -19,14 +20,14 @@ public class EnemyHealth : MonoBehaviour
         hp = maxHp;    
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Transform damageSource)
     {
         hp -= damage;
         hp = Mathf.Clamp(hp, 0, maxHp);
 
         Debug.Log("Quái nhận: " + damage + " sát thương, máu hiện tại: " + hp);
 
-        knockback.GetKnockedBack(Init.plTransform, 15f);
+        knockback.GetKnockedBack(damageSource, knockBackThrust);
         StartCoroutine(flash.FlashRoutine());
 
         if (hp <= 0)
