@@ -292,7 +292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07002ae6d79b5646a4f5a16073babfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
   noOfKeyPresses: 0
   maxComboDelay: 0.9
 --- !u!114 &5563224348452628526
@@ -310,7 +309,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 2109904548637315635, guid: b79a00da0a3b9c641bc90627e9e6614e, type: 3}
   projectileSpeed: 4
   point: {fileID: 5952869744337689652}
-  anim: {fileID: 0}
 --- !u!114 &8243623661207053018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1fae7d1c4c62849aac3bacdb09100e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
+  maxHp: 3
 --- !u!114 &7514934699160986747
 MonoBehaviour:
   m_ObjectHideFlags: 0

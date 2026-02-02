@@ -4,13 +4,19 @@ public class Init : MonoBehaviour
 {
     public static Character player;
     public static Transform plTransform;
+    public static HeartUI heartUI;
 
     void Start()
     {
+        heartUI = FindObjectOfType<HeartUI>();
+
         GameObject selectedCharacter = CharacterSelect.selectedCharacter;
         GameObject playerObject = Instantiate(selectedCharacter, transform.position, Quaternion.identity);
+
         playerObject.name = "Player";
         plTransform = playerObject.transform;
+
+        playerObject.GetComponent<PlayerHealth>().SetHeartUI(heartUI);
 
         switch (selectedCharacter.name)
         {
