@@ -3,14 +3,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyData", menuName = "Enemy/Data", order = 50)]
 public class EnemyData : ScriptableObject
 {
-    public int maxHp = 3;
-    public float moveSpeed = 3f;
+    [Header("Stats")]
+    public int maxHp;
+    public float moveSpeed;
     public float gravityScale = 5f;
 
-    public float chaseRange = 6f;
-    public float attackRange = 1.2f;
+    [Header("Detection")]
+    public float chaseRange;
+    public float attackRange;
 
-    public float attackCooldown = 2f;
+    [Header("Attack")]
+    public float attackCooldown;
     public int attackDmg = 1;
-    public float attackHitRadius = 0.3f;
+    public float attackHitRadius;
 }

@@ -13,10 +13,17 @@ public class EnemyAnimator : MonoBehaviour
     {
         animator.SetBool("IsIdle", state == EnemyState.Idle);
         animator.SetBool("IsChasing", state == EnemyState.Chase);
+        animator.SetBool("IsAttacking", state == EnemyState.Attack);
+        animator.SetBool("IsHurt", state == EnemyState.Hurt);
     }
 
     public void TriggerAttack()
     {
         animator.SetTrigger("Attack");
+    }
+
+    public void TriggerHurt()
+    {
+        animator.SetTrigger("Hurt");
     }
 }

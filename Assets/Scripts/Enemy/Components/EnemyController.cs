@@ -37,6 +37,14 @@ public class EnemyController : MonoBehaviour
 
     private void UpdateState()
     {
+        if (knockback.gettingKnockedBack)
+        {
+            ChangeState(EnemyState.Hurt);
+            return;
+        }
+
+        if (attack.IsAttacking) return;
+
         float distance = Vector2.Distance(transform.position, playerPos.position);
 
         if (distance <= data.attackRange)
@@ -71,10 +79,13 @@ public class EnemyController : MonoBehaviour
                 movement.Stop();
                 attack.TryAttack();
                 break;
+
+            case EnemyState.Hurt:
+                break;
         }
     }
 
-    private void ChangeState(EnemyState newState)
+    public void ChangeState(EnemyState newState)
     {
         if (CurrentState == newState) return;
 

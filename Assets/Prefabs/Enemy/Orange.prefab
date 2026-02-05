@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 1649536845727884625}
   - component: {fileID: 1213603119985761396}
   - component: {fileID: 3267873071517970454}
+  - component: {fileID: 2602924895465927853}
   - component: {fileID: 8760712384110868059}
   m_Layer: 8
   m_Name: Orange
@@ -261,7 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9f32eb64d48da439ffc09260e429e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 6438600ba87bddd46a08e91686e5b2df, type: 2}
 --- !u!114 &1213603119985761396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +288,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 6438600ba87bddd46a08e91686e5b2df, type: 2}
   knockBackThrust: 20
+--- !u!114 &2602924895465927853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3851439440478794183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63b412f3a72b644a8cec7d90bdb8acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFlash: {fileID: 2100000, guid: e373f98e6834ff145bfa08e698817ef5, type: 2}
+  restoreDefaulMatTime: 0.1
 --- !u!114 &8760712384110868059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,4 +314,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960aea318973ac448ae92a563afdc09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackTime: 0.2
+  knockBackTime: 0.3

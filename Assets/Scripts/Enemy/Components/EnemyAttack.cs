@@ -10,6 +10,8 @@ public class EnemyAttack : MonoBehaviour
     private EnemyAnimator enemyAnimator;
     private Knockback knockback;
 
+    public bool IsAttacking { get; private set; }
+
     private void Awake()
     {
         enemyAnimator = GetComponent<EnemyAnimator>();
@@ -19,12 +21,20 @@ public class EnemyAttack : MonoBehaviour
     public void TryAttack()
     {
         if (knockback.gettingKnockedBack) return;
+        if (IsAttacking) return;
 
         if (Time.time < lastAttackTime + data.attackCooldown)
             return;
 
         lastAttackTime = Time.time;
+        IsAttacking = true;
+
         enemyAnimator.TriggerAttack();
+    }
+
+    public void EndAttack()
+    {
+        IsAttacking = false;
     }
 
     public void DealDamage()
