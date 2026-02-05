@@ -40,6 +40,7 @@ public class EnemyController : MonoBehaviour
         if (knockback.gettingKnockedBack)
         {
             ChangeState(EnemyState.Hurt);
+            attack.EndAttack();
             return;
         }
 

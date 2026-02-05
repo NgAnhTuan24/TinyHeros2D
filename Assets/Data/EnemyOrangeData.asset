@@ -19,3 +19,4 @@ MonoBehaviour:
   attackRange: 1.2
   attackCooldown: 2
   attackDmg: 1
+  attackHitRadius: 0.2
