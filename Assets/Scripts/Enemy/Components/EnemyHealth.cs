@@ -4,6 +4,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private EnemyData data;
     [SerializeField] private float knockBackThrust = 30; //lực đẩy;
+    [SerializeField] private GameObject deathVFX;
 
     private int hp;
     private EnemyController controller;
@@ -24,6 +25,14 @@ public class EnemyHealth : MonoBehaviour
     private void Start()
     {
         hp = data.maxHp;    
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            TakeDamage(10, transform);
+        }
     }
 
     public void TakeDamage(int damage, Transform damageSource)
@@ -49,6 +58,9 @@ public class EnemyHealth : MonoBehaviour
     public void Die()
     {
         Debug.Log("Quái đã chết");
+
+        Instantiate(deathVFX, transform.position, Quaternion.identity);
+
         Destroy(gameObject);
     }
 }
