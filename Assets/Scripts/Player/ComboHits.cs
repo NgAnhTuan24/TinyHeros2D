@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class ComboHits : MonoBehaviour
 {
-    public int noOfKeyPresses = 0;
-    public float maxComboDelay = 0;
+    Character player;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackRadius = 0.2f;
+    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private int noOfKeyPresses = 0;
+    [SerializeField] private float maxComboDelay = 0;
 
     private float lastKeyPressedTime = 0;
     
@@ -11,6 +15,7 @@ public class ComboHits : MonoBehaviour
 
     private void Start()
     {
+        player = Init.player;
         anim = GetComponent<Animator>();
     }
 
@@ -33,6 +38,16 @@ public class ComboHits : MonoBehaviour
         }
     }
 
+    public void DealDamage()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius, enemyLayer);
+
+        if (hit != null)
+        {
+            hit.GetComponent<EnemyHealth>()?.TakeDamage(player.Damage, transform);
+        }
+    }
+
     public void return1()
     {
         if (noOfKeyPresses >= 2)
@@ -51,5 +66,12 @@ public class ComboHits : MonoBehaviour
         anim.SetBool("Attack1", false);
         anim.SetBool("Attack2", false);
         noOfKeyPresses = 0;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null) return;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
 }
