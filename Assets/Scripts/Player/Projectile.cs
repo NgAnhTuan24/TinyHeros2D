@@ -15,7 +15,7 @@ public class Projectile : MonoBehaviour
         EnemyHealth enemy = col.GetComponent<EnemyHealth>();
         if (enemy != null)
         {
-            enemy.TakeDamage(dmg);
+            enemy.TakeDamage(dmg, transform);
             Destroy(gameObject);
         }
     }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
+    private HeartUI heartUI;
 
     void Awake()
     {
@@ -21,14 +23,23 @@ public class PlayerHealth : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+    }
+
+    public void SetHeartUI(HeartUI ui)
+    {
+        heartUI = ui;
 
         hp = maxHp;
+        heartUI.Init(maxHp);
+        heartUI.UpdateHearts(hp);
     }
 
     public void TakeDamage(int damage , Transform damageSource)
     {
         hp -= damage;
         hp = Mathf.Clamp(hp, 0, maxHp);
+
+        heartUI.UpdateHearts(hp);
 
         Debug.Log("Nhân vật nhận: " + damage + " sát thương, HP còn: " + hp);
 
@@ -58,5 +69,10 @@ public class PlayerHealth : MonoBehaviour
         }
 
         anim.SetTrigger("IsDie");
+    }
+
+    public void OnDie()
+    {
+        Destroy(gameObject);
     }
 }

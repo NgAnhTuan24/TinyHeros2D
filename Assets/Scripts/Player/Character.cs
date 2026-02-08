@@ -55,7 +55,6 @@ public class Character
 
     protected Character(GameObject gameObject)
     {
-        hp = 3;
         speed = 7f;
         jumpForce = 15f;
 

@@ -15,7 +15,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (enemyHealth != null)
         {
-            enemyHealth.TakeDamage(player.Damage);
+            enemyHealth.TakeDamage(player.Damage, transform);
         }
     }
 }
