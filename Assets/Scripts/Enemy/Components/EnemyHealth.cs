@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private EnemyData data;
-    [SerializeField] private float knockBackThrust = 30; //lực đẩy;
+    [SerializeField] private float knockBackThrust = 10; //lực đẩy;
     [SerializeField] private GameObject deathVFX;
 
     private int hp;

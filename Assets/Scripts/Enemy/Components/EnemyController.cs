@@ -1,6 +1,13 @@
 using UnityEngine;
 
-
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(EnemyAttack))]
+[RequireComponent(typeof(EnemyMovement))]
+[RequireComponent(typeof(EnemyAnimator))]
+[RequireComponent(typeof(EnemyHealth))]
+[RequireComponent(typeof(Flash))]
+[RequireComponent(typeof(Knockback))]
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private EnemyData data;
@@ -70,7 +77,7 @@ public class EnemyController : MonoBehaviour
                 break;
 
             case EnemyState.Chase:
-                movement.Chase(playerPos.position, data.moveSpeed);
+                movement.Chase(playerPos.position, data.moveSpeed, data.enemyType);
                 break;
 
             case EnemyState.Attack:
@@ -116,10 +123,10 @@ public class EnemyController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, data.attackRange);
 
         //Attack hit
-        if (attack != null && attack.AttackPoint != null)
-        {
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawWireSphere(attack.AttackPoint.position, data.attackHitRadius);
-        }
+        //if (attack != null && attack.AttackPoint != null)
+        //{
+        //    Gizmos.color = Color.cyan;
+        //    Gizmos.DrawWireSphere(attack.AttackPoint.position, data.attackHitRadius);
+        //}
     }
 }
