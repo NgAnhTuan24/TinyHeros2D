@@ -2,12 +2,18 @@ using UnityEngine;
 
 public class ComboHits : MonoBehaviour
 {
-    Character player;
+    [Header("Attack")]
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRadius = 0.2f;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private int noOfKeyPresses = 0;
     [SerializeField] private float maxComboDelay = 0;
+
+    [Header("Damage")]
+    [SerializeField] private int minDmg = 1;
+    [SerializeField] private int maxDmg = 3;
+    [SerializeField] private float critChance = .25f;
+    [SerializeField] private float critMultiplier = 2f;
 
     private float lastKeyPressedTime = 0;
     
@@ -15,7 +21,6 @@ public class ComboHits : MonoBehaviour
 
     private void Start()
     {
-        player = Init.player;
         anim = GetComponent<Animator>();
     }
 
@@ -44,7 +49,14 @@ public class ComboHits : MonoBehaviour
 
         if (hit != null)
         {
-            hit.GetComponent<EnemyHealth>()?.TakeDamage(player.Damage, transform);
+            int dmg = Random.Range(minDmg, maxDmg + 1);
+
+            if (Random.value < critChance)
+            {
+                dmg = Mathf.RoundToInt(dmg * critMultiplier);
+            }
+
+            hit.GetComponent<EnemyHealth>()?.TakeDamage(dmg, transform);
         }
     }
 

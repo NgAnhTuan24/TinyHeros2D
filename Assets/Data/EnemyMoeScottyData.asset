@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: EnemyMoeScottyData
   m_EditorClassIdentifier: 
   enemyType: 1
-  maxHp: 500
+  maxHp: 5
   moveSpeed: 4
   gravityScale: 0
-  chaseRange: 10
+  chaseRange: 8
   attackRange: 0.6
   attackCooldown: 1
   attackDmg: 1

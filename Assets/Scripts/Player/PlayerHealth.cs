@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHp;
+    [SerializeField] private int maxHp;
     private int hp;
 
     Knockback knockback;
