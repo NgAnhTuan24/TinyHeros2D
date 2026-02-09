@@ -9,7 +9,6 @@ public class EnemyHealth : MonoBehaviour
     private int hp;
     private EnemyController controller;
     private EnemyAnimator animator;
-    private EnemyAttack attack;
     private Flash flash;
     private Knockback knockback;
 
@@ -17,7 +16,6 @@ public class EnemyHealth : MonoBehaviour
     {
         controller = GetComponent<EnemyController>();
         animator = GetComponent<EnemyAnimator>();
-        attack = GetComponent<EnemyAttack>();
         flash = GetComponent<Flash>();
         knockback = GetComponent<Knockback>();
     }
@@ -44,7 +42,6 @@ public class EnemyHealth : MonoBehaviour
 
         animator.TriggerHurt();
         controller.ChangeState(EnemyState.Hurt);
-        attack.EndAttack();
 
         knockback.GetKnockedBack(damageSource, knockBackThrust);
         StartCoroutine(flash.FlashRoutine());

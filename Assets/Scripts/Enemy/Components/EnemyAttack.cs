@@ -10,6 +10,8 @@ public class EnemyAttack : MonoBehaviour
     private EnemyAnimator enemyAnimator;
     private Knockback knockback;
 
+
+    public Transform AttackPoint => attackPoint;
     public bool IsAttacking { get; private set; }
 
     private void Awake()
@@ -49,12 +51,5 @@ public class EnemyAttack : MonoBehaviour
         {
             hit.GetComponent<PlayerHealth>()?.TakeDamage(data.attackDmg,transform);
         }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null) return;
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPoint.position, data.attackHitRadius);
     }
 }

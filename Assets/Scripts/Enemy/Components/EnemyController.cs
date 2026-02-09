@@ -40,7 +40,6 @@ public class EnemyController : MonoBehaviour
         if (knockback.gettingKnockedBack)
         {
             ChangeState(EnemyState.Hurt);
-            attack.EndAttack();
             return;
         }
 
@@ -111,11 +110,18 @@ public class EnemyController : MonoBehaviour
         if (data == null) return;
 
         // Chase range
-        Gizmos.color = Color.cyan;
+        Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, data.chaseRange);
 
         // Attack range
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, data.attackRange);
+
+        //Attack hit
+        if (attack != null && attack.AttackPoint != null)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(attack.AttackPoint.position, data.attackHitRadius);
+        }
     }
 }
