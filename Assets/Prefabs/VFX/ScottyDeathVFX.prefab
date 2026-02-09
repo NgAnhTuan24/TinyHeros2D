@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 663669519312132139}
   - component: {fileID: 7240526167318672018}
   m_Layer: 0
-  m_Name: OrangeDeathVFX
+  m_Name: ScottyDeathVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,8 +226,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.9215687, g: 0.5411765, b: 0.019607844, a: 1}
-        key1: {r: 0.74509805, g: 0.3254902, b: 0.2509804, a: 1}
+        key0: {r: 0.32941177, g: 0.34509805, b: 0.75294125, a: 1}
+        key1: {r: 0.10588236, g: 0.078431375, b: 0.11764707, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}

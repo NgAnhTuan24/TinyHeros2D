@@ -3,21 +3,17 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private EnemyData data;
-    [SerializeField] private float knockBackThrust = 30; //lực đẩy;
+    [SerializeField] private float knockBackThrust = 10; //lực đẩy;
     [SerializeField] private GameObject deathVFX;
 
     private int hp;
-    private EnemyController controller;
     private EnemyAnimator animator;
-    private EnemyAttack attack;
     private Flash flash;
     private Knockback knockback;
 
     private void Awake()
     {
-        controller = GetComponent<EnemyController>();
         animator = GetComponent<EnemyAnimator>();
-        attack = GetComponent<EnemyAttack>();
         flash = GetComponent<Flash>();
         knockback = GetComponent<Knockback>();
     }
@@ -43,8 +39,6 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("Quái nhận: " + damage + " sát thương, máu hiện tại: " + hp);
 
         animator.TriggerHurt();
-        controller.ChangeState(EnemyState.Hurt);
-        attack.EndAttack();
 
         knockback.GetKnockedBack(damageSource, knockBackThrust);
         StartCoroutine(flash.FlashRoutine());

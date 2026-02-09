@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
@@ -10,7 +11,10 @@ public class EnemyAttack : MonoBehaviour
     private EnemyAnimator enemyAnimator;
     private Knockback knockback;
 
+    public Transform AttackPoint => attackPoint;
     public bool IsAttacking { get; private set; }
+
+    private Coroutine attackRoutine;
 
     private void Awake()
     {
@@ -30,6 +34,17 @@ public class EnemyAttack : MonoBehaviour
         IsAttacking = true;
 
         enemyAnimator.TriggerAttack();
+
+        if (attackRoutine != null)
+            StopCoroutine(attackRoutine);
+
+        attackRoutine = StartCoroutine(AttackCooldownRoutine());
+    }
+
+    private IEnumerator AttackCooldownRoutine()
+    {
+        yield return new WaitForSeconds(.5f);
+        IsAttacking = false;
     }
 
     public void EndAttack()
@@ -54,7 +69,7 @@ public class EnemyAttack : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null) return;
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(attackPoint.position, data.attackHitRadius);
     }
 }

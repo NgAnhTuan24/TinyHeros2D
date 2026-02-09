@@ -3,6 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyData", menuName = "Enemy/Data", order = 50)]
 public class EnemyData : ScriptableObject
 {
+    public EnemyType enemyType;
+
     [Header("Stats")]
     public int maxHp;
     public float moveSpeed;

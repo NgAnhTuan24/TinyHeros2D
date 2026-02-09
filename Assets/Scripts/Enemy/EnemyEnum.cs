@@ -5,3 +5,9 @@ public enum EnemyState
     Attack,
     Hurt
 }
+
+public enum EnemyType
+{
+    Ground,
+    Flying
+}

@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9f32eb64d48da439ffc09260e429e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultFacing: 1
 --- !u!114 &1213603119985761396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 6438600ba87bddd46a08e91686e5b2df, type: 2}
-  knockBackThrust: 20
+  knockBackThrust: 10
   deathVFX: {fileID: 2457184018333464194, guid: 14df99954f0907145988ecb2177be52a, type: 3}
 --- !u!114 &2602924895465927853
 MonoBehaviour:

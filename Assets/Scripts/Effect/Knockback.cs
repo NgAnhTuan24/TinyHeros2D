@@ -5,7 +5,7 @@ public class Knockback : MonoBehaviour
 {
     public bool gettingKnockedBack { get; private set; }
 
-    [SerializeField] private float knockBackTime = .2f;
+    [SerializeField] private float knockBackTime = .3f;
 
     private Rigidbody2D rb;
 
