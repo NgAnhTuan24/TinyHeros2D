@@ -23,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
         hp = data.maxHp;    
     }
 
+    // Test enemy hurt, die
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))

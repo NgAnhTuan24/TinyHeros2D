@@ -4,21 +4,21 @@ using UnityEngine;
 public class Flash : MonoBehaviour
 {
     [SerializeField] private Material whiteFlash;
-    [SerializeField] private float restoreDefaulMatTime = .1f;
+    [SerializeField] private float restoreDefaultMatTime = .1f;
 
-    private Material defaulMat;
+    private Material defaultMat;
     private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        defaulMat = spriteRenderer.material;
+        defaultMat = spriteRenderer.material;
     }
 
     public IEnumerator FlashRoutine()
     {
         spriteRenderer.material = whiteFlash;
-        yield return new WaitForSeconds(restoreDefaulMatTime);
-        spriteRenderer.material = defaulMat;
+        yield return new WaitForSeconds(restoreDefaultMatTime);
+        spriteRenderer.material = defaultMat;
     }
 }

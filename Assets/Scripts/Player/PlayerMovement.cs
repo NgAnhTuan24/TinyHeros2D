@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int maxJumpCount = 2;
     [SerializeField] private float gravityScale = 5f;
 
+    [SerializeField] private ParticleSystem dustRun;
+    [SerializeField] private ParticleSystem dustJump;
+
     private Rigidbody2D rb;
     private Animator anim;
     private BoxCollider2D boxCol2D;
@@ -31,6 +34,15 @@ public class PlayerMovement : MonoBehaviour
     {
         inputX = Input.GetAxis("Horizontal");
 
+        if (isGrounded && Mathf.Abs(inputX) > 0.1f && !dustRun.isPlaying)
+        {
+            dustRun.Play();
+        }
+        else if (!isGrounded || Mathf.Abs(inputX) <= 0.1f)
+        {
+            dustRun.Stop();
+        }
+
         if (Input.GetButtonDown("Jump") && jumpCount < maxJumpCount) Jump();
 
         Flip();
@@ -47,6 +59,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
+        if (isGrounded)
+        {
+            dustJump.Play();
+        }
+
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
@@ -66,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
         if (!wasGround && isGrounded)
         {
             jumpCount = 0;
+            dustJump.Play();
         }
     }
 

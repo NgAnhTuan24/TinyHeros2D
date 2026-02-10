@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 6968422138854207326}
   - component: {fileID: 7945883791858957986}
   - component: {fileID: 7981346658661881702}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bub
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 612084764, guid: 7f0a1d465a6bf994c83f6e717b886faa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

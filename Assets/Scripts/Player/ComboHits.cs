@@ -45,6 +45,7 @@ public class ComboHits : MonoBehaviour
 
     public void DealDamage()
     {
+        // Chỉ đánh gây sát thương được với 1 enemy -> cần mở rộng là gây lên nhiều quái 
         Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius, enemyLayer);
 
         if (hit != null)
