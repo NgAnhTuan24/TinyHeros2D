@@ -19,5 +19,7 @@ public class Init : MonoBehaviour
         cam.Follow = player.transform;
 
         player.GetComponent<PlayerHealth>().SetHeartUI(heartUI);
+
+        PlayerManager.instance.RegisterPlayer(player);
     }
 }

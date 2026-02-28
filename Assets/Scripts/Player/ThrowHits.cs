@@ -21,6 +21,12 @@ public class ThrowHits : MonoBehaviour
         }    
     }
 
+    //UI Button Call
+    public void ThrowButton()
+    {
+        anim.SetBool("IsThrow", true);
+    }
+
     public void GoToBackIdle()
     {
         anim.SetBool("IsThrow", false);

@@ -43,6 +43,21 @@ public class ComboHits : MonoBehaviour
         }
     }
 
+    // UI Button Call
+    public void AttackButton()
+    {
+        if (Time.time - lastKeyPressedTime > maxComboDelay)
+            noOfKeyPresses = 0;
+
+        lastKeyPressedTime = Time.time;
+        noOfKeyPresses++;
+
+        if (noOfKeyPresses == 1)
+            anim.SetBool("Attack1", true);
+
+        noOfKeyPresses = Mathf.Clamp(noOfKeyPresses, 0, 2);
+    }
+
     public void DealDamage()
     {
         // Chỉ đánh gây sát thương được với 1 enemy -> cần mở rộng là gây lên nhiều quái 

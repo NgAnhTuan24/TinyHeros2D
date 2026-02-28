@@ -32,19 +32,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        #region Input PC - test
         inputX = Input.GetAxis("Horizontal");
-
-        if (isGrounded && Mathf.Abs(inputX) > 0.1f && !dustRun.isPlaying)
-        {
-            dustRun.Play();
-        }
-        else if (!isGrounded || Mathf.Abs(inputX) <= 0.1f)
-        {
-            dustRun.Stop();
-        }
-
         if (Input.GetButtonDown("Jump") && jumpCount < maxJumpCount) Jump();
+        #endregion
 
+        DustEffect();
         Flip();
         UpdateAnim();
     }
@@ -56,6 +49,28 @@ public class PlayerMovement : MonoBehaviour
         CheckGround();
         rb.velocity = new Vector2(inputX * moveSpeed, rb.velocity.y);
     }
+
+    #region UI Button Call - Input Mobile
+    public void MoveLeft()
+    {
+        inputX = -1;
+    }
+
+    public void MoveRight()
+    {
+        inputX = 1;
+    }
+
+    public void StopMove()
+    {
+        inputX = 0;
+    }
+
+    public void JumpButton()
+    {
+        if (jumpCount < maxJumpCount) Jump();
+    }
+    #endregion 
 
     void Jump()
     {
@@ -84,6 +99,18 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpCount = 0;
             dustJump.Play();
+        }
+    }
+
+    void DustEffect()
+    {
+        if (isGrounded && Mathf.Abs(inputX) > 0.1f && !dustRun.isPlaying)
+        {
+            dustRun.Play();
+        }
+        else if (!isGrounded || Mathf.Abs(inputX) <= 0.1f)
+        {
+            dustRun.Stop();
         }
     }
 
