@@ -2,16 +2,9 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static PlayerManager instance;
-
     public PlayerMovement movement;
     public ComboHits hits;
     public ThrowHits throwHits;
-
-    private void Awake()
-    {
-        instance = this;
-    }
 
     public void RegisterPlayer(GameObject player)
     {

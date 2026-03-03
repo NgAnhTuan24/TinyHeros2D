@@ -33,8 +33,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         #region Input PC - test
-        inputX = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Jump") && jumpCount < maxJumpCount) Jump();
+        //inputX = Input.GetAxis("Horizontal");
+        //if (Input.GetButtonDown("Jump") && jumpCount < maxJumpCount) Jump();
         #endregion
 
         DustEffect();

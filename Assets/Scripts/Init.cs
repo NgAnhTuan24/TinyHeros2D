@@ -20,6 +20,6 @@ public class Init : MonoBehaviour
 
         player.GetComponent<PlayerHealth>().SetHeartUI(heartUI);
 
-        PlayerManager.instance.RegisterPlayer(player);
+        GameManager.instance.playerManager.RegisterPlayer(player);
     }
 }

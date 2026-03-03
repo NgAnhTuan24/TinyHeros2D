@@ -2010,6 +2010,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 833909918}
+  - component: {fileID: 833909920}
   - component: {fileID: 833909919}
   m_Layer: 0
   m_Name: GameManager
@@ -2048,6 +2049,19 @@ MonoBehaviour:
   movement: {fileID: 0}
   hits: {fileID: 0}
   throwHits: {fileID: 0}
+--- !u!114 &833909920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833909917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d6bc3bccd5b264ea34167a9cf4de26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerManager: {fileID: 0}
 --- !u!1 &850036154
 GameObject:
   m_ObjectHideFlags: 0
