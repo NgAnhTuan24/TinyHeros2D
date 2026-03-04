@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 
     public PlayerManager playerManager;
 
+    public PauseManager pauseManager;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -20,5 +22,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         playerManager = GetComponent<PlayerManager>();
+
+        pauseManager = GetComponent<PauseManager>();
     }
 }
