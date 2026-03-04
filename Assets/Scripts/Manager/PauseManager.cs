@@ -13,6 +13,14 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void RepeatGame()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadSceneAsync(currentSceneIndex);
+        Destroy(GameManager.instance.gameObject);
+        Time.timeScale = 1f;
+    }
+
     public void ExitGame()
     {
         SceneManager.LoadSceneAsync(0);
