@@ -3,37 +3,23 @@ using Cinemachine;
 
 public class Init : MonoBehaviour
 {
-    public static Character player;
-    public static Transform plTransform;
-    public static HeartUI heartUI;
+    [SerializeField] CinemachineVirtualCamera cam;
+    [SerializeField] HeartUI heartUI;
 
-    [SerializeField] private CinemachineVirtualCamera cameraFollow;
+    void Awake()
+    {
+        cam = FindObjectOfType<CinemachineVirtualCamera>();
+        heartUI = FindObjectOfType<HeartUI>();
+    }
 
     void Start()
     {
-        heartUI = FindObjectOfType<HeartUI>();
+        GameObject player = Instantiate(CharacterSelect.selectedCharacter, transform.position, Quaternion.identity);
 
-        GameObject selectedCharacter = CharacterSelect.selectedCharacter;
-        GameObject playerObject = Instantiate(selectedCharacter, transform.position, Quaternion.identity);
+        cam.Follow = player.transform;
 
-        playerObject.name = "Player";
-        plTransform = playerObject.transform;
+        player.GetComponent<PlayerHealth>().SetHeartUI(heartUI);
 
-        cameraFollow.Follow = plTransform;
-
-        playerObject.GetComponent<PlayerHealth>().SetHeartUI(heartUI);
-
-        switch (selectedCharacter.name)
-        {
-            case "Pink":
-                player = new Pink(playerObject);
-                break;
-            case "Owlet":
-                player = new Owlet(playerObject);
-                break;
-            case "Dude":
-                player = new Dude(playerObject);
-                break;
-        }
+        GameManager.instance.playerManager.RegisterPlayer(player);
     }
 }

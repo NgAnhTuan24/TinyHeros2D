@@ -32,8 +32,9 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         if (playerPos == null) 
-        { 
-            FindPlayer(); 
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null) playerPos = playerObj.transform;
             return; 
         }
 
@@ -73,7 +74,7 @@ public class EnemyController : MonoBehaviour
         switch (CurrentState)
         {
             case EnemyState.Idle:
-                movement.Stop();
+                movement.Stop(data.enemyType);
                 break;
 
             case EnemyState.Chase:
@@ -81,7 +82,7 @@ public class EnemyController : MonoBehaviour
                 break;
 
             case EnemyState.Attack:
-                movement.Stop();
+                movement.Stop(data.enemyType);
                 attack.TryAttack();
                 break;
 
@@ -96,18 +97,6 @@ public class EnemyController : MonoBehaviour
 
         CurrentState = newState;
         animator.SetState(newState);
-    }
-
-    void FindPlayer()
-    {
-        if (Init.plTransform != null)
-        {
-            playerPos = Init.plTransform;
-            return;
-        }
-
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null) playerPos = playerObj.transform;
     }
 
     private void OnDrawGizmosSelected()

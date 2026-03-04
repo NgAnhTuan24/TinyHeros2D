@@ -51,9 +51,16 @@ public class EnemyMovement : MonoBehaviour
         );
     }
 
-    public void Stop()
+    public void Stop(EnemyType enemyType)
     {
-        rb.velocity = new Vector2(0, rb.velocity.y);
+        if (enemyType == EnemyType.Ground)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        else // Flying
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     public void SetGravity(float gravity)
