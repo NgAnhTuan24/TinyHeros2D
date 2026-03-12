@@ -15,16 +15,16 @@ public class PauseManager : MonoBehaviour
 
     public void RepeatGame()
     {
+        Time.timeScale = 1f;
+        Destroy(GameManager.instance.gameObject);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadSceneAsync(currentSceneIndex);
-        Destroy(GameManager.instance.gameObject);
-        Time.timeScale = 1f;
     }
 
     public void ExitGame()
     {
-        SceneManager.LoadSceneAsync(0);
-        Destroy(GameManager.instance.gameObject);
         Time.timeScale = 1f;
+        Destroy(GameManager.instance.gameObject);
+        SceneManager.LoadScene(0);
     }
 }

@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 
     public PlayerManager playerManager;
 
+    public ControlUIManager controlUIManager;
+
+    public TutorialDialogueUI tutorialDialogueUI;
+
     public PauseManager pauseManager;
 
     private void Awake()
@@ -22,6 +26,10 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         playerManager = GetComponent<PlayerManager>();
+
+        controlUIManager = GetComponent<ControlUIManager>();
+
+        tutorialDialogueUI = GetComponent<TutorialDialogueUI>();
 
         pauseManager = GetComponent<PauseManager>();
     }
