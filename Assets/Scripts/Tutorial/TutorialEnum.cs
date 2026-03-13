@@ -1,8 +1,7 @@
 public enum TutorialType
 {
-    Move,
+    None,
     Jump,
-    DoubleJump,
     Attack,
     Throw
 }

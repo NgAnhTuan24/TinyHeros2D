@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  jumpForce: 15
+  jumpForce: 16
   maxJumpCount: 2
   gravityScale: 5
   dustRun: {fileID: 6127966936464932906}
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whiteFlash: {fileID: 2100000, guid: e373f98e6834ff145bfa08e698817ef5, type: 2}
-  restoreDefaulMatTime: 0.2
+  restoreDefaultMatTime: 0.1
 --- !u!114 &1323907541740342668
 MonoBehaviour:
   m_ObjectHideFlags: 0
