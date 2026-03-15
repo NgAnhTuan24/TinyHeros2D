@@ -14,12 +14,15 @@ public class Init : MonoBehaviour
 
     void Start()
     {
-        GameObject player = Instantiate(CharacterSelect.selectedCharacter, transform.position, Quaternion.identity);
+        if (PlayerController.instance == null)
+        {
+            GameObject player = Instantiate(CharacterSelect.selectedCharacter, transform.position, Quaternion.identity);
 
-        cam.Follow = player.transform;
+            cam.Follow = player.transform;
 
-        player.GetComponent<PlayerHealth>().SetHeartUI(heartUI);
+            player.GetComponent<PlayerHealth>().SetHeartUI(heartUI);
 
-        GameManager.instance.playerManager.RegisterPlayer(player);
+            UIManager.instance.playerManager.RegisterPlayer(player);
+        }
     }
 }

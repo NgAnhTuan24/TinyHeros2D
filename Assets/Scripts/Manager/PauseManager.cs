@@ -17,6 +17,8 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         Destroy(GameManager.instance.gameObject);
+        Destroy(PlayerController.instance.gameObject);
+        Destroy(UIManager.instance.gameObject);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadSceneAsync(currentSceneIndex);
     }
@@ -25,6 +27,8 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         Destroy(GameManager.instance.gameObject);
+        Destroy(PlayerController.instance.gameObject);
+        Destroy(UIManager.instance.gameObject);
         SceneManager.LoadScene(0);
     }
 }

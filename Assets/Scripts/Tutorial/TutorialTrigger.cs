@@ -17,23 +17,23 @@ public class TutorialTrigger : MonoBehaviour
         switch(type)
         {
             case TutorialType.Jump:
-                GameManager.instance.controlUIManager.ShowJump();
+                UIManager.instance.controlUIManager.ShowJump();
                 break;
             case TutorialType.Attack:
-                GameManager.instance.controlUIManager.ShowAttack();
+                UIManager.instance.controlUIManager.ShowAttack();
                 break;
             case TutorialType.Throw:
-                GameManager.instance.controlUIManager.ShowThrow();
+                UIManager.instance.controlUIManager.ShowThrow();
                 break;
         }
 
-        GameManager.instance.tutorialDialogueUI.ShowDialogue(iconLeft, iconRight, message);
+        UIManager.instance.tutorialDialogueUI.ShowDialogue(iconLeft, iconRight, message);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
 
-        GameManager.instance.tutorialDialogueUI.HideDialogue();
+        UIManager.instance.tutorialDialogueUI.HideDialogue();
     }
 }

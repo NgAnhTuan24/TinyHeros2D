@@ -4,13 +4,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public PlayerManager playerManager;
+    public SceneTransition sceneTransition;
 
-    public ControlUIManager controlUIManager;
-
-    public TutorialDialogueUI tutorialDialogueUI;
-
-    public PauseManager pauseManager;
+    public CameraController cameraController;
 
     private void Awake()
     {
@@ -25,12 +21,8 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        playerManager = GetComponent<PlayerManager>();
+        sceneTransition = GetComponent<SceneTransition>();
 
-        controlUIManager = GetComponent<ControlUIManager>();
-
-        tutorialDialogueUI = GetComponent<TutorialDialogueUI>();
-
-        pauseManager = GetComponent<PauseManager>();
+        cameraController = GetComponent<CameraController>();
     }
 }
