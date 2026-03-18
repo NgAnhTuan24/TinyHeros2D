@@ -334,6 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 3
+  invincibleTime: 0.8
 --- !u!114 &7847793239730155983
 MonoBehaviour:
   m_ObjectHideFlags: 0

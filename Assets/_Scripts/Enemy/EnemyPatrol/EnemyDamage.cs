@@ -4,13 +4,17 @@ public class EnemyDamage : MonoBehaviour
 {
     public int dmg;
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        PlayerHealth pl = col.gameObject.GetComponent<PlayerHealth>();
+    [SerializeField] private float damageCooldown = 1f;
+    private float lastDamageTime;
 
-        if (pl != null)
-        {
-            pl.TakeDamage(dmg, transform);
-        }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+        if (player == null) return;
+
+        if (Time.time < lastDamageTime + damageCooldown) return;
+
+        player.TakeDamage(1, transform);
+        lastDamageTime = Time.time;
     }
 }
