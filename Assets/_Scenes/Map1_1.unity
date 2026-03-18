@@ -2583,6 +2583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 599559659}
   - component: {fileID: 599559660}
+  - component: {fileID: 599559661}
   m_Layer: 5
   m_Name: UI_Coin
   m_TagString: Untagged
@@ -2637,6 +2638,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &599559661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599559658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ca402dd9d8c2343b07524d1687faf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 1973535292}
 --- !u!1 &667470795
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,6 +3460,7 @@ GameObject:
   - component: {fileID: 833909921}
   - component: {fileID: 833909924}
   - component: {fileID: 833909925}
+  - component: {fileID: 833909926}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3482,6 +3497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneTransition: {fileID: 0}
   cameraController: {fileID: 0}
+  coinManager: {fileID: 0}
 --- !u!114 &833909921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3516,6 +3532,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e102d50572fde214084f3317e98b1d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &833909926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833909917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9c59ce4424fe2458f42639fa20208a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &858414337
@@ -12028,7 +12056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Map1_2
-  sceneTransitionName: Area2
+  sceneTransitionName: Area2_1
 --- !u!1 &1553171930
 GameObject:
   m_ObjectHideFlags: 0
@@ -14233,6 +14261,7 @@ GameObject:
   - component: {fileID: 6968422137622350305}
   - component: {fileID: 7945883793110652957}
   - component: {fileID: 7981346657950724569}
+  - component: {fileID: 7981346657950724570}
   m_Layer: 9
   m_Name: Bub
   m_TagString: Enemy
@@ -14346,6 +14375,22 @@ MonoBehaviour:
   distance: 3
   blinkDuration: 1
   blinkInterval: 0.1
+--- !u!114 &7981346657950724570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574023475110483329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d04a93fb969a07488ad750dcdb8ad90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 6651977575895760230, guid: 5ce2672aa19ea4e46817b734ab8deeb4, type: 3}
+  minCoin: 1
+  maxCoin: 1
+  force: 0
 --- !u!61 &8483200861195712086
 BoxCollider2D:
   m_ObjectHideFlags: 0

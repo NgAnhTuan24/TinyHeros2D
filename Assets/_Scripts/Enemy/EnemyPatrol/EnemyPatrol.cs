@@ -13,11 +13,13 @@ public class EnemyPatrol : MonoBehaviour
     private bool movingLeft = true;
     private Rigidbody2D rb;
     private Animator anim;
+    private EnemyDrop drop;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        drop = GetComponent<EnemyDrop>();
         startPos = transform.position;
     }
 
@@ -57,6 +59,8 @@ public class EnemyPatrol : MonoBehaviour
         anim.SetBool("IsDie", true);
 
         StartCoroutine(DieRoutine());
+
+        drop.Drop();
     }
 
     IEnumerator DieRoutine()

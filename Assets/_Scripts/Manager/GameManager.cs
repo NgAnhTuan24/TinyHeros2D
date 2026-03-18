@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public CameraController cameraController;
 
+    public CoinManager coinManager;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -24,5 +26,7 @@ public class GameManager : MonoBehaviour
         sceneTransition = GetComponent<SceneTransition>();
 
         cameraController = GetComponent<CameraController>();
+
+        coinManager = GetComponent<CoinManager>();
     }
 }
