@@ -72,7 +72,7 @@ public class ComboHits : MonoBehaviour
                 dmg = Mathf.RoundToInt(dmg * critMultiplier);
             }
 
-            hit.GetComponent<EnemyHealth>()?.TakeDamage(dmg, transform);
+            //hit.GetComponent<EnemyHealth>()?.TakeDamage(dmg, transform);
         }
     }
 

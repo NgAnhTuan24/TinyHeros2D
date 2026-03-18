@@ -12,11 +12,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        EnemyHealth enemy = col.GetComponent<EnemyHealth>();
-        if (enemy != null)
-        {
-            enemy.TakeDamage(dmg, transform);
-            Destroy(gameObject);
-        }
+        //EnemyHealth enemy = col.GetComponent<EnemyHealth>();
+        //if (enemy != null)
+        //{
+        //    enemy.TakeDamage(dmg, transform);
+        //    Destroy(gameObject);
+        //}
     }
 }

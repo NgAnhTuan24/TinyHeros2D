@@ -14935,7 +14935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f7424c183bf2e44b96c1f95be267c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
   distance: 5
   blinkDuration: 1
   blinkInterval: 0.1
