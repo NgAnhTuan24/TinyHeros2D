@@ -34,6 +34,8 @@ public class TutorialTrigger : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
+        if (UIManager.instance == null) return;
+
         UIManager.instance.tutorialDialogueUI.HideDialogue();
     }
 }
