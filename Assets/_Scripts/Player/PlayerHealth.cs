@@ -45,6 +45,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isInvincible) return;
 
+        isInvincible = true;
+
         hp -= damage;
         hp = Mathf.Clamp(hp, 0, maxHp);
 

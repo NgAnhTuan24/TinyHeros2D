@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class EnemyDamage : MonoBehaviour
+public class SpikeTrapDamage : MonoBehaviour
 {
-    public int damage = 1;
-
+    [SerializeField] private int damage = 1;
     [SerializeField] private float damageCooldown = 1f;
+
     private float lastDamageTime;
 
-    void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+        PlayerHealth player = collision.GetComponent<PlayerHealth>();
         if (player == null) return;
 
         if (Time.time < lastDamageTime + damageCooldown) return;
