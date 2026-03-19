@@ -11,14 +11,19 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 patrolDirection = Vector2.right;
     private bool facingRight = true;
 
+    Knockback knockback;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         enemy = GetComponent<EnemyController>();
+        knockback = GetComponent<Knockback>();
     }
 
     public void Patrol()
     {
+        if (knockback.gettingKnockedBack) return;
+
         if (patrolTimer <= 0)
         {
             FlipDirection();
@@ -36,6 +41,8 @@ public class EnemyMovement : MonoBehaviour
 
     public void ChasePlayer()
     {
+        if (knockback.gettingKnockedBack) return;
+
         Transform player = enemy.Detection.GetPlayer();
         if (player == null) return;
 

@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
     public EnemyDetection Detection { get; private set; }
     public EnemyCombat Combat { get; private set; }
     public EnemyAnimator Animator { get; private set; }
+    public Knockback knockback { get; private set; }
 
     [SerializeField] private bool usePatrol = true;
     public bool UsePatrol => usePatrol;
@@ -31,6 +32,7 @@ public class EnemyController : MonoBehaviour
         Detection = GetComponent<EnemyDetection>();
         Combat = GetComponent<EnemyCombat>();
         Animator = GetComponent<EnemyAnimator>();
+        knockback = GetComponent<Knockback>();
 
         StateMachine = new EnemyStateMachine();
 

@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 1977256794105125092}
   - component: {fileID: 2409137536961960225}
   - component: {fileID: 9171336000293543092}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dmg
   m_TagString: Untagged
   m_Icon: {fileID: 0}

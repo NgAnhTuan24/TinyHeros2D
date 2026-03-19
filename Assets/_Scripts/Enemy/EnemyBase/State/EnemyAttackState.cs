@@ -20,6 +20,8 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void Update()
     {
+        if (enemy.knockback.gettingKnockedBack) return;
+
         timer -= Time.deltaTime;
 
         if (!enemy.Detection.InAttackRange())

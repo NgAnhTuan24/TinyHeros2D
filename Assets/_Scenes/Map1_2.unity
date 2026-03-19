@@ -14770,7 +14770,7 @@ GameObject:
   - component: {fileID: 1977256794305702769}
   - component: {fileID: 2409137537430973108}
   - component: {fileID: 9171335999822966561}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dmg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14846,7 +14846,7 @@ GameObject:
   - component: {fileID: 1700598503969317241}
   - component: {fileID: 4086794756611402863}
   - component: {fileID: 4132206489965106310}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dmg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14864,7 +14864,7 @@ GameObject:
   - component: {fileID: 1700598503787478352}
   - component: {fileID: 4086794757332185158}
   - component: {fileID: 4132206489774966959}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dmg
   m_TagString: Untagged
   m_Icon: {fileID: 0}

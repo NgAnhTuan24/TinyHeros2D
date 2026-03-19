@@ -25,6 +25,7 @@ public class Knockback : MonoBehaviour
         direction.Normalize();
 
         rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0;
         rb.AddForce(direction * knockBackThrust, ForceMode2D.Impulse);
 
         if (knockCoroutine != null)

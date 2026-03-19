@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7023686915165396709}
   - component: {fileID: 9132112555226380069}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Coin_Bounce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
