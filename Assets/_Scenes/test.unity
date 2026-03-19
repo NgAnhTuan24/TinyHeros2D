@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 2096311867}
   - component: {fileID: 2096311866}
   - component: {fileID: 2096311865}
+  - component: {fileID: 2096311869}
   m_Layer: 8
   m_Name: Orange_MeleEnemy
   m_TagString: Enemy
@@ -700,6 +701,19 @@ MonoBehaviour:
   chaseSpeed: 5
   attackRange: 4
   detectRange: 10
+  usePatrol: 1
+--- !u!114 &2096311869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096311859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e347ba6286cea4e8e47a11bfefc995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

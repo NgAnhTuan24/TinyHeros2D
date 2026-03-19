@@ -19,6 +19,8 @@ public class EnemyPatrolState : EnemyBaseState
 
         timer = patrolTime;
         enemy.Movement.ResetPatrolTimer();
+
+        enemy.Animator.SetMove(true);
     }
 
     public override void Update()

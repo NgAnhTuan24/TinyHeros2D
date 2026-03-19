@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
     public EnemyMovement Movement { get; private set; }
     public EnemyDetection Detection { get; private set; }
     public EnemyCombat Combat { get; private set; }
+    public EnemyAnimator Animator { get; private set; }
 
     [SerializeField] private bool usePatrol = true;
     public bool UsePatrol => usePatrol;
@@ -29,6 +30,7 @@ public class EnemyController : MonoBehaviour
         Movement = GetComponent<EnemyMovement>();
         Detection = GetComponent<EnemyDetection>();
         Combat = GetComponent<EnemyCombat>();
+        Animator = GetComponent<EnemyAnimator>();
 
         StateMachine = new EnemyStateMachine();
 

@@ -13,6 +13,9 @@ public class EnemyAttackState : EnemyBaseState
     {
         timer = cooldown;
         enemy.Movement.Stop();
+
+        enemy.Animator.SetMove(false);
+        enemy.Animator.TriggerAttack();
     }
 
     public override void Update()
@@ -26,7 +29,7 @@ public class EnemyAttackState : EnemyBaseState
         }
         if (timer <= 0)
         {
-            enemy.Combat.Attack();
+            enemy.Animator.TriggerAttack();
             timer = cooldown;
         }
     }

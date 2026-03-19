@@ -4,6 +4,11 @@ public class EnemyChaseState : EnemyBaseState
     {
     }
 
+    public override void Enter()
+    {
+        enemy.Animator.SetMove(true);
+    }
+
     public override void Update()
     {
         enemy.Movement.ChasePlayer();

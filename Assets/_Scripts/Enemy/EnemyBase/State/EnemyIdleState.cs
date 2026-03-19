@@ -13,6 +13,8 @@ public class EnemyIdleState : EnemyBaseState
     {
         timer = idleTime;
         enemy.Movement.Stop();
+
+        enemy.Animator.SetMove(false);
     }
 
     public override void Update()
