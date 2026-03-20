@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 using System.Collections;
 
 public class DialogueManager : MonoBehaviour
@@ -23,14 +24,18 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping;
     [SerializeField] private float typingSpeed = 0.02f;
 
+    private Action onDialogueEnd;
+
     private void Awake()
     {
         Instance = this;
     }
 
-    public void StartDialogue(DialogueLine[] dialogueLines)
+    public void StartDialogue(DialogueLine[] dialogueLines, Action onEnd = null)
     {
         PlayerController.instance.movement.LockPlayer();
+
+        onDialogueEnd = onEnd;
 
         lines = dialogueLines;
         index = 0;
@@ -38,7 +43,6 @@ public class DialogueManager : MonoBehaviour
 
         panel.SetActive(true);
 
-        // Ẩn UI khác
         foreach (var ui in otherUI)
             ui.SetActive(false);
 
@@ -100,5 +104,7 @@ public class DialogueManager : MonoBehaviour
             ui.SetActive(true);
 
         PlayerController.instance.movement.UnlockPlayer();
+
+        onDialogueEnd?.Invoke();
     }
 }

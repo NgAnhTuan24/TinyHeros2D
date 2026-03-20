@@ -4,6 +4,10 @@ public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private DialogueLine[] lines;
 
+    [SerializeField] private bool spawnAfterDialogue;
+    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private Transform spawnPoint;
+
     private bool triggered = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,7 +17,22 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             triggered = true;
-            DialogueManager.Instance.StartDialogue(lines);
+
+            if (spawnAfterDialogue)
+            {
+                DialogueManager.Instance.StartDialogue(lines, SpawnEnemy);
+            }
+            else
+            {
+                DialogueManager.Instance.StartDialogue(lines);
+            }
         }
+    }
+
+    void SpawnEnemy()
+    {
+        if (enemyPrefab == null || spawnPoint == null) return;
+
+        Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
     }
 }
