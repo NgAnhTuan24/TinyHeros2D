@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-   public static PlayerController instance;
+    public static PlayerController instance;
+
+    public PlayerMovement movement;
 
     private void Awake()
     {
@@ -16,5 +18,10 @@ public class PlayerController : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        movement = GetComponent<PlayerMovement>();
     }
 }

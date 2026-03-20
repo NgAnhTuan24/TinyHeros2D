@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     int jumpCount;
 
+    public bool isLocked;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -53,11 +55,13 @@ public class PlayerMovement : MonoBehaviour
     #region UI Button Call - Input Mobile
     public void MoveLeft()
     {
+        if (isLocked) return;
         inputX = -1;
     }
 
     public void MoveRight()
     {
+        if (isLocked) return;
         inputX = 1;
     }
 
@@ -68,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void JumpButton()
     {
+        if (isLocked) return;
         if (jumpCount < maxJumpCount) Jump();
     }
     #endregion 
@@ -125,5 +130,20 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Speed", Mathf.Abs(inputX));
         anim.SetBool("IsJumping", !isGrounded && rb.velocity.y > 0.2f);
         anim.SetBool("IsFalling", !isGrounded && rb.velocity.y < -0.2f);
+    }
+
+    public void LockPlayer()
+    {
+        isLocked = true;
+        inputX = 0;
+
+        rb.velocity = Vector2.zero;
+
+        anim.SetFloat("Speed", 0);
+    }
+
+    public void UnlockPlayer()
+    {
+        isLocked = false;
     }
 }
