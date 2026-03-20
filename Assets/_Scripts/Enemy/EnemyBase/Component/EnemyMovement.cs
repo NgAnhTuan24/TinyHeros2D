@@ -5,6 +5,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float patrolSwitchTime = 2f;
     private float patrolTimer;
 
+    [SerializeField] private bool startFacingRight = true;
+
     private Rigidbody2D rb;
     private EnemyController enemy;
 
@@ -18,6 +20,28 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         enemy = GetComponent<EnemyController>();
         knockback = GetComponent<Knockback>();
+    }
+
+    private void Start()
+    {
+        SetFacing(startFacingRight);
+        SetPatrolDirection(startFacingRight);
+    }
+
+    private void SetFacing(bool faceRight)
+    {
+        facingRight = faceRight;
+
+        Vector3 scale = transform.localScale;
+        scale.x = Mathf.Abs(scale.x) * (faceRight ? 1 : -1);
+        transform.localScale = scale;
+    }
+
+    private void SetPatrolDirection(bool goRight)
+    {
+        patrolDirection = goRight ? Vector2.right : Vector2.left;
+
+        patrolTimer = patrolSwitchTime;
     }
 
     public void Patrol()

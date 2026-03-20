@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyAttackState : EnemyBaseState
 {
-    private float cooldown = 1f;
+    private float cooldown = 1.5f;
     private float timer;
 
     public EnemyAttackState(EnemyController enemy) : base(enemy)
@@ -31,8 +31,8 @@ public class EnemyAttackState : EnemyBaseState
         }
         if (timer <= 0)
         {
-            enemy.Animator.TriggerAttack();
             timer = cooldown;
+            enemy.Animator.TriggerAttack();
         }
     }
 }
