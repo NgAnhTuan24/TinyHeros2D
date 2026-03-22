@@ -22,5 +22,14 @@ public class EnemyRanged : MonoBehaviour
 
     public void SpawnProjectile()
     {
+        GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+
+        Projectile projectile = proj.GetComponent<Projectile>();
+
+        if (projectile != null)
+        {
+            float dir = transform.localScale.x > 0 ? 1f : -1f;
+            projectile.Init(dir);
+        }
     }
 }

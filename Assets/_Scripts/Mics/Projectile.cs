@@ -1,10 +1,18 @@
 using UnityEngine;
 
+public enum Team
+{
+    None,
+    Player,
+    Enemy
+}
+
 public class Projectile : MonoBehaviour
 {
     public int dmg = 1;
     public float speed = 8f;
     public float lifeTime = 4f;
+    public Team ownerTeam;
     private Rigidbody2D rb;
 
     void Awake()
@@ -19,10 +27,14 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        EnemyHealth enemy = col.GetComponent<EnemyHealth>();
-        if (enemy != null)
+        if (col.CompareTag(ownerTeam.ToString()))
+            return;
+
+        IDamageable damageable = col.GetComponent<IDamageable>();
+
+        if (damageable != null)
         {
-            enemy.TakeDamage(dmg, transform);
+            damageable.TakeDamage(dmg, transform);
             Destroy(gameObject);
         }
     }
