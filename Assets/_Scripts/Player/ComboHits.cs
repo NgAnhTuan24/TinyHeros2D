@@ -61,18 +61,28 @@ public class ComboHits : MonoBehaviour
     public void DealDamage()
     {
         // Chỉ đánh gây sát thương được với 1 enemy -> cần mở rộng là gây lên nhiều quái 
-        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius, enemyLayer);
+        Collider2D hit = Physics2D.OverlapCircle(
+        attackPoint.position,
+        attackRadius,
+        enemyLayer
+        );
 
-        if (hit != null)
+        if (hit == null) return;
+
+        IDamageable damageable = hit.GetComponent<IDamageable>();
+
+        if (damageable != null)
         {
             int dmg = Random.Range(minDmg, maxDmg + 1);
 
+            // crit
             if (Random.value < critChance)
             {
                 dmg = Mathf.RoundToInt(dmg * critMultiplier);
+                Debug.Log("CRIT: " + dmg);
             }
 
-            hit.GetComponent<EnemyHealth>()?.TakeDamage(dmg, transform);
+            damageable.TakeDamage(dmg, transform);
         }
     }
 

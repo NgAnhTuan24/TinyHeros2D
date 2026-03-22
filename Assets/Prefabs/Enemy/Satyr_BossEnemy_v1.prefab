@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3732289742562568214}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 1, z: 0}
+  m_LocalPosition: {x: 1, y: 0.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 7983424288473076918}
   - component: {fileID: 3231537940878926273}
   - component: {fileID: 2187305996849261144}
+  - component: {fileID: 1184322637108019766}
   m_Layer: 8
   m_Name: Satyr_BossEnemy_v1
   m_TagString: Enemy
@@ -72,6 +73,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2007968619798232135}
+  - {fileID: 8741641689182135874}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8124934065652227715
@@ -233,12 +235,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleeRange: 2.5
   dashRange: 5
-  rangedRange: 8
+  rangedRange: 10
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  dashCooldown: 5
-  meleeCooldown: 2
+  dashCooldown: 3.5
+  meleeCooldown: 3
   rangedCooldown: 4
   startFacingRight: 0
 --- !u!114 &2478463183745203872
@@ -268,6 +270,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5688950813f0d954e9b64e57f2154047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
+  attackPoint: {fileID: 8741641689182135874}
+  attackRadius: 0.2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &4154103135103520352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0068b9fd650f4742b2044b1a59c3a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 3945567147229084334, guid: 9fc07612cf037eb41bd49e141d715cf0, type: 3}
   firePoint: {fileID: 2007968619798232135}
 --- !u!114 &7983424288473076918
 MonoBehaviour:
@@ -295,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  knockbackThrust: 10
+  knockbackThrust: 8
   deathVFX: {fileID: 175678647051944287, guid: 8864ab2bb57c8894b84ef6351751dc59, type: 3}
 --- !u!114 &3231537940878926273
 MonoBehaviour:
@@ -309,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63b412f3a72b644a8cec7d90bdb8acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whiteFlash: {fileID: 0}
+  whiteFlash: {fileID: 2100000, guid: e373f98e6834ff145bfa08e698817ef5, type: 2}
   restoreDefaultMatTime: 0.1
 --- !u!114 &2187305996849261144
 MonoBehaviour:
@@ -324,3 +332,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockBackTime: 0.3
+--- !u!114 &1184322637108019766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599673091857622171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d04a93fb969a07488ad750dcdb8ad90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 6651977575895760230, guid: 5ce2672aa19ea4e46817b734ab8deeb4, type: 3}
+  coin: 10
+  useRandom: 0
+  minCoin: 10
+  maxCoin: 20
+  force: 4
+--- !u!1 &7197975225452702253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8741641689182135874}
+  m_Layer: 8
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8741641689182135874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7197975225452702253}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9, y: 0.22, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7551428756554115506}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

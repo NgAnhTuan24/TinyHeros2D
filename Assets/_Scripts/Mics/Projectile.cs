@@ -45,5 +45,6 @@ public class Projectile : MonoBehaviour
         {
             rb.velocity = Vector2.right * dir * speed;
         }
+        transform.localScale = new Vector3(dir, 1, 1);
     }
 }

@@ -17,7 +17,7 @@ public class EnemyRanged : MonoBehaviour
     {
         animator.SetTrigger("AttackRange");
 
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(3f);
     }
 
     public void SpawnProjectile()

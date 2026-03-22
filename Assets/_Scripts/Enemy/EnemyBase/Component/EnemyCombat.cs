@@ -20,11 +20,11 @@ public class EnemyCombat : MonoBehaviour
 
         if (hit != null)
         {
-            PlayerHealth player = hit.GetComponent<PlayerHealth>();
-            if (player != null)
+            IDamageable damageable = hit.GetComponent<IDamageable>();
+
+            if (damageable != null)
             {
-                player.TakeDamage(damage, transform);
-                Debug.Log("Hit player!");
+                damageable.TakeDamage(damage, transform);
             }
         }
     }

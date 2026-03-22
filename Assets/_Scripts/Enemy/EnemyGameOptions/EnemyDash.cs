@@ -27,7 +27,6 @@ public class EnemyDash : MonoBehaviour
 
         float dirX = Mathf.Sign(playerPos.x - startPos.x);
 
-        // 👉 target position cách player 1.5 units
         float targetX = playerPos.x - dirX * stopDistance;
 
         float t = 0;
@@ -42,7 +41,6 @@ public class EnemyDash : MonoBehaviour
             yield return null;
         }
 
-        // snap chính xác
         rb.MovePosition(new Vector2(targetX, rb.position.y));
     }
 }

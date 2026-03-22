@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolSwitchTime: 2
+  startFacingRight: 1
 --- !u!114 &1239918553804366407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  knockbackThrust: 15
+  knockbackThrust: 10
   deathVFX: {fileID: 1551652072768891484, guid: dd029c1154cc80f4db1963a45b754436, type: 3}
 --- !u!114 &709820076747682424
 MonoBehaviour:
