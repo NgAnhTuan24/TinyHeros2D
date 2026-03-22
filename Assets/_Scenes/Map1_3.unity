@@ -755,7 +755,7 @@ MonoBehaviour:
   - icon: {fileID: 21300000, guid: aa77b147d5d5c8b44844a59ddfd5c037, type: 3}
     text: Go away, outsider!
   spawnAfterDialogue: 1
-  enemyPrefab: {fileID: 3513625206225149323, guid: ec1e007972a0e6e479bce03c97f9a052, type: 3}
+  enemyPrefab: {fileID: 4599673091857622171, guid: a46a9e96734d7ea488ca7ec11dacdb1f, type: 3}
   spawnPoint: {fileID: 54918220}
 --- !u!4 &557994083
 Transform:

@@ -10,13 +10,6 @@ public class EnemyCombat : MonoBehaviour
     [SerializeField] private float attackRadius = 0.5f;
     [SerializeField] private LayerMask playerLayer;
 
-    private EnemyController enemy;
-
-    private void Awake()
-    {
-        enemy = GetComponent<EnemyController>();
-    }
-
     public void DealDamage()
     {
         Collider2D hit = Physics2D.OverlapCircle(
