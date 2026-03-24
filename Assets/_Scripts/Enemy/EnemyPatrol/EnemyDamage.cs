@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public int dmg;
+    public int damage = 1;
 
-    private void OnTriggerEnter2D(Collider2D col)
+    [SerializeField] private float damageCooldown = 1f;
+    private float lastDamageTime;
+
+    void OnCollisionStay2D(Collision2D collision)
     {
-        PlayerHealth pl = col.gameObject.GetComponent<PlayerHealth>();
+        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
+        if (player == null) return;
 
-        if (pl != null)
-        {
-            pl.TakeDamage(dmg, transform);
-        }
+        if (Time.time < lastDamageTime + damageCooldown) return;
+
+        player.TakeDamage(damage, transform);
+        lastDamageTime = Time.time;
     }
 }

@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 4665793}
   - component: {fileID: 4665792}
   - component: {fileID: 4665791}
+  - component: {fileID: 4665794}
   m_Layer: 0
   m_Name: SpikeTrap
   m_TagString: Untagged
@@ -252,6 +253,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1045413301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4665794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c00619cea031848ac8d4b2642338ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageCooldown: 1
 --- !u!1 &55550876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,6 +1348,7 @@ GameObject:
   - component: {fileID: 730174174}
   - component: {fileID: 730174173}
   - component: {fileID: 730174172}
+  - component: {fileID: 730174175}
   m_Layer: 0
   m_Name: SpikeTrap
   m_TagString: Untagged
@@ -1452,6 +1468,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1045413301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &730174175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730174171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c00619cea031848ac8d4b2642338ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageCooldown: 1
 --- !u!1 &758455315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,6 +1926,7 @@ GameObject:
   - component: {fileID: 945817484}
   - component: {fileID: 945817483}
   - component: {fileID: 945817482}
+  - component: {fileID: 945817485}
   m_Layer: 0
   m_Name: SpikeTrap
   m_TagString: Untagged
@@ -2015,6 +2046,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1045413301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &945817485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945817481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c00619cea031848ac8d4b2642338ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageCooldown: 1
 --- !u!1 &1045413300
 GameObject:
   m_ObjectHideFlags: 0
@@ -13251,6 +13296,7 @@ GameObject:
   - component: {fileID: 1623220531}
   - component: {fileID: 1623220530}
   - component: {fileID: 1623220529}
+  - component: {fileID: 1623220532}
   m_Layer: 0
   m_Name: SpikeTrap
   m_TagString: Untagged
@@ -13370,6 +13416,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1045413301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1623220532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623220528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c00619cea031848ac8d4b2642338ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageCooldown: 1
 --- !u!1 &1900593110
 GameObject:
   m_ObjectHideFlags: 0
@@ -14264,7 +14324,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.24477005}
@@ -14515,7 +14575,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.266}
@@ -14560,7 +14620,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.266}
@@ -14588,7 +14648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0baf043fa40bc940a34cb355bb22b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 1
+  damage: 1
+  damageCooldown: 1
 --- !u!114 &4132206489965106310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14601,7 +14662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0baf043fa40bc940a34cb355bb22b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 1
+  damage: 1
+  damageCooldown: 1
 --- !u!95 &5282174418001148828
 Animator:
   serializedVersion: 5
@@ -14768,7 +14830,7 @@ GameObject:
   - component: {fileID: 1977256794305702769}
   - component: {fileID: 2409137537430973108}
   - component: {fileID: 9171335999822966561}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dmg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14844,7 +14906,7 @@ GameObject:
   - component: {fileID: 1700598503969317241}
   - component: {fileID: 4086794756611402863}
   - component: {fileID: 4132206489965106310}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dmg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14862,7 +14924,7 @@ GameObject:
   - component: {fileID: 1700598503787478352}
   - component: {fileID: 4086794757332185158}
   - component: {fileID: 4132206489774966959}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dmg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14935,8 +14997,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f7424c183bf2e44b96c1f95be267c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  distance: 5
+  speed: 3
+  distance: 4
   blinkDuration: 1
   blinkInterval: 0.1
 --- !u!114 &7101117464491181114
@@ -14952,6 +15014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 6651977575895760230, guid: 5ce2672aa19ea4e46817b734ab8deeb4, type: 3}
+  coin: 1
+  useRandom: 0
   minCoin: 1
   maxCoin: 1
   force: 0
@@ -15089,6 +15153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 6651977575895760230, guid: 5ce2672aa19ea4e46817b734ab8deeb4, type: 3}
+  coin: 1
+  useRandom: 0
   minCoin: 1
   maxCoin: 1
   force: 0
@@ -15121,6 +15187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 6651977575895760230, guid: 5ce2672aa19ea4e46817b734ab8deeb4, type: 3}
+  coin: 1
+  useRandom: 0
   minCoin: 1
   maxCoin: 1
   force: 0
@@ -15244,7 +15312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0baf043fa40bc940a34cb355bb22b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 1
+  damage: 1
+  damageCooldown: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

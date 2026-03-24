@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 1700598502995227849}
   - component: {fileID: 4086794757587728863}
   - component: {fileID: 4132206489058050358}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dmg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.266}
@@ -398,3 +398,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 1
+  damageCooldown: 1

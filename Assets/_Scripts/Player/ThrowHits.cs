@@ -3,7 +3,6 @@ using UnityEngine;
 public class ThrowHits : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    public float projectileSpeed;
     public Transform point;
 
     Animator anim;
@@ -34,14 +33,14 @@ public class ThrowHits : MonoBehaviour
     
     public void ThrowStone()
     {
-        GameObject stone = Instantiate(projectilePrefab, point.position, Quaternion.identity);
+        GameObject proj = Instantiate(projectilePrefab, point.position, Quaternion.identity);
 
-        Rigidbody2D rb = stone.GetComponent<Rigidbody2D>();
+        Projectile projectile = proj.GetComponent<Projectile>();
 
-        if (rb != null )
+        if (projectile != null )
         {
             float dir = transform.localScale.x > 0 ? 1f : -1f;
-            rb.velocity = Vector2.right * dir * projectileSpeed;
+            projectile.Init(dir);
         }
     }
 }
