@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        HandleKeyboardInput();
+
         DustEffect();
         Flip();
         UpdateAnim();
@@ -46,6 +48,25 @@ public class PlayerMovement : MonoBehaviour
         CheckGround();
         rb.velocity = new Vector2(inputX * moveSpeed, rb.velocity.y);
     }
+
+    #region Input PC
+    void HandleKeyboardInput()
+    {
+        if (isLocked) return;
+
+        // Di chuyển
+        inputX = Input.GetAxisRaw("Horizontal");
+
+        // Nhảy
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (jumpCount < maxJumpCount)
+            {
+                Jump();
+            }
+        }
+    }
+    #endregion
 
     #region UI Button Call - Input Mobile
     public void MoveLeft()
