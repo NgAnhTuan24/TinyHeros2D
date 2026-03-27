@@ -18,10 +18,7 @@ public class PlayerController : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-    }
 
-    private void Start()
-    {
         movement = GetComponent<PlayerMovement>();
     }
 }

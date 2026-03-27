@@ -10,6 +10,9 @@ public class AreaEntrance : MonoBehaviour
         {
             PlayerController.instance.transform.position = this.transform.position;
             GameManager.instance.cameraController.SetPlayerCameraFollow();
+
+            UIManager.instance.SetUIActive(true);
+            PlayerController.instance.movement.UnlockPlayer();
         }
     }
 }

@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
 
     public TutorialDialogueUI tutorialDialogueUI;
 
+    [Header("UI_Game_Active")]
+    public GameObject[] uiGames;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -28,5 +31,16 @@ public class UIManager : MonoBehaviour
         controlUIManager = GetComponent<ControlUIManager>();
 
         tutorialDialogueUI = GetComponent<TutorialDialogueUI>();
+    }
+
+    public void SetUIActive(bool isActive)
+    {
+        foreach (GameObject ui in uiGames)
+        {
+            if (ui != null)
+            {
+                ui.SetActive(isActive);
+            }
+        }
     }
 }

@@ -349,7 +349,7 @@ MonoBehaviour:
   useRandom: 0
   minCoin: 10
   maxCoin: 20
-  force: 4
+  force: 5
 --- !u!1 &7197975225452702253
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,10 @@ public class SceneTransition : MonoBehaviour
 
     private IEnumerator TransitionRoutine(string sceneName, string transitionName)
     {
+        PlayerController.instance.movement.LockPlayer();
+
+        UIManager.instance.SetUIActive(false);
+
         transitionAnim.SetTrigger("end");
 
         yield return new WaitForSeconds(1.3f);
