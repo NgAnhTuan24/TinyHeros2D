@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        HandleKeyboardInput();
+        //HandleKeyboardInput();
 
         DustEffect();
         Flip();
