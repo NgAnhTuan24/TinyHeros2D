@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 616172518822960651}
   - component: {fileID: 3391318787818620720}
   - component: {fileID: 1323907541740342668}
+  - component: {fileID: 5467019731933310339}
   m_Layer: 7
   m_Name: Pink
   m_TagString: Player
@@ -203,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 461412c1e06f33b43ac995de6661de40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 0}
 --- !u!114 &-8643850182637981329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +223,7 @@ MonoBehaviour:
   gravityScale: 5
   dustRun: {fileID: 6127966936464932906}
   dustJump: {fileID: 8836591738307050604}
+  isLocked: 0
 --- !u!114 &1005209018548112271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +260,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2109904548637315635, guid: b79a00da0a3b9c641bc90627e9e6614e, type: 3}
-  projectileSpeed: 8
   point: {fileID: 1254801646802656193}
 --- !u!114 &616172518822960651
 MonoBehaviour:
@@ -300,6 +302,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockBackTime: 0.2
+--- !u!114 &5467019731933310339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155509736639523145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430d990e9250ddb4fa1c4d5c9cfdf254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: Pink
+  playerIcon: {fileID: 21300000, guid: ff0eb2bc3d922f743b9629ae98c9d8d5, type: 3}
 --- !u!1 &6170803951998558888
 GameObject:
   m_ObjectHideFlags: 0

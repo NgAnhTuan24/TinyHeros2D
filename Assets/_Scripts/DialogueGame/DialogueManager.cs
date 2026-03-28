@@ -11,7 +11,8 @@ public class DialogueManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject panel;
     [SerializeField] private Image icon;
-    [SerializeField] private TMP_Text text;
+    [SerializeField] private TMP_Text nameText;
+    [SerializeField] private TMP_Text dialogueText;
 
     [Header("Other UI")]
     [SerializeField] private GameObject[] otherUI;
@@ -23,6 +24,8 @@ public class DialogueManager : MonoBehaviour
     private Coroutine typingCoroutine;
     private bool isTyping;
     [SerializeField] private float typingSpeed = 0.02f;
+
+    private PlayerIdentity identity;
 
     private Action onDialogueEnd;
 
@@ -46,6 +49,8 @@ public class DialogueManager : MonoBehaviour
         foreach (var ui in otherUI)
             ui.SetActive(false);
 
+        identity = FindObjectOfType<PlayerIdentity>();
+
         ShowLine();
     }
 
@@ -67,12 +72,22 @@ public class DialogueManager : MonoBehaviour
     {
         isTyping = true;
 
-        icon.sprite = line.icon;
-        text.text = "";
+        if (line.speaker == SpeakerType.Player && identity != null)
+        {
+            icon.sprite = identity.playerIcon;
+            nameText.text = identity.playerName;
+        }
+        else
+        {
+            icon.sprite = line.icon;
+            nameText.text = line.name;
+        }
+
+        dialogueText.text = "";
 
         foreach (char c in line.text)
         {
-            text.text += c;
+            dialogueText.text += c;
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -86,7 +101,7 @@ public class DialogueManager : MonoBehaviour
         if (isTyping)
         {
             StopCoroutine(typingCoroutine);
-            text.text = lines[index].text;
+            dialogueText.text = lines[index].text;
             isTyping = false;
             return;
         }

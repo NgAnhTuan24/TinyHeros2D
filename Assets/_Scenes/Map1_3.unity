@@ -750,9 +750,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - icon: {fileID: 21300000, guid: aa77b147d5d5c8b44844a59ddfd5c037, type: 3}
+  - speaker: 0
+    icon: {fileID: 21300000, guid: aa77b147d5d5c8b44844a59ddfd5c037, type: 3}
+    name: Satyr (Incarnate)
     text: This is not a place you can come to, you outsider!
-  - icon: {fileID: 21300000, guid: aa77b147d5d5c8b44844a59ddfd5c037, type: 3}
+  - speaker: 1
+    icon: {fileID: 0}
+    name: 
     text: Go away, outsider!
   afterBattleLines: []
   spawnAfterDialogue: 1
