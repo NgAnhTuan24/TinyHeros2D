@@ -2,37 +2,68 @@ using UnityEngine;
 
 public class EnemyAttackState : EnemyBaseState
 {
-    private float cooldown = 1.5f;
-    private float timer;
+    private float attackCooldown = 1.5f;
+    private float recoveryTime = .2f;
 
-    public EnemyAttackState(EnemyController enemy) : base(enemy)
-    {
-    }
+    private float timer;
+    private bool isRecovering;
+
+    public EnemyAttackState(EnemyController enemy) : base(enemy) { }
 
     public override void Enter()
     {
-        timer = cooldown;
-        enemy.Movement.Stop();
+        timer = 0;
+        isRecovering = false;
 
+        enemy.Movement.Stop();
         enemy.Animator.SetMove(false);
-        enemy.Animator.TriggerAttack();
+
+        Attack();
     }
 
     public override void Update()
     {
         if (enemy.knockback.gettingKnockedBack) return;
 
-        timer -= Time.deltaTime;
+        enemy.Movement.Stop();
 
-        if (!enemy.Detection.InAttackRange())
+        timer += Time.deltaTime;
+
+        if (!isRecovering)
+        {
+            if (timer >= attackCooldown)
+            {
+                isRecovering = true;
+                timer = 0;
+            }
+        }
+        else
+        {
+            if (timer >= recoveryTime)
+            {
+                DecideNextState();
+            }
+        }
+    }
+
+    private void Attack()
+    {
+        enemy.Animator.TriggerAttack();
+    }
+
+    private void DecideNextState()
+    {
+        if (enemy.Detection.InAttackRange())
+        {
+            enemy.StateMachine.ChangeState(enemy.AttackState);
+        }
+        else if (enemy.Detection.CanSeePlayer())
         {
             enemy.StateMachine.ChangeState(enemy.ChaseState);
-            return;
         }
-        if (timer <= 0)
+        else
         {
-            timer = cooldown;
-            enemy.Animator.TriggerAttack();
+            enemy.StateMachine.ChangeState(enemy.UsePatrol ? enemy.PatrolState : enemy.IdleState);
         }
     }
 }

@@ -88,7 +88,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private IEnumerator DamageRoutine(Transform damageSource)
     {
-        knockback.GetKnockedBack(damageSource, 5f);
+        knockback.GetKnockedBack(damageSource, 15f);
 
         yield return StartCoroutine(flash.FlashRoutine());
 
