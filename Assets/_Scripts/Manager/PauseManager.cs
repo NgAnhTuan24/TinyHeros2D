@@ -16,9 +16,13 @@ public class PauseManager : MonoBehaviour
     public void ExitGame()
     {
         Time.timeScale = 1f;
-        Destroy(GameManager.instance.gameObject);
-        Destroy(PlayerController.instance.gameObject);
-        Destroy(UIManager.instance.gameObject);
+
+        if (GameManager.instance != null) Destroy(GameManager.instance.gameObject);
+
+        if (PlayerController.instance != null) Destroy(PlayerController.instance.gameObject);
+
+        if (UIManager.instance != null) Destroy(UIManager.instance.gameObject);
+
         SceneManager.LoadScene(0);
     }
 }
