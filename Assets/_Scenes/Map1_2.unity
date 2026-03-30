@@ -1313,7 +1313,7 @@ Transform:
   m_GameObject: {fileID: 487988223}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43, y: -6.5, z: 0}
+  m_LocalPosition: {x: 42.5, y: -6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1378,7 +1378,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &523347008
 GameObject:
@@ -1463,6 +1463,39 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1588202454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &657382238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 657382239}
+  m_Layer: 0
+  m_Name: DialogueGameContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &657382239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657382238}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1029485280}
+  - {fileID: 1896549013}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730174171
 GameObject:
@@ -2602,6 +2635,143 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1029485278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029485280}
+  - component: {fileID: 1029485279}
+  - component: {fileID: 1029485281}
+  m_Layer: 0
+  m_Name: Dialogue1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1029485279
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029485278}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1029485280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029485278}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 23.5, y: -3.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 657382239}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1029485281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029485278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac27dd1c1afbf2c4f9cab0ed1601e084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: "Another one\u2026 but it looks different."
+  - speaker: 1
+    icon: {fileID: 0}
+    name: 
+    text: "Yeah\u2026 it doesn\u2019t look like the Bub from before."
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: "Yeah\u2026 it doesn\u2019t look like the Bub from before."
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: This is a Pokey Bub.
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: "Its behavior is similar, but don\u2019t let the appearance fool you."
+  - speaker: 1
+    icon: {fileID: 0}
+    name: 
+    text: "So\u2026 same weakness?"
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: Yes. Aim for the head.
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: Jump at the right moment.
+  - speaker: 1
+    icon: {fileID: 0}
+    name: 
+    text: "Got it. I\u2019ll handle it."
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: Stay sharp.
+  afterBattleLines: []
+  spawnAfterDialogue: 0
+  enemyPrefab: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  portalPrefab: {fileID: 0}
+  portalSpawnPoint: {fileID: 0}
 --- !u!1 &1045413300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,7 +2922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Map1_1
-  sceneTransitionName: Area1
+  sceneTransitionName: Map1_1
 --- !u!61 &1265952863
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2796,7 +2966,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &1265952864
 Transform:
@@ -2807,7 +2977,7 @@ Transform:
   m_GameObject: {fileID: 1265952861}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.5, y: -1.5, z: 0}
+  m_LocalPosition: {x: -15, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3562,7 +3732,7 @@ Tilemap:
       - {fileID: 1772280952, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
       - {fileID: 638449477, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
       - {fileID: 717049203, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
-      m_AnimationSpeed: 1.1396599
+      m_AnimationSpeed: 4.2655406
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 38, y: -8, z: 0}
@@ -3573,7 +3743,7 @@ Tilemap:
       - {fileID: 1772280952, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
       - {fileID: 638449477, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
       - {fileID: 717049203, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
-      m_AnimationSpeed: 4.9550495
+      m_AnimationSpeed: 3.7092419
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 39, y: -8, z: 0}
@@ -3584,7 +3754,7 @@ Tilemap:
       - {fileID: 1772280952, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
       - {fileID: 638449477, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
       - {fileID: 717049203, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
-      m_AnimationSpeed: 4.620342
+      m_AnimationSpeed: 4.101005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 40, y: -8, z: 0}
@@ -3595,7 +3765,7 @@ Tilemap:
       - {fileID: 1772280952, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
       - {fileID: 638449477, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
       - {fileID: 717049203, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
-      m_AnimationSpeed: 3.8522453
+      m_AnimationSpeed: 1.2499247
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 41, y: -8, z: 0}
@@ -3606,7 +3776,7 @@ Tilemap:
       - {fileID: 1772280952, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
       - {fileID: 638449477, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
       - {fileID: 717049203, guid: bfeb67660655ff6489085f5ee210fbd1, type: 3}
-      m_AnimationSpeed: 2.3009775
+      m_AnimationSpeed: 3.575747
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -8179,7 +8349,7 @@ Transform:
   m_GameObject: {fileID: 1547287373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: -0.3, z: 0}
+  m_LocalPosition: {x: -3.5, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8197,7 +8367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657d8e624164eb1448b34b67d78edf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionName: Area2_2
+  transitionName: Map1_2.2
 --- !u!1 &1588202453
 GameObject:
   m_ObjectHideFlags: 0
@@ -8275,7 +8445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Map1_3
-  sceneTransitionName: Area3
+  sceneTransitionName: Map1_3
 --- !u!61 &1616303491
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8319,7 +8489,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &1616303492
 Transform:
@@ -8330,7 +8500,7 @@ Transform:
   m_GameObject: {fileID: 1616303489}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.5, y: -6.5, z: 0}
+  m_LocalPosition: {x: 67, y: -6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8512,6 +8682,151 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1896549010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1896549013}
+  - component: {fileID: 1896549012}
+  - component: {fileID: 1896549011}
+  m_Layer: 0
+  m_Name: Dialogue2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1896549011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896549010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac27dd1c1afbf2c4f9cab0ed1601e084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: "Wait\u2026 this one is different."
+  - speaker: 1
+    icon: {fileID: 0}
+    name: 
+    text: "It\u2019s not reacting like the others."
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: "That\u2019s an Orange."
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: "It can detect you from a distance\u2026 and it will chase you."
+  - speaker: 1
+    icon: {fileID: 0}
+    name: 
+    text: So I just jump on it like before?
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: "No. That won\u2019t work this time."
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: Its head is not a weak point.
+  - speaker: 1
+    icon: {fileID: 0}
+    name: 
+    text: Then how do I defeat it?
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: You need to attack it directly.
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: "Watch its movement\u2026 and strike at the right moment."
+  - speaker: 1
+    icon: {fileID: 0}
+    name: 
+    text: "Understood. I\u2019ll be careful."
+  - speaker: 0
+    icon: {fileID: 21300000, guid: 27a0e13141500e349bb75f01c01c53ad, type: 3}
+    name: Flora
+    text: "Stay alert. It won\u2019t go down easily."
+  afterBattleLines: []
+  spawnAfterDialogue: 0
+  enemyPrefab: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  portalPrefab: {fileID: 0}
+  portalSpawnPoint: {fileID: 0}
+--- !u!61 &1896549012
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896549010}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1896549013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896549010}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 44.5, y: -6.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 657382239}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1900593110
 GameObject:
@@ -9035,7 +9350,7 @@ Transform:
   m_GameObject: {fileID: 2043046442}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: -0.3, z: 0}
+  m_LocalPosition: {x: 3.5, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9053,7 +9368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657d8e624164eb1448b34b67d78edf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionName: Area2_1
+  transitionName: Map1_2.1
 --- !u!1 &2046475505
 GameObject:
   m_ObjectHideFlags: 0
@@ -10508,3 +10823,4 @@ SceneRoots:
   - {fileID: 2046475506}
   - {fileID: 487988224}
   - {fileID: 1673510385}
+  - {fileID: 657382239}

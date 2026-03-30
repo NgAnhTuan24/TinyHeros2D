@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour, IDamageable
+public class EnemyHealth : MonoBehaviour, IDamageable, IEnemy
 {
-    public Action onDie;
+    public event Action OnDie;
 
     [SerializeField] private int maxHealth = 3;
     private int currentHealth;
@@ -45,7 +45,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         Debug.Log("Quái đã chết");
 
-        onDie?.Invoke();
+        OnDie?.Invoke();
 
         Instantiate(deathVFX, transform.position, Quaternion.identity);
 

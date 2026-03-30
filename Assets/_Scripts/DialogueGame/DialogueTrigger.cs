@@ -13,6 +13,10 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private Transform spawnPoint;
 
+    [Header("Portal")]
+    [SerializeField] private GameObject portalPrefab;
+    [SerializeField] private Transform portalSpawnPoint;
+
     private bool triggered = false;
 
     bool enemyHandled = false;
@@ -42,11 +46,11 @@ public class DialogueTrigger : MonoBehaviour
 
         GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
 
-        EnemyHealth health = enemy.GetComponent<EnemyHealth>();
+        IEnemy enemyInterface = enemy.GetComponent<IEnemy>();
 
-        if (health != null)
+        if (enemyInterface != null)
         {
-            health.onDie += OnEnemyDie;
+            enemyInterface.OnDie += OnEnemyDie;
         }
     }
 
@@ -66,7 +70,14 @@ public class DialogueTrigger : MonoBehaviour
 
         if (afterBattleLines != null && afterBattleLines.Length > 0)
         {
-            DialogueManager.Instance.StartDialogue(afterBattleLines);
+            DialogueManager.Instance.StartDialogue(afterBattleLines, SpawnPortal);
         }
+    }
+
+    void SpawnPortal()
+    {
+        if (portalPrefab == null || portalSpawnPoint == null) return;
+
+        Instantiate(portalPrefab, portalSpawnPoint.position, Quaternion.identity);
     }
 }

@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
-public class EnemyPatrol : MonoBehaviour
+public class EnemyPatrol : MonoBehaviour, IEnemy
 {
+    public event Action OnDie;
+
     [SerializeField] private float speed = 2f;
     [SerializeField] private float distance = 5f;
 
@@ -45,6 +48,8 @@ public class EnemyPatrol : MonoBehaviour
 
     public void Die()
     {
+        OnDie?.Invoke();
+
         if (!rb.simulated) return;
 
         rb.velocity = Vector2.zero;
