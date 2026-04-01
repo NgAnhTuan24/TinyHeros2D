@@ -27,6 +27,8 @@ public class CheckpointManager : MonoBehaviour
         {
             StartCoroutine(RespawnDifferentScene());
         }
+
+        UIManager.instance.SetUIActive(true);
     }
 
     void RespawnInSameScene()

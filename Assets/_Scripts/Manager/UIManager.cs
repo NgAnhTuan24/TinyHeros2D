@@ -11,7 +11,10 @@ public class UIManager : MonoBehaviour
     public TutorialDialogueUI tutorialDialogueUI;
 
     [Header("UI_Game_Active")]
-    public GameObject[] uiGames;
+    [SerializeField] private GameObject[] uiGames;
+
+    [Header("UI_You Died!")]
+    [SerializeField] private GameObject deathUI;
 
     private void Awake()
     {
@@ -42,5 +45,16 @@ public class UIManager : MonoBehaviour
                 ui.SetActive(isActive);
             }
         }
+    }
+
+    public void ShowDeathUI()
+    {
+        SetUIActive(false);
+        deathUI.SetActive(true);
+    }
+
+    public void HideDeathUI()
+    {
+        deathUI.SetActive(false);
     }
 }

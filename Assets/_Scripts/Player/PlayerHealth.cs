@@ -83,7 +83,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void OnDie()
     {
-        GameManager.instance.checkpointManager.Respawn();
+        UIManager.instance.ShowDeathUI();
     }
 
     public void ResetPlayer()
@@ -104,6 +104,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         anim.Rebind();
         anim.Update(0f);
+
+        transform.localScale = Vector3.one;
 
         Debug.Log("Player reset");
     }
