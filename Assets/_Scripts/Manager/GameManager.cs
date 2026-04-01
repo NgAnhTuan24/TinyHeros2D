@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public CoinManager coinManager;
 
+    public CheckpointManager checkpointManager;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -28,5 +30,7 @@ public class GameManager : MonoBehaviour
         cameraController = GetComponent<CameraController>();
 
         coinManager = GetComponent<CoinManager>();
+
+        checkpointManager = GetComponent<CheckpointManager>();
     }
 }

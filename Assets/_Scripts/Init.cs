@@ -14,6 +14,11 @@ public class Init : MonoBehaviour
 
     void Start()
     {
+        if (GameManager.instance.checkpointManager != null && string.IsNullOrEmpty(GameManager.instance.checkpointManager.checkpointScene))
+        {
+            GameManager.instance.checkpointManager.SetCheckpoint(transform.position);
+        }
+
         if (PlayerController.instance == null)
         {
             GameObject player = Instantiate(CharacterSelect.selectedCharacter, transform.position, Quaternion.identity);
@@ -23,6 +28,14 @@ public class Init : MonoBehaviour
             player.GetComponent<PlayerHealth>().SetHeartUI(heartUI);
 
             UIManager.instance.playerManager.RegisterPlayer(player);
+        }
+        else
+        {
+            cam.Follow = PlayerController.instance.transform;
+
+            PlayerController.instance.health.SetHeartUI(heartUI);
+
+            UIManager.instance.playerManager.RegisterPlayer(PlayerController.instance.gameObject);
         }
     }
 }

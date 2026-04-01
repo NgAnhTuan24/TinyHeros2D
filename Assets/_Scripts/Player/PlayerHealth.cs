@@ -83,7 +83,29 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void OnDie()
     {
-        Destroy(gameObject);
+        GameManager.instance.checkpointManager.Respawn();
+    }
+
+    public void ResetPlayer()
+    {
+        hp = maxHp;
+        heartUI.UpdateHearts(hp);
+
+        rb.simulated = true;
+
+        Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
+        foreach (var col in colliders)
+        {
+            col.enabled = true;
+        }
+
+        isInvincible = false;
+        SetAlpha(1f);
+
+        anim.Rebind();
+        anim.Update(0f);
+
+        Debug.Log("Player reset");
     }
 
     private IEnumerator DamageRoutine(Transform damageSource)

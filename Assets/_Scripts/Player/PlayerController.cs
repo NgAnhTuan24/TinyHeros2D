@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 
     public PlayerMovement movement;
 
+    public PlayerHealth health;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -20,5 +22,7 @@ public class PlayerController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         movement = GetComponent<PlayerMovement>();
+
+        health = GetComponent<PlayerHealth>();
     }
 }
