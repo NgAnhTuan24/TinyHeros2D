@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AreaExit : MonoBehaviour
+public class AreaExit : MonoBehaviour, IInteractable
 {
     [SerializeField] private string sceneToLoad;
     [SerializeField] private string sceneTransitionName;
@@ -35,12 +35,12 @@ public class AreaExit : MonoBehaviour
 
             if (requireButtonPress)
             {
-                UIManager.instance.controlUIManager.HideInteractButton();
+                UIManager.instance.controlUIManager.HideInteractButton(this);
             }
         }
     }
 
-    public void TryInteract()
+    public void Interact()
     {
         if (playerInZone)
         {

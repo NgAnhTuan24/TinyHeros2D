@@ -7,7 +7,7 @@ public class ControlUIManager : MonoBehaviour
     public GameObject throwButton;
     public GameObject interactButton;
 
-    private AreaExit currentExit;
+    private IInteractable currentInteractable;
 
     public void ShowJump()
     {
@@ -24,20 +24,23 @@ public class ControlUIManager : MonoBehaviour
         throwButton.SetActive(true);
     }
 
-    public void ShowInteractButton(AreaExit exit)
+    public void ShowInteractButton(IInteractable interactable)
     {
         interactButton.SetActive(true);
-        currentExit = exit;
+        currentInteractable = interactable;
     }
 
-    public void HideInteractButton()
+    public void HideInteractButton(IInteractable interactable)
     {
-        interactButton.SetActive(false);
-        currentExit = null;
+        if (currentInteractable == interactable)
+        {
+            interactButton.SetActive(false);
+            currentInteractable = null;
+        }
     }
 
     public void OnInteractButtonPressed()
     {
-        currentExit?.TryInteract();
+        currentInteractable?.Interact();
     }
 }

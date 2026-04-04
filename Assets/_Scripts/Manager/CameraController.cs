@@ -8,6 +8,9 @@ public class CameraController : MonoBehaviour
     public void SetPlayerCameraFollow()
     {
         cinemachineVirtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
-        cinemachineVirtualCamera.Follow = PlayerController.instance.transform;
+        if (cinemachineVirtualCamera != null)
+        {
+            cinemachineVirtualCamera.Follow = PlayerController.instance.transform;
+        }
     }
 }
