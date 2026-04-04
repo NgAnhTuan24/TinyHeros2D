@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using System.Collections;
 
 public class Init : MonoBehaviour
 {
@@ -37,5 +38,14 @@ public class Init : MonoBehaviour
 
             UIManager.instance.playerManager.RegisterPlayer(PlayerController.instance.gameObject);
         }
+
+        StartCoroutine(AutoSave());
+    }
+
+    IEnumerator AutoSave()
+    {
+        yield return null;
+
+        GameManager.instance.SaveGame();
     }
 }

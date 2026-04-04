@@ -19,6 +19,16 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private Coroutine invincibleCoroutine;
 
+    public int GetCurrentHP()
+    {
+        return hp;
+    }
+
+    public int GetMaxHP()
+    {
+        return maxHp;
+    }
+
     void Awake()
     {
         knockback = GetComponent<Knockback>();

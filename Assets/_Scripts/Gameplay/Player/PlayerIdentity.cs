@@ -3,5 +3,6 @@ using UnityEngine;
 public class PlayerIdentity : MonoBehaviour
 {
     public string playerName;
-    public Sprite playerIcon;
+    public Sprite playerIconDialogue;
+    public Sprite playerIconGame;
 }

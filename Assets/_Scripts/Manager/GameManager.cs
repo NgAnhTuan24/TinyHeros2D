@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,5 +33,22 @@ public class GameManager : MonoBehaviour
         coinManager = GetComponent<CoinManager>();
 
         checkpointManager = GetComponent<CheckpointManager>();
+
+    }
+
+    public void SaveGame()
+    {
+        GameData data = new GameData();
+
+        data.sceneName = SceneManager.GetActiveScene().name;
+        data.characterName = PlayerController.instance.identity.playerName;
+        data.playerPosition = PlayerController.instance.transform.position;
+        data.playerHP = PlayerController.instance.health.GetCurrentHP();
+        data.playerMaxHP = PlayerController.instance.health.GetMaxHP();
+        data.coin = coinManager.CurrentCoin;
+
+        SaveSystem.Save(data);
+
+        UIManager.instance.saveSlotUI.UpdateUI(data, PlayerController.instance.identity.playerIconGame);
     }
 }

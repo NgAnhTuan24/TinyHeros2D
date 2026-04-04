@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     public PlayerHealth health;
 
+    public PlayerIdentity identity;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -24,5 +26,7 @@ public class PlayerController : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
 
         health = GetComponent<PlayerHealth>();
+
+        identity = GetComponent<PlayerIdentity>();
     }
 }

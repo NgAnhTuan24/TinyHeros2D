@@ -74,7 +74,7 @@ public class DialogueManager : MonoBehaviour
 
         if (line.speaker == SpeakerType.Player && identity != null)
         {
-            icon.sprite = identity.playerIcon;
+            icon.sprite = identity.playerIconDialogue;
             nameText.text = identity.playerName;
         }
         else

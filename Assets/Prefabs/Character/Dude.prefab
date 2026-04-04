@@ -236,6 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
+  health: {fileID: 0}
+  identity: {fileID: 0}
 --- !u!114 &-189699851621569180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,7 +348,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Dude
-  playerIcon: {fileID: 21300000, guid: 592341db6996ec34bb6bb9725563e1d6, type: 3}
+  playerIconDialogue: {fileID: 21300000, guid: 592341db6996ec34bb6bb9725563e1d6, type: 3}
+  playerIconGame: {fileID: 21300000, guid: 034ace567197d96418b05b5cd4d59da4, type: 3}
 --- !u!1 &8682379724556579834
 GameObject:
   m_ObjectHideFlags: 0

@@ -205,6 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
+  health: {fileID: 0}
+  identity: {fileID: 0}
 --- !u!114 &-8643850182637981329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Pink
-  playerIcon: {fileID: 21300000, guid: ff0eb2bc3d922f743b9629ae98c9d8d5, type: 3}
+  playerIconDialogue: {fileID: 21300000, guid: ff0eb2bc3d922f743b9629ae98c9d8d5, type: 3}
+  playerIconGame: {fileID: 21300000, guid: bc8d6a8aec49e044698c75df9957fe91, type: 3}
 --- !u!1 &6170803951998558888
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ public class CharacterSelect : MonoBehaviour
 
     public void OnStartBtnClick()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void OnPrevBtnClick()

@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
 
     public TutorialDialogueUI tutorialDialogueUI;
 
+    public SaveSlotUI saveSlotUI;
+
     [Header("UI_Game_Active")]
     [SerializeField] private GameObject[] uiGames;
 
@@ -53,6 +55,8 @@ public class UIManager : MonoBehaviour
         controlUIManager = GetComponent<ControlUIManager>();
 
         tutorialDialogueUI = GetComponent<TutorialDialogueUI>();
+
+        saveSlotUI = GetComponent<SaveSlotUI>();
 
         uiDict = new Dictionary<UIType, GameObject>();
 
