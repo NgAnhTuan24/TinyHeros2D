@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
+    [SerializeField] private string sceneName = "Map1_1";
+
     public GameObject[] characters;
     public TextMeshProUGUI characterName;
     public GameObject[] characterPrefabs;
@@ -25,7 +27,7 @@ public class CharacterSelect : MonoBehaviour
 
     public void OnStartBtnClick()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void OnPrevBtnClick()

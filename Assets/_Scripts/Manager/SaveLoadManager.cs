@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SaveLoadManager : MonoBehaviour
 {
+    [SerializeField] private string sceneName = "SelectCharacter";
+
     public static int selectedSlot = -1;
 
     [SerializeField] private SaveSlotUI slot1;
@@ -10,8 +12,23 @@ public class SaveLoadManager : MonoBehaviour
 
     void Start()
     {
-        slot1.UpdateUI(null, null);
-        slot2.UpdateUI(null, null);
+        LoadSlotUI(0, slot1);
+        LoadSlotUI(1, slot2);
+    }
+
+    void LoadSlotUI(int slotIndex, SaveSlotUI slotUI)
+    {
+        GameData data = SaveSystem.Load(slotIndex);
+
+        if (data == null)
+        {
+            slotUI.UpdateUI(null, null);
+            return;
+        }
+
+        Sprite icon = CharacterData.instance.GetIcon(data.characterName);
+
+        slotUI.UpdateUI(data, icon);
     }
 
     public void SelectSlot(int slotIndex)
@@ -20,7 +37,16 @@ public class SaveLoadManager : MonoBehaviour
 
         Debug.Log("Chọn slot: " + slotIndex);
 
-        SceneManager.LoadScene(2);
+        GameData data = SaveSystem.Load(slotIndex);
+
+        if (data == null)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene(data.sceneName);
+        }
     }
 
     public void BackToMenu()
