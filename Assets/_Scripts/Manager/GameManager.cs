@@ -49,6 +49,6 @@ public class GameManager : MonoBehaviour
 
         SaveSystem.Save(data);
 
-        UIManager.instance.saveSlotUI.UpdateUI(data, PlayerController.instance.identity.playerIconGame);
+        UIManager.instance.saveSlotUI.UpdateUI(data, CharacterData.instance.GetIcon(data.characterName));
     }
 }
