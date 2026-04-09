@@ -6,6 +6,7 @@ public class Entry
 {
     public string name;
     public Sprite icon;
+    public GameObject prefab;
 }
 
 public class CharacterData : MonoBehaviour
@@ -14,31 +15,46 @@ public class CharacterData : MonoBehaviour
 
     public List<Entry> entries;
 
-    private Dictionary<string, Sprite> dict;
+    private Dictionary<string, Sprite> iconDict;
+    private Dictionary<string, GameObject> prefabDict;
 
     private void Awake()
     {
         instance = this;
 
-        dict = new Dictionary<string, Sprite>();
+        iconDict = new Dictionary<string, Sprite>();
+        prefabDict = new Dictionary<string, GameObject>();
 
         foreach (var e in entries)
         {
-            if (!dict.ContainsKey(e.name))
+            if (!iconDict.ContainsKey(e.name))
             {
-                dict.Add(e.name, e.icon);
+                iconDict.Add(e.name, e.icon);
+            }
+            if (!prefabDict.ContainsKey(e.name))
+            {
+                prefabDict.Add(e.name, e.prefab);
             }
         }
     }
 
     public Sprite GetIcon(string name)
     {
-        if (dict.TryGetValue(name, out Sprite icon))
+        if (iconDict.TryGetValue(name, out Sprite icon))
         {
             return icon;
         }
 
         Debug.LogWarning("Không tìm thấy icon cho: " + name);
+        return null;
+    }
+
+    public GameObject GetCharacterPrefab(string name)
+    {
+        if (prefabDict.TryGetValue(name, out var prefab))
+            return prefab;
+
+        Debug.LogError("Không tìm thấy character prefab: " + name);
         return null;
     }
 }

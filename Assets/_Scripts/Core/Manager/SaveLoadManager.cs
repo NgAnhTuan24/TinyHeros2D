@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SaveLoadManager : MonoBehaviour
 {
+    public static GameData currentData;
+
     [SerializeField] private string sceneName = "SelectCharacter";
 
     public static int selectedSlot = -1;
@@ -45,6 +47,7 @@ public class SaveLoadManager : MonoBehaviour
         }
         else
         {
+            currentData = data;
             SceneManager.LoadScene(data.sceneName);
         }
     }

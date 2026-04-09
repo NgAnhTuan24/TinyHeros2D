@@ -120,6 +120,15 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         Debug.Log("Player reset");
     }
 
+    public void SetHP(int current, int max)
+    {
+        maxHp = max;
+        hp = current;
+
+        heartUI.Init(maxHp);
+        heartUI.UpdateHearts(hp);
+    }
+
     private IEnumerator DamageRoutine(Transform damageSource)
     {
         knockback.GetKnockedBack(damageSource, 15f);
