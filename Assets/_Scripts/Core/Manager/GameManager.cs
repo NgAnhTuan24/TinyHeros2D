@@ -52,6 +52,9 @@ public class GameManager : MonoBehaviour
         float currentSession = Time.time - sessionStartTime;
         data.playTime = loadedPlayTime + currentSession;
 
+        data.checkpointScene = checkpointManager.checkpointScene;
+        data.checkpointPosition = checkpointManager.checkpointPosition;
+
         SaveSystem.Save(data, SaveLoadManager.selectedSlot);
 
         UIManager.instance.saveSlotUI.UpdateUI(data, CharacterData.instance.GetIcon(data.characterName));

@@ -15,28 +15,35 @@ public class Init : MonoBehaviour
 
     void Start()
     {
-        // đây là checkpoint nhưng chỉ set khi checkpoint rỗng - nên sửa lại (phù hợp cho new game không nên dùng cho load game)
-        if (GameManager.instance.checkpointManager != null && string.IsNullOrEmpty(GameManager.instance.checkpointManager.checkpointScene))
-        {
-            GameManager.instance.checkpointManager.SetCheckpoint(transform.position);
-        }
-
         GameData data = SaveLoadManager.currentData;
 
         if (PlayerController.instance == null)
         {
             GameObject prefab;
 
-            if (data != null)
+            if (data != null) //load game (continue game)
             {
                 prefab = CharacterData.instance.GetCharacterPrefab(data.characterName);
                 GameManager.instance.coinManager.SetCoin(data.coin);
                 GameManager.instance.SetLoadedPlayTime(data.playTime);
+
+                //load checkpoint
+                GameManager.instance.checkpointManager.checkpointScene = data.checkpointScene;
+                GameManager.instance.checkpointManager.checkpointPosition = data.checkpointPosition;
+
+
+                //Update the data saved to the UI
+                UIManager.instance.saveSlotUI.UpdateUI(data, CharacterData.instance.GetIcon(data.characterName));
             }
-            else
+            else //new game
             {
                 prefab = CharacterSelect.selectedCharacter;
                 GameManager.instance.SetLoadedPlayTime(0f);
+
+                if (GameManager.instance.checkpointManager != null && string.IsNullOrEmpty(GameManager.instance.checkpointManager.checkpointScene))
+                {
+                    GameManager.instance.checkpointManager.SetCheckpoint(transform.position);
+                }
             }
 
             Vector3 spawnPos = data != null ? data.playerPosition : transform.position;
@@ -58,14 +65,17 @@ public class Init : MonoBehaviour
             UIManager.instance.playerManager.RegisterPlayer(player);
         }
 
-        //StartCoroutine(AutoSave());
+        if (data == null)
+        {
+            StartCoroutine(AutoSave());
+        }
     }
 
-    //lưu dữ liệu khi vào gameplay (sau này sẽ bỏ đi)
-    //IEnumerator AutoSave()
-    //{
-    //    yield return null;
+    //Save data when entering the game
+    IEnumerator AutoSave()
+    {
+        yield return null; //Wait 1 second before saving
 
-    //    GameManager.instance.SaveGame();
-    //}
+        GameManager.instance.SaveGame();
+    }
 }

@@ -10,4 +10,8 @@ public class GameData
     public int playerMaxHP;
     public int coin;
     public float playTime;
+
+    [Header("Checkpoint Data")]
+    public string checkpointScene;
+    public Vector3 checkpointPosition;
 }
