@@ -8,5 +8,5 @@ public class GameData
     public Vector3 playerPosition;
     public int playerHP;
     public int playerMaxHP;
-    //public int coin;
+    public int coin;
 }

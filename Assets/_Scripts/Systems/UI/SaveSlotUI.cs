@@ -10,6 +10,10 @@ public class SaveSlotUI : MonoBehaviour
     [SerializeField] private TMP_Text charaterNameText;
     [Header("Hearts")]
     [SerializeField] private HeartUI heartUI;
+
+    [Header("Coins")]
+    [SerializeField] private TMP_Text coinText;
+
     [Header("Active Object")]
     [SerializeField] private GameObject content;
     [SerializeField] private GameObject noSaveObject;
@@ -30,6 +34,8 @@ public class SaveSlotUI : MonoBehaviour
 
         heartUI.Init(data.playerMaxHP);
         heartUI.UpdateHearts(data.playerHP);
+
+        coinText.text = data.coin.ToString();
     }
 
     private void ShowNoSave()

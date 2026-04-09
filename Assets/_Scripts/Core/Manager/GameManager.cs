@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         data.playerPosition = PlayerController.instance.transform.position;
         data.playerHP = PlayerController.instance.health.GetCurrentHP();
         data.playerMaxHP = PlayerController.instance.health.GetMaxHP();
-        //data.coin = coinManager.CurrentCoin;
+        data.coin = coinManager.CurrentCoin;
 
         SaveSystem.Save(data, SaveLoadManager.selectedSlot);
 

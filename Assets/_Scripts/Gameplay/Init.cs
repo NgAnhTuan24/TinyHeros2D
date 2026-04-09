@@ -30,6 +30,7 @@ public class Init : MonoBehaviour
             if (data != null)
             {
                 prefab = CharacterData.instance.GetCharacterPrefab(data.characterName);
+                GameManager.instance.coinManager.SetCoin(data.coin);
             }
             else
             {

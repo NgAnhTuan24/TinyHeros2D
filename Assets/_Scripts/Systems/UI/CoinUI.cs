@@ -7,9 +7,9 @@ public class CoinUI : MonoBehaviour
 
     void Start()
     {
-        UpdateUI(GameManager.instance.coinManager.CurrentCoin);
-
         GameManager.instance.coinManager.OnCoinChanged += UpdateUI;
+
+        UpdateUI(GameManager.instance.coinManager.CurrentCoin);
     }
 
     private void UpdateUI(int coin)
