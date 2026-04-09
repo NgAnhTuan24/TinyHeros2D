@@ -9,4 +9,5 @@ public class GameData
     public int playerHP;
     public int playerMaxHP;
     public int coin;
+    public float playTime;
 }

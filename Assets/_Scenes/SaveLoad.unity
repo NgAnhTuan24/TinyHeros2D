@@ -782,6 +782,7 @@ MonoBehaviour:
   charaterNameText: {fileID: 609822913}
   heartUI: {fileID: 270649980}
   coinText: {fileID: 230750740}
+  timeText: {fileID: 1700022146}
   content: {fileID: 1663299479}
   noSaveObject: {fileID: 112888864}
 --- !u!1 &270649978
@@ -1051,6 +1052,7 @@ MonoBehaviour:
   charaterNameText: {fileID: 766330725}
   heartUI: {fileID: 1478674694}
   coinText: {fileID: 914429410}
+  timeText: {fileID: 338391163}
   content: {fileID: 1700798230}
   noSaveObject: {fileID: 423632625}
 --- !u!1 &368894915

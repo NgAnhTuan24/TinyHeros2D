@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
 
     public CheckpointManager checkpointManager;
 
+    private float sessionStartTime;
+    private float loadedPlayTime;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -46,9 +49,17 @@ public class GameManager : MonoBehaviour
         data.playerHP = PlayerController.instance.health.GetCurrentHP();
         data.playerMaxHP = PlayerController.instance.health.GetMaxHP();
         data.coin = coinManager.CurrentCoin;
+        float currentSession = Time.time - sessionStartTime;
+        data.playTime = loadedPlayTime + currentSession;
 
         SaveSystem.Save(data, SaveLoadManager.selectedSlot);
 
         UIManager.instance.saveSlotUI.UpdateUI(data, CharacterData.instance.GetIcon(data.characterName));
+    }
+
+    public void SetLoadedPlayTime(float time)
+    {
+        loadedPlayTime = time;
+        sessionStartTime = Time.time;
     }
 }

@@ -15,11 +15,11 @@ public class Init : MonoBehaviour
 
     void Start()
     {
-        // đây là phần sẽ checkpoint khi vào game (hiện tại không dùng được) -> dẫn tới khi vào game ch có điểm check point player die thì không đc spawn lại
-        //if (GameManager.instance.checkpointManager != null && string.IsNullOrEmpty(GameManager.instance.checkpointManager.checkpointScene))
-        //{
-        //    GameManager.instance.checkpointManager.SetCheckpoint(transform.position);
-        //}
+        // đây là checkpoint nhưng chỉ set khi checkpoint rỗng - nên sửa lại (phù hợp cho new game không nên dùng cho load game)
+        if (GameManager.instance.checkpointManager != null && string.IsNullOrEmpty(GameManager.instance.checkpointManager.checkpointScene))
+        {
+            GameManager.instance.checkpointManager.SetCheckpoint(transform.position);
+        }
 
         GameData data = SaveLoadManager.currentData;
 
@@ -31,10 +31,12 @@ public class Init : MonoBehaviour
             {
                 prefab = CharacterData.instance.GetCharacterPrefab(data.characterName);
                 GameManager.instance.coinManager.SetCoin(data.coin);
+                GameManager.instance.SetLoadedPlayTime(data.playTime);
             }
             else
             {
                 prefab = CharacterSelect.selectedCharacter;
+                GameManager.instance.SetLoadedPlayTime(0f);
             }
 
             Vector3 spawnPos = data != null ? data.playerPosition : transform.position;
@@ -56,14 +58,14 @@ public class Init : MonoBehaviour
             UIManager.instance.playerManager.RegisterPlayer(player);
         }
 
-        StartCoroutine(AutoSave()); //....
+        //StartCoroutine(AutoSave());
     }
 
     //lưu dữ liệu khi vào gameplay (sau này sẽ bỏ đi)
-    IEnumerator AutoSave()
-    {
-        yield return null;
+    //IEnumerator AutoSave()
+    //{
+    //    yield return null;
 
-        GameManager.instance.SaveGame();
-    }
+    //    GameManager.instance.SaveGame();
+    //}
 }
