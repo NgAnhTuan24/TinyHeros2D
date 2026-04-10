@@ -31,6 +31,7 @@ public class Init : MonoBehaviour
                 GameManager.instance.checkpointManager.checkpointScene = data.checkpointScene;
                 GameManager.instance.checkpointManager.checkpointPosition = data.checkpointPosition;
 
+                GameManager.instance.dialogueStateManager.LoadFromData(data);
 
                 //Update the data saved to the UI
                 UIManager.instance.saveSlotUI.UpdateUI(data, CharacterData.instance.GetIcon(data.characterName));

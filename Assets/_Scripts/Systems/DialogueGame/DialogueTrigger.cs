@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    [Header("ID")]
+    [SerializeField] private string dialogueID;
+
     [Header("Dialogue_1")]
     [SerializeField] private DialogueLine[] lines;
 
@@ -17,25 +20,34 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private GameObject portalPrefab;
     [SerializeField] private Transform portalSpawnPoint;
 
-    private bool triggered = false;
+    //private bool triggered = false;
 
     bool enemyHandled = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (triggered) return;
+        //if (triggered) return;
 
         if (collision.CompareTag("Player"))
         {
-            triggered = true;
+            if (GameManager.instance.dialogueStateManager.IsTriggered(dialogueID)) return;
+
+            //triggered = true;
 
             if (spawnAfterDialogue)
             {
-                DialogueManager.Instance.StartDialogue(lines, SpawnEnemy);
+                DialogueManager.Instance.StartDialogue(lines, () =>
+                {
+                    GameManager.instance.dialogueStateManager.MarkTriggered(dialogueID);
+                    SpawnEnemy();
+                });
             }
             else
             {
-                DialogueManager.Instance.StartDialogue(lines);
+                DialogueManager.Instance.StartDialogue(lines, () =>
+                {
+                    GameManager.instance.dialogueStateManager.MarkTriggered(dialogueID);
+                });
             }
         }
     }

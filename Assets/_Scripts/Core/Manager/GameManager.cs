@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public CheckpointManager checkpointManager;
 
+    public DialogueStateManager dialogueStateManager;
+
     private float sessionStartTime;
     private float loadedPlayTime;
 
@@ -37,6 +39,8 @@ public class GameManager : MonoBehaviour
 
         checkpointManager = GetComponent<CheckpointManager>();
 
+        dialogueStateManager = GetComponent<DialogueStateManager>();
+
     }
 
     public void SaveGame()
@@ -54,6 +58,8 @@ public class GameManager : MonoBehaviour
 
         data.checkpointScene = checkpointManager.checkpointScene;
         data.checkpointPosition = checkpointManager.checkpointPosition;
+
+        dialogueStateManager.SaveToData(data);
 
         SaveSystem.Save(data, SaveLoadManager.selectedSlot);
 

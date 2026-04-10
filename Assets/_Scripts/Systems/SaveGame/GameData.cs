@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -14,4 +15,7 @@ public class GameData
     [Header("Checkpoint Data")]
     public string checkpointScene;
     public Vector3 checkpointPosition;
+
+    [Header("Dialogue Game Data")]
+    public List<string> triggeredDialogues = new List<string>();
 }
