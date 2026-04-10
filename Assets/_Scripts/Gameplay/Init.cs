@@ -32,6 +32,19 @@ public class Init : MonoBehaviour
                 GameManager.instance.checkpointManager.checkpointPosition = data.checkpointPosition;
 
                 GameManager.instance.dialogueStateManager.LoadFromData(data);
+                GameManager.instance.tutorialStateManager.LoadFromData(data);
+
+                // reload The UI button game
+                var tutorial = GameManager.instance.tutorialStateManager;
+
+                if (tutorial.jumpUnlocked)
+                    UIManager.instance.controlUIManager.ShowJump();
+
+                if (tutorial.attackUnlocked)
+                    UIManager.instance.controlUIManager.ShowAttack();
+
+                if (tutorial.throwUnlocked)
+                    UIManager.instance.controlUIManager.ShowThrow();
 
                 //Update the data saved to the UI
                 UIManager.instance.saveSlotUI.UpdateUI(data, CharacterData.instance.GetIcon(data.characterName));

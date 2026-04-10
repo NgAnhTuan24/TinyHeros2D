@@ -18,4 +18,9 @@ public class GameData
 
     [Header("Dialogue Game Data")]
     public List<string> triggeredDialogues = new List<string>();
+
+    [Header("Tutorial Flag Data")]
+    public bool jumpUnlocked;
+    public bool attackUnlocked;
+    public bool throwUnlocked;
 }

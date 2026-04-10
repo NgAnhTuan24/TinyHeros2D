@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1760645760959811159}
   - component: {fileID: 6620486462069481027}
   - component: {fileID: 545839372163097105}
+  - component: {fileID: 4239326039862670185}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -55,6 +56,7 @@ MonoBehaviour:
   coinManager: {fileID: 0}
   checkpointManager: {fileID: 0}
   dialogueStateManager: {fileID: 0}
+  tutorialStateManager: {fileID: 0}
 --- !u!114 &6765723204817597672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +132,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff133be8d8c87d4cac147dd3584b8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4239326039862670185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755803776471162811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1052d916dd1e97c4aae420a0008baf8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpUnlocked: 0
+  attackUnlocked: 0
+  throwUnlocked: 0

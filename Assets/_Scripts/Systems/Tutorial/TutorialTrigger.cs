@@ -14,16 +14,21 @@ public class TutorialTrigger : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
+        var manager = GameManager.instance.tutorialStateManager;
+
         switch(type)
         {
             case TutorialType.Jump:
                 UIManager.instance.controlUIManager.ShowJump();
+                manager.jumpUnlocked = true;
                 break;
             case TutorialType.Attack:
                 UIManager.instance.controlUIManager.ShowAttack();
+                manager.attackUnlocked = true;
                 break;
             case TutorialType.Throw:
                 UIManager.instance.controlUIManager.ShowThrow();
+                manager.throwUnlocked = true;
                 break;
         }
 
