@@ -96,6 +96,18 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         UIManager.instance.ShowDeathUI();
     }
 
+    public void InstantKill()
+    {
+        if (hp <= 0) return;
+
+        hp = 0;
+        heartUI.UpdateHearts(hp);
+
+        StopAllCoroutines();
+
+        Die();
+    }
+
     public void ResetPlayer()
     {
         hp = maxHp;
