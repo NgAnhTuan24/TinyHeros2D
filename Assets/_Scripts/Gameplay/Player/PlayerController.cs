@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
+            return;
         }
         else
         {

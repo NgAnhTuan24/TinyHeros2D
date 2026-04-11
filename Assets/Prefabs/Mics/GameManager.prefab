@@ -57,6 +57,7 @@ MonoBehaviour:
   checkpointManager: {fileID: 0}
   dialogueStateManager: {fileID: 0}
   tutorialStateManager: {fileID: 0}
+  gameplayeMusic: {fileID: 8300000, guid: d5a7ae3db8097e146aea57ac4f018e82, type: 3}
 --- !u!114 &6765723204817597672
 MonoBehaviour:
   m_ObjectHideFlags: 0

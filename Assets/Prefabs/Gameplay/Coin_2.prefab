@@ -284,3 +284,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 1
+  collectCoinSFX: {fileID: 8300000, guid: c3c3b7814ae0f71409bd0510f511f56f, type: 3}
