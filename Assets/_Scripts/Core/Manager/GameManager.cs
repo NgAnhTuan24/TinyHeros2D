@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public TutorialStateManager tutorialStateManager;
 
+    public ProjectileStatsManager projectileStatsManager;
+
     private float sessionStartTime;
     private float loadedPlayTime;
 
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
 
         tutorialStateManager = GetComponent<TutorialStateManager>();
 
+        projectileStatsManager = GetComponent<ProjectileStatsManager>();
     }
 
     public void SaveGame()

@@ -10,8 +10,7 @@ public class ComboHits : MonoBehaviour
     [SerializeField] private float maxComboDelay = 0;
 
     [Header("Damage")]
-    [SerializeField] private int minDmg = 1;
-    [SerializeField] private int maxDmg = 3;
+    [SerializeField] private int damage = 1;
     [SerializeField] private float critChance = .25f;
     [SerializeField] private float critMultiplier = 2f;
 
@@ -60,29 +59,29 @@ public class ComboHits : MonoBehaviour
 
     public void DealDamage()
     {
-        // Chỉ đánh gây sát thương được với 1 enemy -> cần mở rộng là gây lên nhiều quái 
-        Collider2D hit = Physics2D.OverlapCircle(
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
         attackPoint.position,
         attackRadius,
         enemyLayer
-        );
+    );
 
-        if (hit == null) return;
-
-        IDamageable damageable = hit.GetComponent<IDamageable>();
-
-        if (damageable != null)
+        foreach (Collider2D hit in hits)
         {
-            int dmg = Random.Range(minDmg, maxDmg + 1);
+            IDamageable damageable = hit.GetComponent<IDamageable>();
 
-            // crit
-            if (Random.value < critChance)
+            if (damageable != null)
             {
-                dmg = Mathf.RoundToInt(dmg * critMultiplier);
-                Debug.Log("CRIT: " + dmg);
-            }
+                int dmg = damage;
 
-            damageable.TakeDamage(dmg, transform);
+                // crit
+                if (Random.value < critChance)
+                {
+                    dmg = Mathf.RoundToInt(dmg * critMultiplier);
+                    Debug.Log("CRIT: " + dmg);
+                }
+
+                damageable.TakeDamage(dmg, transform);
+            }
         }
     }
 
@@ -104,6 +103,11 @@ public class ComboHits : MonoBehaviour
         anim.SetBool("Attack1", false);
         anim.SetBool("Attack2", false);
         noOfKeyPresses = 0;
+    }
+
+    public void AddDamage(float value)
+    {
+        damage += Mathf.RoundToInt(value);
     }
 
     private void OnDrawGizmosSelected()

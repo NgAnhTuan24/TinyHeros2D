@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6620486462069481027}
   - component: {fileID: 545839372163097105}
   - component: {fileID: 4239326039862670185}
+  - component: {fileID: 6538040614644938948}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -57,7 +58,7 @@ MonoBehaviour:
   checkpointManager: {fileID: 0}
   dialogueStateManager: {fileID: 0}
   tutorialStateManager: {fileID: 0}
-  gameplayeMusic: {fileID: 8300000, guid: d5a7ae3db8097e146aea57ac4f018e82, type: 3}
+  projectileStatsManager: {fileID: 0}
 --- !u!114 &6765723204817597672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,3 +149,15 @@ MonoBehaviour:
   jumpUnlocked: 0
   attackUnlocked: 0
   throwUnlocked: 0
+--- !u!114 &6538040614644938948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755803776471162811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535594b7934c52545b9243e0680627ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

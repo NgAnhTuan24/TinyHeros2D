@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 
     public PlayerHealth health;
 
+    public ComboHits hits;
+
     public PlayerIdentity identity;
 
     private void Awake()
@@ -27,6 +29,8 @@ public class PlayerController : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
 
         health = GetComponent<PlayerHealth>();
+
+        hits = GetComponent<ComboHits>();
 
         identity = GetComponent<PlayerIdentity>();
     }

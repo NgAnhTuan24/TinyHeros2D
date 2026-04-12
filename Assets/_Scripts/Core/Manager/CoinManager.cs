@@ -20,4 +20,14 @@ public class CoinManager : MonoBehaviour
 
         OnCoinChanged?.Invoke(CurrentCoin);
     }
+
+    public bool SpendCoin(int amount)
+    {
+        if (CurrentCoin < amount)
+            return false;
+
+        CurrentCoin -= amount;
+        OnCoinChanged?.Invoke(CurrentCoin);
+        return true;
+    }
 }

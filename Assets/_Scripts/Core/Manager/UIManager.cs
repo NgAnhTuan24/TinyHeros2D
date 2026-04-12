@@ -4,7 +4,9 @@ using UnityEngine;
 public enum UIType
 {
     None,
-    Save
+    Save,
+    Upgrade,
+    Item,
 }
 
 [System.Serializable]

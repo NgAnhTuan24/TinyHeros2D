@@ -10,7 +10,7 @@ public enum Team
 public class Projectile : MonoBehaviour
 {
     public int dmg = 1;
-    public float speed = 8f;
+    public float speed = 10f;
     public float lifeTime = 4f;
     public Team ownerTeam;
     private Rigidbody2D rb;
@@ -41,6 +41,12 @@ public class Projectile : MonoBehaviour
 
     public void Init(float dir)
     {
+        if (ownerTeam == Team.Player)
+        {
+            dmg += (int)GameManager.instance.projectileStatsManager.bonusDamage;
+            speed += GameManager.instance.projectileStatsManager.bonusSpeed;
+        }
+
         if (rb != null)
         {
             rb.velocity = Vector2.right * dir * speed;
