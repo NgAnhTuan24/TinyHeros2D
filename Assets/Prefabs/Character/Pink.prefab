@@ -206,6 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
   health: {fileID: 0}
+  hits: {fileID: 0}
   identity: {fileID: 0}
 --- !u!114 &-8643850182637981329
 MonoBehaviour:
@@ -223,6 +224,7 @@ MonoBehaviour:
   jumpForce: 16
   maxJumpCount: 2
   gravityScale: 5
+  doubleJumpEffectPrefab: {fileID: 2130170902186881109, guid: b4a9d4970d2fb7d4ba93fafee0a686c8, type: 3}
   dustRun: {fileID: 6127966936464932906}
   dustJump: {fileID: 8836591738307050604}
   isLocked: 0
@@ -245,8 +247,7 @@ MonoBehaviour:
     m_Bits: 256
   noOfKeyPresses: 0
   maxComboDelay: 0.7
-  minDmg: 1
-  maxDmg: 3
+  damage: 1
   critChance: 0.25
   critMultiplier: 2
 --- !u!114 &1379052931988623598

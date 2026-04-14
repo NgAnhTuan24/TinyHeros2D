@@ -5,7 +5,7 @@ public static class SaveSystem
 {
     private static string GetPath(int slot)
     {
-        return Application.persistentDataPath + "/save_" + slot + ".json";
+        return Path.Combine(Application.persistentDataPath, $"save_{slot}.json");
     }
 
     public static void Save(GameData data, int slot)

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyAttackState : EnemyBaseState
 {
-    private float attackCooldown = 1.5f;
+    private float attackCooldown = 1f;
     private float recoveryTime = .2f;
 
     private float timer;

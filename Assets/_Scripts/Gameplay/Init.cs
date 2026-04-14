@@ -88,7 +88,7 @@ public class Init : MonoBehaviour
     //Save data when entering the game
     IEnumerator AutoSave()
     {
-        yield return null; //Wait 1 second before saving
+        yield return null; //Wait 1 frame before saving
 
         GameManager.instance.SaveGame();
     }

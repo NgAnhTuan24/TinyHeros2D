@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int maxJumpCount = 2;
     [SerializeField] private float gravityScale = 5f;
 
+    [SerializeField] private GameObject doubleJumpEffectPrefab;
     [SerializeField] private ParticleSystem dustRun;
     [SerializeField] private ParticleSystem dustJump;
 
@@ -98,6 +99,10 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded)
         {
             dustJump.Play();
+        }
+        else
+        {
+            Instantiate(doubleJumpEffectPrefab, transform.position, Quaternion.identity);
         }
 
         rb.velocity = new Vector2(rb.velocity.x, 0);
