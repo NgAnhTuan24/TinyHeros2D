@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +19,9 @@ public class GameManager : MonoBehaviour
     public TutorialStateManager tutorialStateManager;
 
     public ProjectileStatsManager projectileStatsManager;
+
+    // Upgrade state data
+    public Dictionary<UpgradeType, int> upgradeLevels = new Dictionary<UpgradeType, int>();
 
     private float sessionStartTime;
     private float loadedPlayTime;
@@ -69,6 +73,17 @@ public class GameManager : MonoBehaviour
 
         dialogueStateManager.SaveToData(data);
         tutorialStateManager.SaveToData(data);
+
+        data.upgrades = new List<UpgradeSaveData>();
+
+        foreach (var kvp in upgradeLevels)
+        {
+            data.upgrades.Add(new UpgradeSaveData
+            {
+                type = kvp.Key,
+                level = kvp.Value
+            });
+        }
 
         SaveSystem.Save(data, SaveLoadManager.selectedSlot);
 

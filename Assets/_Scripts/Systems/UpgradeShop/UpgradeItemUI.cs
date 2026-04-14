@@ -11,12 +11,29 @@ public class UpgradeItemUI : MonoBehaviour
     public TextMeshProUGUI costText;
     public Button upgradeButton;
 
-    private int currentLevel = 0;
+    private int currentLevel;
 
     private void Start()
     {
+        LoadLevel();
+
+        for (int i = 0; i < currentLevel; i++)
+        {
+            ApplyUpgradeAtLevel(i);
+        }
+
         RefreshUI();
         upgradeButton.onClick.AddListener(OnUpgradeClicked);
+    }
+
+    void LoadLevel()
+    {
+        var dict = GameManager.instance.upgradeLevels;
+
+        if (dict.ContainsKey(data.type))
+            currentLevel = dict[data.type];
+        else
+            currentLevel = 0;
     }
 
     void RefreshUI()
@@ -50,6 +67,9 @@ public class UpgradeItemUI : MonoBehaviour
         if (GameManager.instance.coinManager.SpendCoin(cost))
         {
             currentLevel++;
+
+            GameManager.instance.upgradeLevels[data.type] = currentLevel;
+
             ApplyUpgrade();
             RefreshUI();
         }
@@ -61,7 +81,12 @@ public class UpgradeItemUI : MonoBehaviour
 
     void ApplyUpgrade()
     {
-        float value = data.values[currentLevel - 1];
+        ApplyUpgradeAtLevel(currentLevel - 1);
+    }
+
+    void ApplyUpgradeAtLevel(int levelIndex)
+    {
+        float value = data.values[levelIndex];
 
         switch (data.type)
         {
