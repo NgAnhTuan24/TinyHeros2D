@@ -184,6 +184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 1
-  speed: 8
-  lifeTime: 4
+  speed: 10
+  lifeTime: 3
   ownerTeam: 2

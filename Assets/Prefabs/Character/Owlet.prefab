@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 8740907180456331205}
   - component: {fileID: 7847793239730155983}
   - component: {fileID: 7429434455134659688}
+  - component: {fileID: 1411130774197871513}
   m_Layer: 7
   m_Name: Owlet
   m_TagString: Player
@@ -265,6 +266,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 461412c1e06f33b43ac995de6661de40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 0}
+  health: {fileID: 0}
+  identity: {fileID: 0}
 --- !u!114 &-3862174233643111362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +287,7 @@ MonoBehaviour:
   gravityScale: 5
   dustRun: {fileID: 3594827669277377393}
   dustJump: {fileID: 6026770366804282362}
+  isLocked: 0
 --- !u!114 &-7577404974551556252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2109904548637315635, guid: b79a00da0a3b9c641bc90627e9e6614e, type: 3}
-  projectileSpeed: 8
   point: {fileID: 5971041672087994818}
 --- !u!114 &8740907180456331205
 MonoBehaviour:
@@ -362,6 +366,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockBackTime: 0.2
+--- !u!114 &1411130774197871513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791180543132582722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430d990e9250ddb4fa1c4d5c9cfdf254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: Owlet
+  playerIconDialogue: {fileID: 21300000, guid: e77b26e81f638d648903ead42784cc26, type: 3}
+  playerIconGame: {fileID: 21300000, guid: e86839c92d8ae3c49b24e71bb05a882e, type: 3}
 --- !u!1001 &4900590681300778818
 PrefabInstance:
   m_ObjectHideFlags: 0
