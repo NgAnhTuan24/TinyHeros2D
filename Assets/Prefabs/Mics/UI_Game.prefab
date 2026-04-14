@@ -1098,6 +1098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5242998197862897995}
+  - component: {fileID: 7107163727506397315}
   m_Layer: 5
   m_Name: Setting
   m_TagString: Untagged
@@ -1126,6 +1127,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7107163727506397315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154998311625355110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f2c0741d5ff334890e62981120ba21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 359a7385d8c6e394eb59cbd108c5bfbd, type: 3}
 --- !u!1 &1199420856119466295
 GameObject:
   m_ObjectHideFlags: 0
@@ -6027,6 +6041,7 @@ GameObject:
   - component: {fileID: 1534978856882661382}
   - component: {fileID: 8940981205462434729}
   - component: {fileID: 613587018576516842}
+  - component: {fileID: 3743669741122691702}
   m_Layer: 5
   m_Name: UI_SavePoint
   m_TagString: Untagged
@@ -6121,6 +6136,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd8e4d91367abe44a8a698c0c992ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3743669741122691702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4791232971926116794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f2c0741d5ff334890e62981120ba21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 359a7385d8c6e394eb59cbd108c5bfbd, type: 3}
 --- !u!1 &4985347574368180069
 GameObject:
   m_ObjectHideFlags: 0
@@ -7668,6 +7696,7 @@ GameObject:
   - component: {fileID: 3649567668255996418}
   - component: {fileID: 9175837576338670163}
   - component: {fileID: 4570292697909285652}
+  - component: {fileID: 1126828139335308485}
   m_Layer: 5
   m_Name: UI_Upgrade
   m_TagString: Untagged
@@ -7749,6 +7778,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiType: 2
+--- !u!114 &1126828139335308485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442383792270119330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f2c0741d5ff334890e62981120ba21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 359a7385d8c6e394eb59cbd108c5bfbd, type: 3}
 --- !u!1 &6462858400412818324
 GameObject:
   m_ObjectHideFlags: 0
@@ -8733,6 +8775,7 @@ GameObject:
   - component: {fileID: 352570335817163253}
   - component: {fileID: 6436275970402796340}
   - component: {fileID: 5503354958312324890}
+  - component: {fileID: 7089730629759439925}
   m_Layer: 5
   m_Name: YouDiedUI
   m_TagString: Untagged
@@ -8799,6 +8842,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7089730629759439925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7949411161139354838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f2c0741d5ff334890e62981120ba21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 359a7385d8c6e394eb59cbd108c5bfbd, type: 3}
 --- !u!1 &8018963732762043159
 GameObject:
   m_ObjectHideFlags: 0
