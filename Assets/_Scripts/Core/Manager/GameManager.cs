@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public CheckpointManager checkpointManager;
 
+    public DialogueManager dialogueManager;
+
     public DialogueStateManager dialogueStateManager;
 
     public TutorialStateManager tutorialStateManager;
@@ -47,6 +49,8 @@ public class GameManager : MonoBehaviour
         coinManager = GetComponent<CoinManager>();
 
         checkpointManager = GetComponent<CheckpointManager>();
+
+        dialogueManager = GetComponent<DialogueManager>();
 
         dialogueStateManager = GetComponent<DialogueStateManager>();
 

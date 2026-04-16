@@ -3318,6 +3318,7 @@ GameObject:
   - component: {fileID: 4919182982208007663}
   - component: {fileID: 2377411181732716957}
   - component: {fileID: 5407992383541811248}
+  - component: {fileID: 1457296429170808391}
   - component: {fileID: 6610540389154094358}
   m_Layer: 5
   m_Name: UI_Game
@@ -3433,6 +3434,7 @@ MonoBehaviour:
   playerManager: {fileID: 0}
   controlUIManager: {fileID: 0}
   tutorialDialogueUI: {fileID: 0}
+  dialogueUI: {fileID: 0}
   saveSlotUI: {fileID: 0}
   uiGames:
   - {fileID: 2784540306568439866}
@@ -3494,6 +3496,29 @@ MonoBehaviour:
   icon1: {fileID: 3277966805324814904}
   icon2: {fileID: 4201418476822889562}
   text: {fileID: 7091927345977413547}
+--- !u!114 &1457296429170808391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789040322203875686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11c58b8abc384d346b4601732c8d30da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 839165695096792065}
+  icon: {fileID: 1546582483786880533}
+  nameText: {fileID: 8559072342676649814}
+  dialogueText: {fileID: 5947936123158791380}
+  otherUI:
+  - {fileID: 2784540306568439866}
+  - {fileID: 8808445504270253900}
+  - {fileID: 7007491898259826181}
+  - {fileID: 1154998311625355110}
+  - {fileID: 1199420856119466295}
+  typingSpeed: 0.02
 --- !u!114 &6610540389154094358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5636,7 +5661,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1229568941123701}
-  - component: {fileID: 686356476338484657}
   m_Layer: 5
   m_Name: DialogueGame
   m_TagString: Untagged
@@ -5664,29 +5688,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2108, y: 984}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &686356476338484657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4684716932558210699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea03459f3e809b489a3ee6ad496546e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 839165695096792065}
-  icon: {fileID: 1546582483786880533}
-  nameText: {fileID: 8559072342676649814}
-  dialogueText: {fileID: 5947936123158791380}
-  otherUI:
-  - {fileID: 2784540306568439866}
-  - {fileID: 8808445504270253900}
-  - {fileID: 7007491898259826181}
-  - {fileID: 1154998311625355110}
-  - {fileID: 1199420856119466295}
-  typingSpeed: 0.05
 --- !u!1 &4736199612264212132
 GameObject:
   m_ObjectHideFlags: 0
@@ -6016,7 +6017,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 686356476338484657}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: Next
         m_Mode: 1

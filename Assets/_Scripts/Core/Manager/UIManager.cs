@@ -26,6 +26,8 @@ public class UIManager : MonoBehaviour
 
     public TutorialDialogueUI tutorialDialogueUI;
 
+    public DialogueUI dialogueUI;
+
     public SaveSlotUI saveSlotUI;
 
     [Header("UI_Game_Active")]
@@ -58,6 +60,8 @@ public class UIManager : MonoBehaviour
         controlUIManager = GetComponent<ControlUIManager>();
 
         tutorialDialogueUI = GetComponent<TutorialDialogueUI>();
+
+        dialogueUI = GetComponent<DialogueUI>();
 
         saveSlotUI = GetComponent<SaveSlotUI>();
 
