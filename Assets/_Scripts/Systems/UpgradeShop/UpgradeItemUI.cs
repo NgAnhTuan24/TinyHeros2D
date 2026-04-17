@@ -32,6 +32,16 @@ public class UpgradeItemUI : MonoBehaviour
 
     void RefreshUI()
     {
+        bool isUnlocked = GameManager.instance.IsUpgradeUnlocked(data.type);
+        if (!isUnlocked)
+        {
+            levelText.text = "Locked";
+            valueText.text = "???";
+            costText.text = "Unlock via tutorial";
+            upgradeButton.interactable = false;
+            return;
+        }
+
         if (currentLevel >= data.maxLevel)
         {
             levelText.text = "Lv: MAX";
@@ -54,6 +64,9 @@ public class UpgradeItemUI : MonoBehaviour
 
     void OnUpgradeClicked()
     {
+        if (!GameManager.instance.IsUpgradeUnlocked(data.type))
+            return;
+
         if (currentLevel >= data.maxLevel) return;
 
         int cost = data.prices[currentLevel];

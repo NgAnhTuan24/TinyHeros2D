@@ -135,4 +135,22 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+
+    public bool IsUpgradeUnlocked(UpgradeType type)
+    {
+        var tutorial = tutorialStateManager;
+
+        switch (type)
+        {
+            case UpgradeType.Damage:
+                return tutorial.attackUnlocked;
+
+            case UpgradeType.ProjectileDamage:
+            case UpgradeType.ProjectileSpeed:
+                return tutorial.throwUnlocked;
+
+            default:
+                return true;
+        }
+    }
 }
