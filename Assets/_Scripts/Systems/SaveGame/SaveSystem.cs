@@ -30,4 +30,19 @@ public static class SaveSystem
 
         return data;
     }
+
+    public static void Delete(int slot)
+    {
+        string path = GetPath(slot);
+
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+            Debug.Log("Deleted slot " + slot);
+        }
+        else
+        {
+            Debug.Log("Slot " + slot + " không tồn tại");
+        }
+    }
 }
