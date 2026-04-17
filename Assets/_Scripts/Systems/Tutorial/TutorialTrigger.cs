@@ -21,14 +21,17 @@ public class TutorialTrigger : MonoBehaviour
             case TutorialType.Jump:
                 UIManager.instance.controlUIManager.ShowJump();
                 manager.jumpUnlocked = true;
+                UIManager.instance.RefreshUpgradeUI();
                 break;
             case TutorialType.Attack:
                 UIManager.instance.controlUIManager.ShowAttack();
                 manager.attackUnlocked = true;
+                UIManager.instance.RefreshUpgradeUI();
                 break;
             case TutorialType.Throw:
                 UIManager.instance.controlUIManager.ShowThrow();
                 manager.throwUnlocked = true;
+                UIManager.instance.RefreshUpgradeUI();
                 break;
         }
 

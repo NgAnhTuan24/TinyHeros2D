@@ -30,7 +30,7 @@ public class UpgradeItemUI : MonoBehaviour
             currentLevel = 0;
     }
 
-    void RefreshUI()
+    public void RefreshUI()
     {
         bool isUnlocked = GameManager.instance.IsUpgradeUnlocked(data.type);
         if (!isUnlocked)

@@ -3449,6 +3449,10 @@ MonoBehaviour:
     uiObject: {fileID: 4791232971926116794}
   - type: 2
     uiObject: {fileID: 6442383792270119330}
+  upgradeItems:
+  - {fileID: 6914907070129714273}
+  - {fileID: 970197737575262128}
+  - {fileID: 6674948358516593191}
 --- !u!114 &4919182982208007663
 MonoBehaviour:
   m_ObjectHideFlags: 0

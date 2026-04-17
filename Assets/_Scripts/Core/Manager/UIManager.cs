@@ -39,6 +39,9 @@ public class UIManager : MonoBehaviour
     [Header("List UI Entry")]
     [SerializeField] private List<UIEntry> uiList;
 
+    [Header("List UI Item Upgrade")]
+    public UpgradeItemUI[] upgradeItems;
+
     private Dictionary<UIType, GameObject> uiDict;
 
     private void Awake()
@@ -117,6 +120,14 @@ public class UIManager : MonoBehaviour
             SetUIActive(true);
 
             Time.timeScale = 1f;
+        }
+    }
+
+    public void RefreshUpgradeUI()
+    {
+        foreach (var item in upgradeItems)
+        {
+            item.RefreshUI();
         }
     }
 }

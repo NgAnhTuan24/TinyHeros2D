@@ -32,6 +32,13 @@ public class ControlUIManager : MonoBehaviour
 
     public void HideInteractButton(IInteractable interactable)
     {
+        if (interactable == null || currentInteractable == null)
+        {
+            interactButton.SetActive(false);
+            currentInteractable = null;
+            return;
+        }
+
         if (currentInteractable == interactable)
         {
             interactButton.SetActive(false);
