@@ -16,12 +16,6 @@ public class UpgradeItemUI : MonoBehaviour
     private void Start()
     {
         LoadLevel();
-
-        for (int i = 0; i < currentLevel; i++)
-        {
-            ApplyUpgradeAtLevel(i);
-        }
-
         RefreshUI();
         upgradeButton.onClick.AddListener(OnUpgradeClicked);
     }

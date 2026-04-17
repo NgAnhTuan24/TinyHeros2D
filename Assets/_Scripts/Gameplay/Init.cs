@@ -87,6 +87,8 @@ public class Init : MonoBehaviour
                 health.SetHP(data.playerHP, data.playerMaxHP);
             }
 
+            GameManager.instance.ApplyAllUpgrades();
+
             UIManager.instance.playerManager.RegisterPlayer(player);
         }
 

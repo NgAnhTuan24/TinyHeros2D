@@ -99,4 +99,40 @@ public class GameManager : MonoBehaviour
         loadedPlayTime = time;
         sessionStartTime = Time.time;
     }
+
+    public void ApplyAllUpgrades()
+    {
+        foreach (var kvp in upgradeLevels)
+        {
+            UpgradeType type = kvp.Key;
+            int level = kvp.Value;
+
+            for (int i = 0; i < level; i++)
+            {
+                ApplyUpgrade(type, i);
+            }
+        }
+    }
+
+    private void ApplyUpgrade(UpgradeType type, int levelIndex)
+    {
+        UpgradeData data = UpgradeDatabase.instance.GetData(type);
+
+        float value = data.values[levelIndex];
+
+        switch (type)
+        {
+            case UpgradeType.Damage:
+                PlayerController.instance.hits.AddDamage(value);
+                break;
+
+            case UpgradeType.ProjectileDamage:
+                projectileStatsManager.AddDamage(value);
+                break;
+
+            case UpgradeType.ProjectileSpeed:
+                projectileStatsManager.AddSpeed(value);
+                break;
+        }
+    }
 }
