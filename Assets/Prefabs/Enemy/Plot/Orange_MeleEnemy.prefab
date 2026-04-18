@@ -268,6 +268,7 @@ MonoBehaviour:
   maxHealth: 3
   knockbackThrust: 10
   deathVFX: {fileID: 1551652072768891484, guid: dd029c1154cc80f4db1963a45b754436, type: 3}
+  hurtSFX: {fileID: 8300000, guid: 4bebc42d41eea0a4b8bbb8c38f8636c6, type: 3}
 --- !u!114 &7584996730588513895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,8 +311,8 @@ MonoBehaviour:
   coinPrefab: {fileID: 6651977575895760230, guid: 5ce2672aa19ea4e46817b734ab8deeb4, type: 3}
   coin: 3
   useRandom: 0
-  minCoin: 3
-  maxCoin: 5
+  minCoin: 0
+  maxCoin: 0
   force: 5
 --- !u!1 &7559893162502467419
 GameObject:

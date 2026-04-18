@@ -9,6 +9,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private float invincibleTime = .8f;
     private bool isInvincible;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip hurtSFX;
+    [SerializeField] private AudioClip deathSFX;
+
     Knockback knockback;
     Flash flash;
     SpriteRenderer sprite;
@@ -56,6 +60,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (isInvincible) return;
 
         isInvincible = true;
+        
+        AudioManager.instance.PlaySFX(hurtSFX);
 
         hp -= damage;
         hp = Mathf.Clamp(hp, 0, maxHp);
@@ -76,6 +82,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     void Die()
     {
         Debug.Log("Player đã chết");
+
+        AudioManager.instance.PlaySFX(deathSFX);
 
         if (!rb.simulated) return;
 

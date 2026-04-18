@@ -258,6 +258,8 @@ MonoBehaviour:
   doubleJumpEffectPrefab: {fileID: 2130170902186881109, guid: b4a9d4970d2fb7d4ba93fafee0a686c8, type: 3}
   dustRun: {fileID: 8036065722127105952}
   dustJump: {fileID: 2661825233556908925}
+  jumpSFX: {fileID: 8300000, guid: d713c554aba56d148b2ac69f65cda68c, type: 3}
+  doubleJumpSFX: {fileID: 8300000, guid: 5323adb0f4bc31840ae675104d2ab057, type: 3}
   isLocked: 0
 --- !u!114 &3914281933087109908
 MonoBehaviour:
@@ -281,6 +283,7 @@ MonoBehaviour:
   damage: 1
   critChance: 0.25
   critMultiplier: 2
+  punchSFX: {fileID: 8300000, guid: a7563df9fa74d63418642a93bb08c81d, type: 3}
 --- !u!114 &5563224348452628526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2109904548637315635, guid: b79a00da0a3b9c641bc90627e9e6614e, type: 3}
   point: {fileID: 5952869744337689652}
+  throwSFX: {fileID: 8300000, guid: 798b8a245c13ea14f87d843a13d315e4, type: 3}
 --- !u!114 &8243623661207053018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +313,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 3
   invincibleTime: 0.8
+  hurtSFX: {fileID: 8300000, guid: 4bebc42d41eea0a4b8bbb8c38f8636c6, type: 3}
+  deathSFX: {fileID: 8300000, guid: ccc150a913ee4574a8a7265d6ee8e207, type: 3}
 --- !u!114 &7514934699160986747
 MonoBehaviour:
   m_ObjectHideFlags: 0

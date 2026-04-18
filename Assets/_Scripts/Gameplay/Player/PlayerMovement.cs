@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private ParticleSystem dustRun;
     [SerializeField] private ParticleSystem dustJump;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip jumpSFX;
+    [SerializeField] private AudioClip doubleJumpSFX;
+
     private Rigidbody2D rb;
     private Animator anim;
     private BoxCollider2D boxCol2D;
@@ -98,10 +102,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
+            AudioManager.instance.PlaySFX(jumpSFX);
             dustJump.Play();
         }
         else
         {
+            AudioManager.instance.PlaySFX(doubleJumpSFX);
             Instantiate(doubleJumpEffectPrefab, transform.position, Quaternion.identity);
         }
 
