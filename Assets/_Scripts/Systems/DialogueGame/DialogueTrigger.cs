@@ -20,19 +20,19 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private GameObject portalPrefab;
     [SerializeField] private Transform portalSpawnPoint;
 
-    //private bool triggered = false;
+    private bool triggered = false;
 
     bool enemyHandled = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (triggered) return;
+        if (triggered) return;
 
         if (collision.CompareTag("Player"))
         {
             if (GameManager.instance.dialogueStateManager.IsTriggered(dialogueID)) return;
 
-            //triggered = true;
+            triggered = true;
 
             if (spawnAfterDialogue)
             {
