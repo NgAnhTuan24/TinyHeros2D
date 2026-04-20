@@ -38,7 +38,7 @@ public class DialogueTrigger : MonoBehaviour
             {
                 GameManager.instance.dialogueManager.StartDialogue(lines, () =>
                 {
-                    GameManager.instance.dialogueStateManager.MarkTriggered(dialogueID);
+                    //GameManager.instance.dialogueStateManager.MarkTriggered(dialogueID);
                     SpawnEnemy();
                 });
             }
@@ -91,5 +91,7 @@ public class DialogueTrigger : MonoBehaviour
         if (portalPrefab == null || portalSpawnPoint == null) return;
 
         Instantiate(portalPrefab, portalSpawnPoint.position, Quaternion.identity);
+
+        GameManager.instance.dialogueStateManager.MarkTriggered(dialogueID);
     }
 }
