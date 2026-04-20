@@ -34,6 +34,8 @@ public class ControlUIManager : MonoBehaviour
     {
         if (interactable == null || currentInteractable == null)
         {
+            interactButton.SetActive(false);
+            currentInteractable = null;
             return;
         }
 
