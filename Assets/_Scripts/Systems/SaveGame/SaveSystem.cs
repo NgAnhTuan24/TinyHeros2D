@@ -5,7 +5,7 @@ public static class SaveSystem
 {
     private static string GetPath(int slot)
     {
-        return Application.persistentDataPath + "/save_" + slot + ".json";
+        return Path.Combine(Application.persistentDataPath, $"save_{slot}.json");
     }
 
     public static void Save(GameData data, int slot)
@@ -29,5 +29,20 @@ public static class SaveSystem
         GameData data = JsonUtility.FromJson<GameData>(json);
 
         return data;
+    }
+
+    public static void Delete(int slot)
+    {
+        string path = GetPath(slot);
+
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+            Debug.Log("Deleted slot " + slot);
+        }
+        else
+        {
+            Debug.Log("Slot " + slot + " không tồn tại");
+        }
     }
 }

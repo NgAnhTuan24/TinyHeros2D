@@ -19,6 +19,11 @@ public class SaveSlotUI : MonoBehaviour
     [SerializeField] private GameObject content;
     [SerializeField] private GameObject noSaveObject;
 
+    [Header("DeleteMode")]
+    [SerializeField] private GameObject deleteMode;
+
+    #region Update UI Real Time
+
     public void UpdateUI(GameData data, Sprite characterIcon)
     {
         if (data == null)
@@ -40,11 +45,15 @@ public class SaveSlotUI : MonoBehaviour
         timeText.text = FormatTime(data.playTime);
     }
 
+    #endregion
+
     private void ShowNoSave()
     {
         content.SetActive(false);
         noSaveObject.SetActive(true);
     }
+
+    #region Helper
 
     private string FormatTime(float time)
     {
@@ -54,4 +63,18 @@ public class SaveSlotUI : MonoBehaviour
 
         return $"{hours:00}:{minutes:00}:{seconds:00}";
     }
+
+    #endregion
+
+    #region DeleteMode
+
+    public void SetDeleteMode(bool isDelete)
+    {
+        if (deleteMode != null)
+        {
+            deleteMode.SetActive(isDelete);
+        }
+    }
+
+    #endregion
 }

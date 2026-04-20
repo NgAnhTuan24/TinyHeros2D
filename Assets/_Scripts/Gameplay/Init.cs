@@ -46,6 +46,17 @@ public class Init : MonoBehaviour
                 if (tutorial.throwUnlocked)
                     UIManager.instance.controlUIManager.ShowThrow();
 
+                // load upgrade data
+                if (data.upgrades != null)
+                {
+                    GameManager.instance.upgradeLevels.Clear();
+
+                    foreach (var u in data.upgrades)
+                    {
+                        GameManager.instance.upgradeLevels[u.type] = u.level;
+                    }
+                }
+
                 //Update the data saved to the UI
                 UIManager.instance.saveSlotUI.UpdateUI(data, CharacterData.instance.GetIcon(data.characterName));
             }
@@ -76,6 +87,8 @@ public class Init : MonoBehaviour
                 health.SetHP(data.playerHP, data.playerMaxHP);
             }
 
+            GameManager.instance.ApplyAllUpgrades();
+
             UIManager.instance.playerManager.RegisterPlayer(player);
         }
 
@@ -88,8 +101,10 @@ public class Init : MonoBehaviour
     //Save data when entering the game
     IEnumerator AutoSave()
     {
-        yield return null; //Wait 1 second before saving
+        yield return null; //Wait 1 frame before saving
 
         GameManager.instance.SaveGame();
+
+        SaveLoadManager.currentData = SaveSystem.Load(SaveLoadManager.selectedSlot);
     }
 }

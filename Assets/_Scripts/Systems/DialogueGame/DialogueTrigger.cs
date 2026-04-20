@@ -36,15 +36,15 @@ public class DialogueTrigger : MonoBehaviour
 
             if (spawnAfterDialogue)
             {
-                DialogueManager.Instance.StartDialogue(lines, () =>
+                GameManager.instance.dialogueManager.StartDialogue(lines, () =>
                 {
-                    GameManager.instance.dialogueStateManager.MarkTriggered(dialogueID);
+                    //GameManager.instance.dialogueStateManager.MarkTriggered(dialogueID);
                     SpawnEnemy();
                 });
             }
             else
             {
-                DialogueManager.Instance.StartDialogue(lines, () =>
+                GameManager.instance.dialogueManager.StartDialogue(lines, () =>
                 {
                     GameManager.instance.dialogueStateManager.MarkTriggered(dialogueID);
                 });
@@ -82,7 +82,7 @@ public class DialogueTrigger : MonoBehaviour
 
         if (afterBattleLines != null && afterBattleLines.Length > 0)
         {
-            DialogueManager.Instance.StartDialogue(afterBattleLines, SpawnPortal);
+            GameManager.instance.dialogueManager.StartDialogue(afterBattleLines, SpawnPortal);
         }
     }
 
@@ -91,5 +91,7 @@ public class DialogueTrigger : MonoBehaviour
         if (portalPrefab == null || portalSpawnPoint == null) return;
 
         Instantiate(portalPrefab, portalSpawnPoint.position, Quaternion.identity);
+
+        GameManager.instance.dialogueStateManager.MarkTriggered(dialogueID);
     }
 }

@@ -23,4 +23,14 @@ public class GameData
     public bool jumpUnlocked;
     public bool attackUnlocked;
     public bool throwUnlocked;
+
+    [Header("Upgrade Data")]
+    public List<UpgradeSaveData> upgrades;
+}
+
+[System.Serializable]
+public class UpgradeSaveData
+{
+    public UpgradeType type;
+    public int level;
 }

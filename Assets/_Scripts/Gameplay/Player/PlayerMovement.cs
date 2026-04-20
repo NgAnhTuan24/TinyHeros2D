@@ -8,8 +8,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int maxJumpCount = 2;
     [SerializeField] private float gravityScale = 5f;
 
+    [SerializeField] private GameObject doubleJumpEffectPrefab;
     [SerializeField] private ParticleSystem dustRun;
     [SerializeField] private ParticleSystem dustJump;
+
+    [Header("SFX")]
+    [SerializeField] private AudioClip jumpSFX;
+    [SerializeField] private AudioClip doubleJumpSFX;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -97,7 +102,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
+            AudioManager.instance.PlaySFX(jumpSFX);
             dustJump.Play();
+        }
+        else
+        {
+            AudioManager.instance.PlaySFX(doubleJumpSFX);
+            Instantiate(doubleJumpEffectPrefab, transform.position, Quaternion.identity);
         }
 
         rb.velocity = new Vector2(rb.velocity.x, 0);

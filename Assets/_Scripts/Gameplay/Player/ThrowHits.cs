@@ -5,6 +5,8 @@ public class ThrowHits : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform point;
 
+    [SerializeField] private AudioClip throwSFX;
+
     Animator anim;
 
     void Start()
@@ -24,6 +26,12 @@ public class ThrowHits : MonoBehaviour
     public void ThrowButton()
     {
         anim.SetBool("IsThrow", true);
+        //AudioManager.instance.PlaySFX(throwSFX);
+    }
+
+    public void PlayThrowSFX()
+    {
+        AudioManager.instance.PlaySFX(throwSFX);
     }
 
     public void GoToBackIdle()

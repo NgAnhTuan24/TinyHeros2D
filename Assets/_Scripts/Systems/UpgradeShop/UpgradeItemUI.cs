@@ -11,16 +11,37 @@ public class UpgradeItemUI : MonoBehaviour
     public TextMeshProUGUI costText;
     public Button upgradeButton;
 
-    private int currentLevel = 0;
+    private int currentLevel;
 
     private void Start()
     {
+        LoadLevel();
         RefreshUI();
         upgradeButton.onClick.AddListener(OnUpgradeClicked);
     }
 
-    void RefreshUI()
+    void LoadLevel()
     {
+        var dict = GameManager.instance.upgradeLevels;
+
+        if (dict.ContainsKey(data.type))
+            currentLevel = dict[data.type];
+        else
+            currentLevel = 0;
+    }
+
+    public void RefreshUI()
+    {
+        bool isUnlocked = GameManager.instance.IsUpgradeUnlocked(data.type);
+        if (!isUnlocked)
+        {
+            levelText.text = "Locked";
+            valueText.text = "???";
+            costText.text = "Unlock via tutorial";
+            upgradeButton.interactable = false;
+            return;
+        }
+
         if (currentLevel >= data.maxLevel)
         {
             levelText.text = "Lv: MAX";
@@ -43,6 +64,9 @@ public class UpgradeItemUI : MonoBehaviour
 
     void OnUpgradeClicked()
     {
+        if (!GameManager.instance.IsUpgradeUnlocked(data.type))
+            return;
+
         if (currentLevel >= data.maxLevel) return;
 
         int cost = data.prices[currentLevel];
@@ -50,6 +74,9 @@ public class UpgradeItemUI : MonoBehaviour
         if (GameManager.instance.coinManager.SpendCoin(cost))
         {
             currentLevel++;
+
+            GameManager.instance.upgradeLevels[data.type] = currentLevel;
+
             ApplyUpgrade();
             RefreshUI();
         }
@@ -61,7 +88,12 @@ public class UpgradeItemUI : MonoBehaviour
 
     void ApplyUpgrade()
     {
-        float value = data.values[currentLevel - 1];
+        ApplyUpgradeAtLevel(currentLevel - 1);
+    }
+
+    void ApplyUpgradeAtLevel(int levelIndex)
+    {
+        float value = data.values[levelIndex];
 
         switch (data.type)
         {

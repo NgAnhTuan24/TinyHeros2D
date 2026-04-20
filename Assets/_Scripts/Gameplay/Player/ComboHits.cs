@@ -14,6 +14,8 @@ public class ComboHits : MonoBehaviour
     [SerializeField] private float critChance = .25f;
     [SerializeField] private float critMultiplier = 2f;
 
+    [SerializeField] private AudioClip punchSFX;
+
     private float lastKeyPressedTime = 0;
     
     Animator anim;
@@ -52,7 +54,10 @@ public class ComboHits : MonoBehaviour
         noOfKeyPresses++;
 
         if (noOfKeyPresses == 1)
+        {
             anim.SetBool("Attack1", true);
+            AudioManager.instance.PlaySFX(punchSFX);
+        }
 
         noOfKeyPresses = Mathf.Clamp(noOfKeyPresses, 0, 2);
     }
@@ -90,6 +95,7 @@ public class ComboHits : MonoBehaviour
         if (noOfKeyPresses >= 2)
         {
             anim.SetBool("Attack2", true);
+            AudioManager.instance.PlaySFX(punchSFX);
         }
         else
         {

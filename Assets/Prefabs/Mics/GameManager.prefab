@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6289627855517983552}
   - component: {fileID: 1760645760959811159}
   - component: {fileID: 6620486462069481027}
+  - component: {fileID: 6507409902929721470}
   - component: {fileID: 545839372163097105}
   - component: {fileID: 4239326039862670185}
   - component: {fileID: 6538040614644938948}
@@ -56,6 +57,7 @@ MonoBehaviour:
   cameraController: {fileID: 0}
   coinManager: {fileID: 0}
   checkpointManager: {fileID: 0}
+  dialogueManager: {fileID: 0}
   dialogueStateManager: {fileID: 0}
   tutorialStateManager: {fileID: 0}
   projectileStatsManager: {fileID: 0}
@@ -122,6 +124,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointScene: 
   checkpointPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &6507409902929721470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755803776471162811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea03459f3e809b489a3ee6ad496546e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &545839372163097105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,3 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 535594b7934c52545b9243e0680627ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusDamage: 0
+  bonusSpeed: 0

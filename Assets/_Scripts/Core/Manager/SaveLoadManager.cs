@@ -12,6 +12,8 @@ public class SaveLoadManager : MonoBehaviour
     [SerializeField] private SaveSlotUI slot1;
     [SerializeField] private SaveSlotUI slot2;
 
+    public bool isDeleteMode = false;
+
     void Start()
     {
         LoadSlotUI(0, slot1);
@@ -35,9 +37,15 @@ public class SaveLoadManager : MonoBehaviour
 
     public void SelectSlot(int slotIndex)
     {
-        selectedSlot = slotIndex;
-
         Debug.Log("Chọn slot: " + slotIndex);
+
+        if (isDeleteMode)
+        {
+            DeleteSlot(slotIndex);
+            return;
+        }
+
+        selectedSlot = slotIndex;
 
         GameData data = SaveSystem.Load(slotIndex);
 
@@ -50,6 +58,30 @@ public class SaveLoadManager : MonoBehaviour
             currentData = data;
             SceneManager.LoadScene(data.sceneName);
         }
+    }
+
+    public void ToggleDeleteMode()
+    {
+        isDeleteMode = !isDeleteMode;
+
+        Debug.Log("Delete Mode: " + isDeleteMode);
+
+        slot1.SetDeleteMode(isDeleteMode);
+        slot2.SetDeleteMode(isDeleteMode);
+    }
+
+    void DeleteSlot(int slotIndex)
+    {
+        SaveSystem.Delete(slotIndex);
+
+        Debug.Log("Đã xóa slot: " + slotIndex);
+
+        if (slotIndex == 0)
+            LoadSlotUI(0, slot1);
+        else if (slotIndex == 1)
+            LoadSlotUI(1, slot2);
+
+        ToggleDeleteMode();
     }
 
     public void BackToMenu()
