@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/Map1_3.unity
     guid: 70d542c0dfc819c4b8a059cff99b0a64
   - enabled: 1
+    path: Assets/_Scenes/Map2_1.unity
+    guid: 471b8e37f5b3b6d428bdf45dbf7cfdd9
+  - enabled: 1
     path: Assets/_Scenes/SafeZone.unity
     guid: daef807ec71c57f47b9751a81893125e
   - enabled: 1
