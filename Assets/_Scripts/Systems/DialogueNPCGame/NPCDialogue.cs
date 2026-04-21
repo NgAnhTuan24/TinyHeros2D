@@ -14,21 +14,22 @@ public class NPCDialogue : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.05f;
     [SerializeField] private float delayBetweenLines = 2f;
 
-    private Coroutine dialogueRoutine;
     private PlayerIdentity player;
 
-    private void Start()
-    {
-        player = FindObjectOfType<PlayerIdentity>();
-    }
+    private bool isTrigger;
+
+    //private void Start()
+    //{
+    //    player = FindObjectOfType<PlayerIdentity>();
+    //}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isTrigger)
         {
             player = other.GetComponent<PlayerIdentity>();
 
-            dialogueRoutine = StartCoroutine(RunDialogue());
+            StartCoroutine(RunDialogue());
         }
     }
 
@@ -45,8 +46,13 @@ public class NPCDialogue : MonoBehaviour
 
     IEnumerator RunDialogue()
     {
+        isTrigger = true;
+
         if (dialogue == null || dialogue.lines.Length == 0)
+        {
+            isTrigger = false;
             yield break;
+        }
 
         bubble.SetActive(true);
 
@@ -65,6 +71,8 @@ public class NPCDialogue : MonoBehaviour
         }
 
         bubble.SetActive(false);
+
+        isTrigger = false;
     }
 
     IEnumerator TypeLine(string line)
