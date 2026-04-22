@@ -37,8 +37,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5578154834244353745}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52, y: -6.8, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -223,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patrolSwitchTime: 2
   startFacingRight: 0
+  spriteFacingRight: 1
 --- !u!114 &1361861037878901664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +269,6 @@ MonoBehaviour:
   maxHealth: 3
   knockbackThrust: 10
   deathVFX: {fileID: 1551652072768891484, guid: dd029c1154cc80f4db1963a45b754436, type: 3}
-  hurtSFX: {fileID: 8300000, guid: 4bebc42d41eea0a4b8bbb8c38f8636c6, type: 3}
 --- !u!114 &7584996730588513895
 MonoBehaviour:
   m_ObjectHideFlags: 0

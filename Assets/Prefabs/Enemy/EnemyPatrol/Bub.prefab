@@ -291,6 +291,7 @@ MonoBehaviour:
   distance: 5
   blinkDuration: 1
   blinkInterval: 0.1
+  spriteFacingRight: 0
 --- !u!114 &-847655591728712090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,6 +305,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 6651977575895760230, guid: 5ce2672aa19ea4e46817b734ab8deeb4, type: 3}
+  coin: 1
+  useRandom: 0
   minCoin: 1
   maxCoin: 1
   force: 0
@@ -397,5 +400,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0baf043fa40bc940a34cb355bb22b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 1
+  damage: 1
   damageCooldown: 1
