@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyDamage : MonoBehaviour
+public class EnemyPatrolDamage : MonoBehaviour
 {
     public int damage = 1;
 
