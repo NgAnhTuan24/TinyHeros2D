@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class EnemyDmage : MonoBehaviour
+// chỉ dùng cho các vật thể gây hại cho player như (enemy, trap, ...)
+public class GlobalDmg : MonoBehaviour
 {
     [SerializeField] private int dmg = 1;
 
