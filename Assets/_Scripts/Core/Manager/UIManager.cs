@@ -7,6 +7,7 @@ public enum UIType
     Save,
     Upgrade,
     Item,
+    SelectMap,
 }
 
 [System.Serializable]

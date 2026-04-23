@@ -14,14 +14,11 @@ public class NPCDialogue : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.05f;
     [SerializeField] private float delayBetweenLines = 2f;
 
+    [SerializeField] private Animator animator;
+
     private PlayerIdentity player;
 
     private bool isTrigger;
-
-    //private void Start()
-    //{
-    //    player = FindObjectOfType<PlayerIdentity>();
-    //}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -29,20 +26,12 @@ public class NPCDialogue : MonoBehaviour
         {
             player = other.GetComponent<PlayerIdentity>();
 
+            if (animator != null)
+                animator.SetBool("On", true);
+
             StartCoroutine(RunDialogue());
         }
     }
-
-    //private void OnTriggerExit2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        if (dialogueRoutine != null)
-    //            StopCoroutine(dialogueRoutine);
-
-    //        bubble.SetActive(false);
-    //    }
-    //}
 
     IEnumerator RunDialogue()
     {
@@ -71,6 +60,9 @@ public class NPCDialogue : MonoBehaviour
         }
 
         bubble.SetActive(false);
+
+        if (animator != null)
+            animator.SetBool("On", false);
 
         isTrigger = false;
     }
