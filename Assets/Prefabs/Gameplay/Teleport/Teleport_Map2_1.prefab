@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5145493217394103941}
   - component: {fileID: -8318183197459791165}
   m_Layer: 0
-  m_Name: Teleport
+  m_Name: Teleport_Map2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,6 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32f6783532b41841963cab0a5bd2635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: SafeZone
-  sceneTransitionName: SafeZone1
+  sceneToLoad: Map2_1
+  sceneTransitionName: Map2_1.1
   requireButtonPress: 0
