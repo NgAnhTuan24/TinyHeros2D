@@ -144,5 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpened: 0
+  coinGame: 10
   closedChest: {fileID: -283574307, guid: 1128dd26602a8264bacb741effef1efc, type: 3}
   openedChest: {fileID: -530555433, guid: 1128dd26602a8264bacb741effef1efc, type: 3}
+  collectSFX: {fileID: 8300000, guid: c3c3b7814ae0f71409bd0510f511f56f, type: 3}

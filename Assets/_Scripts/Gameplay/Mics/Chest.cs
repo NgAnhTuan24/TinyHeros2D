@@ -9,6 +9,8 @@ public class Chest : MonoBehaviour
     [SerializeField] private Sprite closedChest;
     [SerializeField] private Sprite openedChest;
 
+    [SerializeField] private AudioClip collectSFX;
+
     private SpriteRenderer sr;
 
     private void Awake()
@@ -34,6 +36,8 @@ public class Chest : MonoBehaviour
         sr.sprite = openedChest;
 
         GameManager.instance.coinManager.AddCoin(coinGame);
+
+        AudioManager.instance.PlaySFX(collectSFX);
 
         Debug.Log("Chest opened!");
 
