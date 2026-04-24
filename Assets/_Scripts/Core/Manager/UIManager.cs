@@ -7,6 +7,7 @@ public enum UIType
     Save,
     Upgrade,
     Item,
+    SelectMap,
 }
 
 [System.Serializable]
@@ -107,7 +108,7 @@ public class UIManager : MonoBehaviour
 
             SetUIActive(isActive);
 
-            Time.timeScale = isActive ? 1f : 0f;
+            //Time.timeScale = isActive ? 1f : 0f;
         }
     }
 
@@ -119,7 +120,7 @@ public class UIManager : MonoBehaviour
 
             SetUIActive(true);
 
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
         }
     }
 

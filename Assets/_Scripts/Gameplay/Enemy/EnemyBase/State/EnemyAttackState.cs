@@ -33,6 +33,7 @@ public class EnemyAttackState : EnemyBaseState
         {
             if (timer >= attackCooldown)
             {
+                //Attack();
                 isRecovering = true;
                 timer = 0;
             }

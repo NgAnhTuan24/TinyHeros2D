@@ -20,35 +20,32 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private GameObject portalPrefab;
     [SerializeField] private Transform portalSpawnPoint;
 
-    //private bool triggered = false;
+    private bool triggered = false;
 
     bool enemyHandled = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (triggered) return;
+        if (triggered) return;
+        if (!collision.CompareTag("Player")) return;
 
-        if (collision.CompareTag("Player"))
+        var state = GameManager.instance.dialogueStateManager;
+
+        if (state.IsCompleted(dialogueID)) return;
+
+        triggered = true;
+
+        if (!state.IsStarted(dialogueID))
         {
-            if (GameManager.instance.dialogueStateManager.IsTriggered(dialogueID)) return;
-
-            //triggered = true;
-
-            if (spawnAfterDialogue)
+            GameManager.instance.dialogueManager.StartDialogue(lines, () =>
             {
-                GameManager.instance.dialogueManager.StartDialogue(lines, () =>
-                {
-                    //GameManager.instance.dialogueStateManager.MarkTriggered(dialogueID);
-                    SpawnEnemy();
-                });
-            }
-            else
-            {
-                GameManager.instance.dialogueManager.StartDialogue(lines, () =>
-                {
-                    GameManager.instance.dialogueStateManager.MarkTriggered(dialogueID);
-                });
-            }
+                state.MarkStarted(dialogueID);
+                SpawnEnemy();
+            });
+        }
+        else
+        {
+            SpawnEnemy();
         }
     }
 
@@ -71,7 +68,9 @@ public class DialogueTrigger : MonoBehaviour
         if (enemyHandled) return;
         enemyHandled = true;
 
-        if (afterBattleLines == null || afterBattleLines.Length == 0) return;
+        var state = GameManager.instance.dialogueStateManager;
+
+        state.MarkCompleted(dialogueID);
 
         StartCoroutine(PlayAfterDialogue());
     }
@@ -91,7 +90,5 @@ public class DialogueTrigger : MonoBehaviour
         if (portalPrefab == null || portalSpawnPoint == null) return;
 
         Instantiate(portalPrefab, portalSpawnPoint.position, Quaternion.identity);
-
-        GameManager.instance.dialogueStateManager.MarkTriggered(dialogueID);
     }
 }

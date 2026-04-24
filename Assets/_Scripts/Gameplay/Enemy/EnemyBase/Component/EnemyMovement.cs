@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
     private float patrolTimer;
 
     [SerializeField] private bool startFacingRight = true;
+    [SerializeField] private bool spriteFacingRight = true;
 
     private Rigidbody2D rb;
     private EnemyController enemy;
@@ -32,8 +33,13 @@ public class EnemyMovement : MonoBehaviour
     {
         facingRight = faceRight;
 
+        float finalDir = faceRight ? 1 : -1;
+
+        if (!spriteFacingRight)
+            finalDir *= -1;
+
         Vector3 scale = transform.localScale;
-        scale.x = Mathf.Abs(scale.x) * (faceRight ? 1 : -1);
+        scale.x = Mathf.Abs(scale.x) * finalDir;
         transform.localScale = scale;
     }
 
@@ -87,25 +93,24 @@ public class EnemyMovement : MonoBehaviour
         patrolTimer = patrolSwitchTime;
     }
 
-    private void Flip()
-    {
-        facingRight = !facingRight;
+    //private void Flip()
+    //{
+    //    facingRight = !facingRight;
 
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
-    }
+    //    Vector3 scale = transform.localScale;
+    //    scale.x *= -1;
+    //    transform.localScale = scale;
+    //}
 
     private void HandleFlip(float direction)
     {
         if (direction > 0 && !facingRight)
         {
-            Flip();
+            SetFacing(true);
         }
-
         else if (direction < 0 && facingRight)
         {
-            Flip();
+            SetFacing(false);
         }
     }
 

@@ -17,15 +17,6 @@ public class EnemyDetection : MonoBehaviour
         if (player == null) return false;
 
         float distance = Vector2.Distance(transform.position, player.position);
-
-        if  (distance > enemy.DetectRange) return false;
-
-        Vector2 dir = (player.position - transform.position).normalized;
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, enemy.DetectRange);
-
-        if (hit.collider == null) return false;
-
         return distance <= enemy.DetectRange;
     }
 

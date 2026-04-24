@@ -92,19 +92,20 @@ public class Init : MonoBehaviour
             UIManager.instance.playerManager.RegisterPlayer(player);
         }
 
-        if (data == null)
-        {
-            StartCoroutine(AutoSave());
-        }
+        // bỏ
+        //if (data == null)
+        //{
+        //    StartCoroutine(AutoSave());
+        //}
     }
 
     //Save data when entering the game
-    IEnumerator AutoSave()
-    {
-        yield return null; //Wait 1 frame before saving
+    //IEnumerator AutoSave()
+    //{
+    //    yield return null; //Wait 1 frame before saving
 
-        GameManager.instance.SaveGame();
+    //    GameManager.instance.SaveGame();
 
-        SaveLoadManager.currentData = SaveSystem.Load(SaveLoadManager.selectedSlot);
-    }
+    //    SaveLoadManager.currentData = SaveSystem.Load(SaveLoadManager.selectedSlot);
+    //}
 }

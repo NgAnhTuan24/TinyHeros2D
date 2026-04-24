@@ -17,7 +17,8 @@ public class GameData
     public Vector3 checkpointPosition;
 
     [Header("Dialogue Game Data")]
-    public List<string> triggeredDialogues = new List<string>();
+    public List<string> startedDialogues;
+    public List<string> completedDialogues;
 
     [Header("Tutorial Flag Data")]
     public bool jumpUnlocked;

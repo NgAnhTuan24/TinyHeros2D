@@ -12,6 +12,8 @@ public class EnemyPatrol : MonoBehaviour, IEnemy
     [SerializeField] private float blinkDuration = 1f;
     [SerializeField] private float blinkInterval = 0.1f;
 
+    [SerializeField] private bool spriteFacingRight = true;
+
     private Vector3 startPos;
     private bool movingLeft = true;
     private Rigidbody2D rb;
@@ -31,19 +33,26 @@ public class EnemyPatrol : MonoBehaviour, IEnemy
         float leftBound = startPos.x - distance;
         float rightBound = startPos.x + distance;
 
+        // Đổi hướng trước (tránh bị vượt biên)
+        if (rb.position.x <= leftBound)
+        {
+            movingLeft = false;
+        }
+        else if (rb.position.x >= rightBound)
+        {
+            movingLeft = true;
+        }
+
         float dir = movingLeft ? -1f : 1f;
         rb.velocity = new Vector2(dir * speed, rb.velocity.y);
 
-        if (movingLeft && rb.position.x <= leftBound)
-        {
-            movingLeft = false;
-            Flip();
-        }
-        else if (!movingLeft && rb.position.x >= rightBound)
-        {
-            movingLeft = true;
-            Flip();
-        }
+        // Flip ổn định
+        Vector3 scale = transform.localScale;
+        scale.x = spriteFacingRight
+            ? Mathf.Sign(dir) * Mathf.Abs(scale.x)
+            : -Mathf.Sign(dir) * Mathf.Abs(scale.x);
+
+        transform.localScale = scale;
     }
 
     public void Die()

@@ -3,26 +3,33 @@ using UnityEngine;
 
 public class DialogueStateManager : MonoBehaviour
 {
-    private HashSet<string> triggered = new HashSet<string>();
+    private HashSet<string> started = new HashSet<string>();
+    private HashSet<string> completed = new HashSet<string>();
 
     public void LoadFromData(GameData data)
     {
-        triggered = new HashSet<string>(data.triggeredDialogues);
+        started = new HashSet<string>(data.startedDialogues);
+        completed = new HashSet<string>(data.completedDialogues);
     }
 
     public void SaveToData(GameData data)
     {
-        data.triggeredDialogues = new List<string>(triggered);
+        data.startedDialogues = new List<string>(started);
+        data.completedDialogues = new List<string>(completed);
     }
 
-    public bool IsTriggered(string id)
+    public bool IsStarted(string id) => started.Contains(id);
+    public bool IsCompleted(string id) => completed.Contains(id);
+
+    public void MarkStarted(string id)
     {
-        return triggered.Contains(id);
+        if (!started.Contains(id))
+            started.Add(id);
     }
 
-    public void MarkTriggered(string id)
+    public void MarkCompleted(string id)
     {
-        if (!triggered.Contains(id))
-            triggered.Add(id);
+        if (!completed.Contains(id))
+            completed.Add(id);
     }
 }
