@@ -760,10 +760,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 15, y: 8}
-      - {x: -15, y: 8}
-      - {x: -15, y: -10}
-      - {x: 15, y: -10}
+    - - {x: 14, y: 8}
+      - {x: -14, y: 8}
+      - {x: -14, y: -10}
+      - {x: 14, y: -10}
   m_UseDelaunayMesh: 0
 --- !u!1 &464118185
 GameObject:

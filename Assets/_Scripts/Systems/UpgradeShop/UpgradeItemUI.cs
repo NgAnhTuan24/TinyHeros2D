@@ -18,6 +18,8 @@ public class UpgradeItemUI : MonoBehaviour
         LoadLevel();
         RefreshUI();
         upgradeButton.onClick.AddListener(OnUpgradeClicked);
+
+        GameManager.instance.coinManager.OnCoinChanged += OnCoinChanged;
     }
 
     void LoadLevel()
@@ -109,5 +111,10 @@ public class UpgradeItemUI : MonoBehaviour
                 GameManager.instance.projectileStatsManager.AddSpeed(value);
                 break;
         }
+    }
+
+    private void OnCoinChanged(int coin)
+    {
+        RefreshUI();
     }
 }
