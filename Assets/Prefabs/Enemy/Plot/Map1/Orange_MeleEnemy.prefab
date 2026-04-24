@@ -192,8 +192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528dcfe15c586b24eb26832ec8e4452c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  chaseSpeed: 5
+  moveSpeed: 6
+  chaseSpeed: 6
   attackRange: 1
   detectRange: 6
   usePatrol: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
   useRandom: 0
   minCoin: 0
   maxCoin: 0
-  force: 5
+  force: 6
 --- !u!1 &7559893162502467419
 GameObject:
   m_ObjectHideFlags: 0
