@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: NPC_SelectMap
   m_EditorClassIdentifier: 
   lines:
-  - Hi, {player}.
-  - Keep moving forward on your journey.
-  - New lands will open as you overcome challenges.
+  - 'Hi, {player}.
+
+    Keep moving forward on your journey.
+
+    New lands will
+    open as you overcome challenges.'
