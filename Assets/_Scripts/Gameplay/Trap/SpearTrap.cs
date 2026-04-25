@@ -4,6 +4,7 @@ using System.Collections;
 public class SpearTrap : MonoBehaviour
 {
     [SerializeField] private float idleTime = 2f;
+    [SerializeField] private float waitTime = 2.5f;
 
     private Animator anim;
 
@@ -20,6 +21,8 @@ public class SpearTrap : MonoBehaviour
             yield return new WaitForSeconds(idleTime);
 
             anim.SetTrigger("Attack");
+
+            yield return new WaitForSeconds(waitTime);
         }
     }
 }
