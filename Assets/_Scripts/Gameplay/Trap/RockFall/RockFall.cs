@@ -13,11 +13,6 @@ public class RockFall : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
-    private void Start()
-    {
-        Destroy(gameObject, 3);
-    }
-
     public void TriggerFall()
     {
         if (isFalling) return;
@@ -29,5 +24,6 @@ public class RockFall : MonoBehaviour
     void StartFalling()
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
+        Destroy(gameObject, 3);
     }
 }
