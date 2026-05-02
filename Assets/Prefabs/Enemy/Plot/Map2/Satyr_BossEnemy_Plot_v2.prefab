@@ -305,6 +305,8 @@ MonoBehaviour:
   maxHealth: 30
   knockbackThrust: 3
   deathVFX: {fileID: 175678647051944287, guid: 8864ab2bb57c8894b84ef6351751dc59, type: 3}
+  isBoss: 1
+  chapterID: 1
 --- !u!114 &3231537940878926273
 MonoBehaviour:
   m_ObjectHideFlags: 0
