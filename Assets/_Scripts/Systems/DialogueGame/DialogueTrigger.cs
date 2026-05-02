@@ -20,6 +20,9 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private GameObject portalPrefab;
     [SerializeField] private Transform portalSpawnPoint;
 
+    [SerializeField] private bool allowReplayEnemy = true;
+    private bool enemyAlive = false;
+
     private bool triggered = false;
 
     bool enemyHandled = false;
@@ -31,7 +34,14 @@ public class DialogueTrigger : MonoBehaviour
 
         var state = GameManager.instance.dialogueStateManager;
 
-        if (state.IsCompleted(dialogueID)) return;
+        if (state.IsCompleted(dialogueID))
+        {
+            if (allowReplayEnemy)
+            {
+                SpawnEnemy();
+            }
+            return;
+        }
 
         triggered = true;
 
@@ -53,7 +63,12 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (enemyPrefab == null || spawnPoint == null) return;
 
+        if (enemyAlive) return;
+
+        enemyHandled = false;
+
         GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        enemyAlive = true;
 
         IEnemy enemyInterface = enemy.GetComponent<IEnemy>();
 
@@ -68,11 +83,19 @@ public class DialogueTrigger : MonoBehaviour
         if (enemyHandled) return;
         enemyHandled = true;
 
+        //enemyAlive = false;
+
         var state = GameManager.instance.dialogueStateManager;
 
-        state.MarkCompleted(dialogueID);
-
-        StartCoroutine(PlayAfterDialogue());
+        if (!state.IsCompleted(dialogueID))
+        {
+            state.MarkCompleted(dialogueID);
+            StartCoroutine(PlayAfterDialogue());
+        }
+        else
+        {
+            SpawnPortal();
+        }
     }
 
     IEnumerator PlayAfterDialogue()
