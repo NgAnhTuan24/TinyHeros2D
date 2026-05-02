@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     // Upgrade state data
     public Dictionary<UpgradeType, int> upgradeLevels = new Dictionary<UpgradeType, int>();
 
+    public HashSet<int> unlockedChapters = new HashSet<int>();
+
     private float sessionStartTime;
     private float loadedPlayTime;
 
@@ -89,6 +91,8 @@ public class GameManager : MonoBehaviour
             });
         }
 
+        data.unlockedChapters = new List<int>(unlockedChapters);
+
         SaveSystem.Save(data, SaveLoadManager.selectedSlot);
 
         UIManager.instance.saveSlotUI.UpdateUI(data, CharacterData.instance.GetIcon(data.characterName));
@@ -152,5 +156,10 @@ public class GameManager : MonoBehaviour
             default:
                 return true;
         }
+    }
+
+    public bool IsChapterUnlocked(int chapter)
+    {
+        return unlockedChapters.Contains(chapter);
     }
 }

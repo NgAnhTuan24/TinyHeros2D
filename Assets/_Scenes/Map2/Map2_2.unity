@@ -18577,7 +18577,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 4, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1874647543
 MonoBehaviour:
@@ -18604,7 +18604,7 @@ Transform:
   m_GameObject: {fileID: 1874647541}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: -6.5, z: 0}
+  m_LocalPosition: {x: -3, y: -6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18944,7 +18944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
-  knockbackThrust: 10
+  knockbackThrust: 15
   deathVFX: {fileID: 175678647051944287, guid: c9f0f15678740e241a956f82b8e10837, type: 3}
 --- !u!1 &88844285750219311
 GameObject:
@@ -18982,7 +18982,7 @@ MonoBehaviour:
   useRandom: 1
   minCoin: 3
   maxCoin: 5
-  force: 5
+  force: 6
 --- !u!114 &419263534745863940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18995,7 +18995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f7424c183bf2e44b96c1f95be267c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   distance: 4
   blinkDuration: 1
   blinkInterval: 0.1
@@ -19017,7 +19017,7 @@ MonoBehaviour:
   useRandom: 0
   minCoin: 0
   maxCoin: 0
-  force: 5
+  force: 6
 --- !u!114 &535051476466129244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19337,8 +19337,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   chaseSpeed: 0
-  attackRange: 1
-  detectRange: 1
+  attackRange: 0.435
+  detectRange: 0.435
   usePatrol: 0
 --- !u!4 &2520693697150655578
 Transform:
@@ -19652,7 +19652,7 @@ MonoBehaviour:
   - {fileID: 1185235153}
   - {fileID: 212604829}
   - {fileID: 1965674712}
-  speed: 5
+  speed: 7
 --- !u!50 &4148458869808459837
 Rigidbody2D:
   serializedVersion: 4
@@ -19708,7 +19708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpened: 0
-  coinGame: 5
+  coinGame: 20
   closedChest: {fileID: -283574307, guid: 1128dd26602a8264bacb741effef1efc, type: 3}
   openedChest: {fileID: -530555433, guid: 1128dd26602a8264bacb741effef1efc, type: 3}
   collectSFX: {fileID: 8300000, guid: c3c3b7814ae0f71409bd0510f511f56f, type: 3}
@@ -19995,7 +19995,7 @@ MonoBehaviour:
   moveSpeed: 5
   chaseSpeed: 5
   attackRange: 1
-  detectRange: 6
+  detectRange: 5
   usePatrol: 0
 --- !u!1 &5514931534438285740
 GameObject:
@@ -20068,7 +20068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f7424c183bf2e44b96c1f95be267c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 8
   distance: 2
   blinkDuration: 1
   blinkInterval: 0.1
@@ -20102,7 +20102,7 @@ MonoBehaviour:
   useRandom: 0
   minCoin: 0
   maxCoin: 0
-  force: 5
+  force: 6
 --- !u!114 &6150788761720237283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20116,7 +20116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
-  knockbackThrust: 10
+  knockbackThrust: 15
   deathVFX: {fileID: 175678647051944287, guid: c9f0f15678740e241a956f82b8e10837, type: 3}
 --- !u!95 &6171328826864712393
 Animator:
@@ -20384,8 +20384,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   chaseSpeed: 0
-  attackRange: 1
-  detectRange: 1
+  attackRange: 0.435
+  detectRange: 0.435
   usePatrol: 0
 --- !u!58 &8580722825825908154
 CircleCollider2D:

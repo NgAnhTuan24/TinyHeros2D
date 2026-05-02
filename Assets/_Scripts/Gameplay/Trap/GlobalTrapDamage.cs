@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpikeTrapDamage : MonoBehaviour
+public class GlobalTrapDamage : MonoBehaviour
 {
     [SerializeField] private int damage = 1;
     [SerializeField] private float damageCooldown = 1f;

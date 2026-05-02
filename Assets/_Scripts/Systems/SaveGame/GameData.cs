@@ -27,6 +27,9 @@ public class GameData
 
     [Header("Upgrade Data")]
     public List<UpgradeSaveData> upgrades;
+
+    [Header("Map Unlock Data")]
+    public List<int> unlockedChapters;
 }
 
 [System.Serializable]

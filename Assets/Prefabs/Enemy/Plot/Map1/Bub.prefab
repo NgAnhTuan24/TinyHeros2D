@@ -307,8 +307,8 @@ MonoBehaviour:
   coinPrefab: {fileID: 6651977575895760230, guid: 5ce2672aa19ea4e46817b734ab8deeb4, type: 3}
   coin: 1
   useRandom: 0
-  minCoin: 1
-  maxCoin: 1
+  minCoin: 0
+  maxCoin: 0
   force: 0
 --- !u!1 &7193857706048994363
 GameObject:

@@ -1,6 +1,7 @@
-using UnityEngine;
 using Cinemachine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Init : MonoBehaviour
 {
@@ -57,6 +58,11 @@ public class Init : MonoBehaviour
                     }
                 }
 
+                if (data.unlockedChapters != null)
+                {
+                    GameManager.instance.unlockedChapters = new HashSet<int>(data.unlockedChapters);
+                }
+
                 //Update the data saved to the UI
                 UIManager.instance.saveSlotUI.UpdateUI(data, CharacterData.instance.GetIcon(data.characterName));
             }
@@ -69,6 +75,9 @@ public class Init : MonoBehaviour
                 {
                     GameManager.instance.checkpointManager.SetCheckpoint(transform.position);
                 }
+
+                GameManager.instance.unlockedChapters.Clear();
+                GameManager.instance.unlockedChapters.Add(1);
             }
 
             Vector3 spawnPos = data != null ? data.playerPosition : transform.position;

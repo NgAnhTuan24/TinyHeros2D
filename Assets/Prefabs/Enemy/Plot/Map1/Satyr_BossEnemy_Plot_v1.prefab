@@ -233,15 +233,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb04a885716bc54fa7217ea05c24448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeRange: 2.5
-  dashRange: 5
-  rangedRange: 10
+  meleeRange: 3
+  dashRange: 8
+  rangedRange: 12
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  dashCooldown: 3.5
-  meleeCooldown: 3
-  rangedCooldown: 4
+  dashCooldown: 3
+  meleeCooldown: 1.5
+  rangedCooldown: 2
   startFacingRight: 0
 --- !u!114 &2478463183745203872
 MonoBehaviour:
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b6d99f9edb3a64db4c86323883e972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 10
   knockbackThrust: 5
   deathVFX: {fileID: 175678647051944287, guid: 8864ab2bb57c8894b84ef6351751dc59, type: 3}
 --- !u!114 &3231537940878926273
@@ -345,11 +345,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 6651977575895760230, guid: 5ce2672aa19ea4e46817b734ab8deeb4, type: 3}
-  coin: 10
+  coin: 50
   useRandom: 0
   minCoin: 0
   maxCoin: 0
-  force: 5
+  force: 6
 --- !u!1 &7197975225452702253
 GameObject:
   m_ObjectHideFlags: 0

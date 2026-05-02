@@ -11,6 +11,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IEnemy
     [SerializeField] private float knockbackThrust;
     [SerializeField] private GameObject deathVFX;
 
+    [SerializeField] private bool isBoss = false;
+    [SerializeField] private int chapterID;
+
     Flash flash;
     Knockback knockback;
     EnemyDrop drop;
@@ -47,10 +50,29 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IEnemy
 
         OnDie?.Invoke();
 
+        if (isBoss)
+        {
+            UnlockNextChapter();
+        }
+
         Instantiate(deathVFX, transform.position, Quaternion.identity);
 
-        Destroy(gameObject);
-
         drop.Drop();
+
+        Destroy(gameObject);
+    }
+
+    void UnlockNextChapter()
+    {
+        int nextChapter = chapterID + 1;
+
+        if (!GameManager.instance.unlockedChapters.Contains(nextChapter))
+        {
+            GameManager.instance.unlockedChapters.Add(nextChapter);
+
+            Debug.Log("Mở khóa chapter " + nextChapter);
+
+            GameManager.instance.SaveGame();
+        }
     }
 }

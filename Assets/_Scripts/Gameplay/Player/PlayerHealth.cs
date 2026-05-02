@@ -149,6 +149,14 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         heartUI.UpdateHearts(hp);
     }
 
+    public void HealFull()
+    {
+        hp = maxHp;
+        heartUI.UpdateHearts(hp);
+
+        Debug.Log("Player đã được hồi full máu");
+    }
+
     private IEnumerator DamageRoutine(Transform damageSource)
     {
         knockback.GetKnockedBack(damageSource, 15f);
