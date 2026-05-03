@@ -83,6 +83,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         Debug.Log("Player đã chết");
 
+        PlayerController.instance.movement.LockPlayer();
+
         AudioManager.instance.PlaySFX(deathSFX);
 
         if (!rb.simulated) return;

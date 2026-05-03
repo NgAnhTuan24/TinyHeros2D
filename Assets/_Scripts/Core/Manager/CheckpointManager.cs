@@ -28,6 +28,7 @@ public class CheckpointManager : MonoBehaviour
             StartCoroutine(RespawnDifferentScene());
         }
 
+        PlayerController.instance.movement.UnlockPlayer();
         UIManager.instance.SetUIActive(true);
     }
 
