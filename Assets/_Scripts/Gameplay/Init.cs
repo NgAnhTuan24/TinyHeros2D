@@ -18,6 +18,12 @@ public class Init : MonoBehaviour
     {
         GameData data = SaveLoadManager.currentData;
 
+        if (SaveLoadManager.selectedSlot != -1)
+        {
+            data = SaveSystem.Load(SaveLoadManager.selectedSlot);
+            SaveLoadManager.currentData = data;
+        }
+
         if (PlayerController.instance == null)
         {
             GameObject prefab;
