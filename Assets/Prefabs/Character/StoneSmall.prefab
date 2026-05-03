@@ -165,3 +165,4 @@ MonoBehaviour:
   speed: 10
   lifeTime: 4
   ownerTeam: 1
+  stoneBrokenSFX: {fileID: 8300000, guid: b31dfe2e328f34746a892ffe7a29a5fd, type: 3}

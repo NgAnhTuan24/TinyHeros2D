@@ -13,6 +13,10 @@ public class Projectile : MonoBehaviour
     public float speed = 10f;
     public float lifeTime = 4f;
     public Team ownerTeam;
+
+    [Header("SFX")]
+    [SerializeField] private AudioClip stoneBrokenSFX;
+
     private Rigidbody2D rb;
 
     void Awake()
@@ -35,6 +39,12 @@ public class Projectile : MonoBehaviour
         if (damageable != null)
         {
             damageable.TakeDamage(dmg, transform);
+            
+            if (stoneBrokenSFX != null)
+            {
+                AudioManager.instance.PlaySFX(stoneBrokenSFX);
+            }
+
             Destroy(gameObject);
         }
     }
