@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  chaseSpeed: 6
+  chaseSpeed: 8
   attackRange: 1
   detectRange: 6
   usePatrol: 0
@@ -267,8 +267,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  knockbackThrust: 10
+  knockbackThrust: 5
   deathVFX: {fileID: 1551652072768891484, guid: dd029c1154cc80f4db1963a45b754436, type: 3}
+  isBoss: 0
+  chapterID: 0
 --- !u!114 &7584996730588513895
 MonoBehaviour:
   m_ObjectHideFlags: 0

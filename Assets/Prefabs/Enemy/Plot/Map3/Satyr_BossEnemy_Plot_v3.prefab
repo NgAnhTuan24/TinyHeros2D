@@ -302,9 +302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b6d99f9edb3a64db4c86323883e972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  knockbackThrust: 3
+  maxHealth: 20
+  knockbackThrust: 5
   deathVFX: {fileID: 175678647051944287, guid: 8864ab2bb57c8894b84ef6351751dc59, type: 3}
+  isBoss: 0
+  chapterID: 0
 --- !u!114 &3231537940878926273
 MonoBehaviour:
   m_ObjectHideFlags: 0

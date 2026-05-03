@@ -18946,6 +18946,8 @@ MonoBehaviour:
   maxHealth: 1
   knockbackThrust: 15
   deathVFX: {fileID: 175678647051944287, guid: c9f0f15678740e241a956f82b8e10837, type: 3}
+  isBoss: 0
+  chapterID: 0
 --- !u!1 &88844285750219311
 GameObject:
   m_ObjectHideFlags: 0
@@ -19652,7 +19654,7 @@ MonoBehaviour:
   - {fileID: 1185235153}
   - {fileID: 212604829}
   - {fileID: 1965674712}
-  speed: 7
+  speed: 5
 --- !u!50 &4148458869808459837
 Rigidbody2D:
   serializedVersion: 4
@@ -19692,9 +19694,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b6d99f9edb3a64db4c86323883e972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  knockbackThrust: 10
+  maxHealth: 5
+  knockbackThrust: 5
   deathVFX: {fileID: 1551652072768891484, guid: dd029c1154cc80f4db1963a45b754436, type: 3}
+  isBoss: 0
+  chapterID: 0
 --- !u!114 &4822393383587866460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19992,8 +19996,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528dcfe15c586b24eb26832ec8e4452c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  chaseSpeed: 5
+  moveSpeed: 6
+  chaseSpeed: 8
   attackRange: 1
   detectRange: 5
   usePatrol: 0
@@ -20118,6 +20122,8 @@ MonoBehaviour:
   maxHealth: 1
   knockbackThrust: 15
   deathVFX: {fileID: 175678647051944287, guid: c9f0f15678740e241a956f82b8e10837, type: 3}
+  isBoss: 0
+  chapterID: 0
 --- !u!95 &6171328826864712393
 Animator:
   serializedVersion: 5

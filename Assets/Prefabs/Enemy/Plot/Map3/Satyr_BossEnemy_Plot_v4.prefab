@@ -234,12 +234,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeRange: 2
-  dashRange: 7
-  rangedRange: 10
+  dashRange: 8
+  rangedRange: 15
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  dashCooldown: 4
+  dashCooldown: 3
   meleeCooldown: 1.5
   rangedCooldown: 2
   startFacingRight: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
-  knockbackThrust: 3
+  knockbackThrust: 5
   deathVFX: {fileID: 175678647051944287, guid: 8864ab2bb57c8894b84ef6351751dc59, type: 3}
   isBoss: 1
   chapterID: 2
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 6651977575895760230, guid: 5ce2672aa19ea4e46817b734ab8deeb4, type: 3}
-  coin: 100
+  coin: 50
   useRandom: 0
   minCoin: 0
   maxCoin: 0

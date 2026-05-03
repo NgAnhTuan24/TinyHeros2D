@@ -235,11 +235,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleeRange: 3
   dashRange: 8
-  rangedRange: 12
+  rangedRange: 15
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  dashCooldown: 3
+  dashCooldown: 2
   meleeCooldown: 1.5
   rangedCooldown: 2
   startFacingRight: 0
@@ -305,6 +305,8 @@ MonoBehaviour:
   maxHealth: 10
   knockbackThrust: 5
   deathVFX: {fileID: 175678647051944287, guid: 8864ab2bb57c8894b84ef6351751dc59, type: 3}
+  isBoss: 0
+  chapterID: 0
 --- !u!114 &3231537940878926273
 MonoBehaviour:
   m_ObjectHideFlags: 0
