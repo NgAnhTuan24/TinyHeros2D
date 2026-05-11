@@ -58,6 +58,13 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IEnemy
         if (isBoss)
         {
             UnlockNextChapter();
+
+            if (chapterID == 3)
+            {
+                GameManager.instance.endingUnlocked = true;
+
+                Debug.Log("Ending unlocked");
+            }
         }
 
         Instantiate(deathVFX, transform.position, Quaternion.identity);

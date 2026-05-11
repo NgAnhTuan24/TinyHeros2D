@@ -41,6 +41,9 @@ public class Init : MonoBehaviour
                 GameManager.instance.dialogueStateManager.LoadFromData(data);
                 GameManager.instance.tutorialStateManager.LoadFromData(data);
 
+                GameManager.instance.endingUnlocked = data.endingUnlocked;
+                GameManager.instance.endingPlayed = data.endingPlayed;
+
                 // reload The UI button game
                 var tutorial = GameManager.instance.tutorialStateManager;
 

@@ -30,6 +30,10 @@ public class GameData
 
     [Header("Map Unlock Data")]
     public List<int> unlockedChapters;
+
+    [Header("Ending Data")]
+    public bool endingUnlocked;
+    public bool endingPlayed;
 }
 
 [System.Serializable]
