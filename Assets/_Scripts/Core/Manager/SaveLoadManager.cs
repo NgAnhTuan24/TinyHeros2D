@@ -51,6 +51,7 @@ public class SaveLoadManager : MonoBehaviour
 
         if (data == null)
         {
+            currentData = null;
             SceneManager.LoadScene(sceneName);
         }
         else
@@ -73,6 +74,11 @@ public class SaveLoadManager : MonoBehaviour
     void DeleteSlot(int slotIndex)
     {
         SaveSystem.Delete(slotIndex);
+
+        if (selectedSlot == slotIndex)
+        {
+            currentData = null;
+        }
 
         Debug.Log("Đã xóa slot: " + slotIndex);
 

@@ -18,6 +18,12 @@ public class Init : MonoBehaviour
     {
         GameData data = SaveLoadManager.currentData;
 
+        if (SaveLoadManager.selectedSlot != -1)
+        {
+            data = SaveSystem.Load(SaveLoadManager.selectedSlot);
+            SaveLoadManager.currentData = data;
+        }
+
         if (PlayerController.instance == null)
         {
             GameObject prefab;
@@ -34,6 +40,9 @@ public class Init : MonoBehaviour
 
                 GameManager.instance.dialogueStateManager.LoadFromData(data);
                 GameManager.instance.tutorialStateManager.LoadFromData(data);
+
+                GameManager.instance.endingUnlocked = data.endingUnlocked;
+                GameManager.instance.endingPlayed = data.endingPlayed;
 
                 // reload The UI button game
                 var tutorial = GameManager.instance.tutorialStateManager;

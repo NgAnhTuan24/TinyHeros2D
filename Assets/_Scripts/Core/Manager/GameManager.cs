@@ -27,6 +27,12 @@ public class GameManager : MonoBehaviour
 
     public HashSet<int> unlockedChapters = new HashSet<int>();
 
+    [Header("Ending State")]
+    public bool endingUnlocked;
+    public bool endingPlayed;
+
+    public bool isPlayingEnding;
+
     private float sessionStartTime;
     private float loadedPlayTime;
 
@@ -92,6 +98,9 @@ public class GameManager : MonoBehaviour
         }
 
         data.unlockedChapters = new List<int>(unlockedChapters);
+
+        data.endingUnlocked = endingUnlocked;
+        data.endingPlayed = endingPlayed;
 
         SaveSystem.Save(data, SaveLoadManager.selectedSlot);
 

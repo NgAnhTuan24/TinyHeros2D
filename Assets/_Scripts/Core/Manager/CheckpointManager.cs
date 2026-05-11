@@ -17,6 +17,13 @@ public class CheckpointManager : MonoBehaviour
 
     public void Respawn()
     {
+        StartCoroutine(RespawnWithTransition());
+    }
+
+    IEnumerator RespawnWithTransition()
+    {
+        yield return GameManager.instance.sceneTransition.PlayTransition();
+
         string currentScene = SceneManager.GetActiveScene().name;
 
         if (currentScene == checkpointScene)
@@ -25,9 +32,10 @@ public class CheckpointManager : MonoBehaviour
         }
         else
         {
-            StartCoroutine(RespawnDifferentScene());
+            yield return StartCoroutine(RespawnDifferentScene());
         }
 
+        PlayerController.instance.movement.UnlockPlayer();
         UIManager.instance.SetUIActive(true);
     }
 

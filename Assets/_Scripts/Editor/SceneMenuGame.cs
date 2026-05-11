@@ -30,6 +30,10 @@ public class SceneMenuGame : EditorWindow
         DrawScenesByPrefix("Map3_");
 
         GUILayout.Space(10);
+        GUILayout.Label("=== MAP 4 ===", EditorStyles.boldLabel);
+        DrawScenesByPrefix("Map4");
+
+        GUILayout.Space(10);
         GUILayout.Label("=== SYSTEM ===", EditorStyles.boldLabel);
         DrawScene("SafeZone");
         DrawScene("Home");

@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IEnemy
     [SerializeField] private int maxHealth = 3;
     private int currentHealth;
 
+    [SerializeField] private EnemyHealthUI healthBar;
+
     [SerializeField] private float knockbackThrust;
     [SerializeField] private GameObject deathVFX;
 
@@ -28,12 +30,15 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IEnemy
     private void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(int damage, Transform damageSource)
     {
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        healthBar.SetHealth(currentHealth);
 
         knockback.GetKnockedBack(damageSource, knockbackThrust);
         StartCoroutine(flash.FlashRoutine());
@@ -53,6 +58,13 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IEnemy
         if (isBoss)
         {
             UnlockNextChapter();
+
+            if (chapterID == 3)
+            {
+                GameManager.instance.endingUnlocked = true;
+
+                Debug.Log("Ending unlocked");
+            }
         }
 
         Instantiate(deathVFX, transform.position, Quaternion.identity);
