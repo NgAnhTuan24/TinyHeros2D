@@ -30,7 +30,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IEnemy
     private void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        if (healthBar != null)
+        {
+            healthBar.SetMaxHealth(maxHealth);
+        }
     }
 
     public void TakeDamage(int damage, Transform damageSource)
@@ -38,7 +41,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IEnemy
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        healthBar.SetHealth(currentHealth);
+        if (healthBar != null)
+        {
+            healthBar.SetHealth(currentHealth);
+        }
 
         knockback.GetKnockedBack(damageSource, knockbackThrust);
         StartCoroutine(flash.FlashRoutine());
